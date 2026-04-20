@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
+<style>
+/* Basic dropdown nav — move to main.css if you prefer */
+.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
+.main-nav li { position: relative; }
+.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
+
+.main-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+/* hide submenu by default */
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.2rem);
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0.4rem 0;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 10;
+}
+
+/* submenu items */
+.main-nav .submenu li a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+/* show submenu on hover/focus */
+.main-nav .dropdown:hover .submenu,
+.main-nav .dropdown:focus-within .submenu {
+  display: block;
+}
+
+/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
+@media (max-width: 700px) {
+  .main-nav { flex-direction: column; align-items: stretch; }
+  .main-nav .submenu { position: static; border: none; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+    <div class="header-center">
+      <p style="font-size:2.2rem;font-weight:500;">
+        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
+      </p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+
+
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+
+
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<main class="container">
+  <section class="contact-grid">
+ 
+<!-- Column 1: Coordinators -->
+<div class="contact-col">
+  <h2>Conference Coordinators</h2>
+  <ul>
+    <li>
+      <strong>Dr. Jibitesh Mishra</strong><br>
+      School of Computer Sciences (SOCS), cum Dean, SW
+    </li>
+    <li>
+      <strong>Dr. Tapas Kumar Patra</strong><br>
+      School of Electronics Sciences (SELS), cum Dean, CDCE
+    </li>
+    <li>
+      <strong>Prof. Sushanta Kumar Sahu</strong><br>
+      School of Electronics Sciences (SELS)
+    </li>
+  </ul>
+
+  <p style="margin-top:10px;">
+    Odisha University of Technology and Research (OUTR)<br>
+    Bhubaneswar, Odisha, India – 751029
+  </p>
+</div>
+
+
+<!-- Column 2: Official Contact Info -->
+<div class="contact-col">
+  <h2>Official Contact</h2>
+  
+  <p><strong>Email:</strong><br> 
+    <a href="mailto:icimp2027@outr.ac.in">icimp2027@outr.ac.in</a><br>
+    	<a href="mailto:icimsp2027@gmail.com">icimsp2027@gmail.com</a>
+  </p>
+
+  <p><strong>Phone:</strong> 
+    <a href="tel:+918249274300">+91 8249274300</a>
+  </p>
+
+  <h2>Address</h2>
+  <p>
+    School of Electronic Sciences (SELS)<br>
+    Odisha University of Technology and Research (OUTR)<br>
+    Bhubaneswar, Odisha, India
+  </p>
+</div>
+
+
+
+    <!-- Column 3: Map -->
+    <div class="contact-col">
+      <h2>Location Map</h2>
+      <div class="map-responsive">
+        <iframe
+          title="OUTR Location"
+          src="https://www.google.com/maps?q=OUTR%20bhubaneswar&output=embed"
+          frameborder="0"
+          allowfullscreen=""
+          loading="lazy"
+          style="width:100%;height:220px;border-radius:8px;"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2027 ICIMSP Organizing Committee | Odisha University of Technology & Research</p>
+</footer>
+</body>
+</html>

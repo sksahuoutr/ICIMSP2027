@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
+<style>
+/* Basic dropdown nav — move to main.css if you prefer */
+.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
+.main-nav li { position: relative; }
+.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
+
+.main-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+/* hide submenu by default */
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.2rem);
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0.4rem 0;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 10;
+}
+
+/* submenu items */
+.main-nav .submenu li a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+/* show submenu on hover/focus */
+.main-nav .dropdown:hover .submenu,
+.main-nav .dropdown:focus-within .submenu {
+  display: block;
+}
+
+/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
+@media (max-width: 700px) {
+  .main-nav { flex-direction: column; align-items: stretch; }
+  .main-nav .submenu { position: static; border: none; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+
+    <div class="header-center">
+      <p style="font-size:2.2rem;font-weight:500;">
+        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
+      </p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<main class="container">
+  <h2 style="margin-top:2rem;">Keynote Speakers (to be updated)</h2>
+  <div class="card-grid" style="margin-top:2rem;">
+    <!-- Speaker 1 -->
+    <div class="card">
+      <img src="images/speaker1.jpg" alt="Keynote Speaker 1" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+    <!-- Speaker 2 -->
+    <div class="card">
+      <img src="images/speaker2.jpg" alt="Keynote Speaker 2" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+    <!-- Speaker 3 -->
+    <div class="card">
+      <img src="images/speaker3.jpg" alt="Keynote Speaker 3" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+    <!-- Speaker 4 -->
+    <div class="card">
+      <img src="images/speaker4.jpg" alt="Keynote Speaker 4" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+    <!-- Speaker 5 -->
+    <div class="card">
+      <img src="images/speaker5.jpg" alt="Keynote Speaker 5" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+    <!-- Speaker 6 -->
+    <div class="card">
+      <img src="images/speaker6.jpg" alt="Keynote Speaker 6" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
+      <h3>Name coming soon</h3>
+      <p>Brief bio will be updated soon.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2027 ICIMSP Organizing Committee</p>
+</footer>
+</body>
+</html>

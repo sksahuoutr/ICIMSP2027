@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
+<style>
+/* Basic dropdown nav — move to main.css if you prefer */
+.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
+.main-nav li { position: relative; }
+.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
+
+.main-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+/* hide submenu by default */
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.2rem);
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0.4rem 0;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 10;
+}
+
+/* submenu items */
+.main-nav .submenu li a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+/* show submenu on hover/focus */
+.main-nav .dropdown:hover .submenu,
+.main-nav .dropdown:focus-within .submenu {
+  display: block;
+}
+
+/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
+@media (max-width: 700px) {
+  .main-nav { flex-direction: column; align-items: stretch; }
+  .main-nav .submenu { position: static; border: none; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+
+
+    <div class="header-center">
+      <p style="font-size:2.2rem;font-weight:500;">
+        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
+      </p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+
+
+
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main class="container">
+    <section class="section">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 8px 0;">Program Overview</h2>
+          <p class="small-muted" style="margin:0;">1–3 July 2027 — Hybrid (On-site @ OUTR + Virtual)</p>
+        </div>
+
+        <div style="display:flex; gap:8px; align-items:center;">
+          <a class="btn" href="#" aria-label="Download schedule as PDF (placeholder)">Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Controls: day tabs + track filter -->
+      <div class="schedule-controls" role="toolbar" aria-label="Schedule controls">
+        <div class="tabs" role="tablist" aria-label="Conference days">
+          <button class="tab-btn" role="tab" aria-selected="true" data-day="day1" id="tab-day1">Day 1<br><small class="small-muted">28 Jan</small></button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-day="day2" id="tab-day2">Day 2<br><small class="small-muted">29 Jan</small></button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-day="day3" id="tab-day3">Day 3<br><small class="small-muted">30 Jan</small></button>
+        </div>
+
+        <div class="filter" aria-hidden="false" style="margin-left:auto;">
+          <label for="track-filter" class="small-muted" style="display:block; font-weight:700; margin-bottom:6px;">Filter by Track</label>
+          <select id="track-filter" style="padding:8px 10px; border-radius:8px; border:1px solid #d7dbe0;">
+            <option value="all">All Tracks</option>
+            <option value="track1">Track I — Intelligent Machines</option>
+            <option value="track2">Track II — Computer Vision</option>
+            <option value="track3">Track III — Signal & Multimedia</option>
+            <option value="track4">Track IV — Biometrics</option>
+            <option value="track5">Track V — AI Imaging</option>
+            <option value="track6">Track VI — Comm & Networks</option>
+            <option value="track7">Track VII — Embedded AI</option>
+            <option value="track8">Track VIII — CPS & Industry 4.0</option>
+          </select>
+        </div>
+      </div>
+
+
+
+
+      <!-- DAY 1 -->
+      <div id="day1" class="schedule-day active" aria-labelledby="tab-day1">
+<!--        <h3>Day 1 — 01 July 2027</h3>
+
+        <!-- Table view (desktop) -->
+        <table class="schedule-table" role="table" aria-label="Day 1 schedule">
+          <thead>
+            <tr>
+              <th style="width:120px">Time</th>
+              <th style="width:180px">Session / Venue</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-track="all track1">
+              <td><strong>09:00–09:30</strong></td>
+              <td>Registration & Coffee</td>
+              <td>Registration desk (Main Foyer). On-site & virtual welcome desk.</td>
+            </tr>
+
+            <tr data-track="all track1">
+              <td><strong>09:30–10:15</strong></td>
+              <td>Opening Ceremony — Auditorium</td>
+              <td>Welcome addresses by Chief Patron, Patron and Conference Chairs.</td>
+            </tr>
+
+            <tr data-track="all track1">
+              <td><strong>10:30–11:30</strong></td>
+              <td>Keynote 1 — Auditorium<br><span class="small-muted">Speaker: TBA</span></td>
+              <td class="small-muted"><span class="session-track">Track I</span> Intelligent control & automation — keynote on autonomous systems.</td>
+            </tr>
+
+            <tr data-track="all track2">
+              <td><strong>11:45–12:45</strong></td>
+              <td>Oral Session A — Room 101</td>
+              <td><strong>Computer Vision & Image Understanding</strong><br>3 papers (20 min each incl. Q&A)</td>
+            </tr>
+
+            <tr data-track="all track3">
+              <td><strong>14:00–15:30</strong></td>
+              <td>Oral Session B — Room 102</td>
+              <td><strong>Advanced Signal & Multimedia Processing</strong><br>6 short talks</td>
+            </tr>
+
+            <tr data-track="all track7">
+              <td><strong>15:45–17:00</strong></td>
+              <td>Panel Discussion — Industry Pavilion</td>
+              <td>Embedded AI & Edge computing — industry perspectives and challenges.</td>
+            </tr>
+
+            <tr data-track="all">
+              <td><strong>17:30–19:00</strong></td>
+              <td>Welcome Reception — Campus Lawn</td>
+              <td>Networking dinner for registered participants (on-site).</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Card view for small screens -->
+        <div class="mobile-sessions" aria-hidden="true">
+          <div class="session-card" data-track="all track1">
+            <div class="session-meta"><div><strong>09:00–09:30</strong></div><div class="session-track">Registration</div></div>
+            <div class="session-title">Registration & Coffee</div>
+            <div class="small-muted">Registration desk (Main Foyer). On-site & virtual welcome desk.</div>
+          </div>
+
+          <div class="session-card" data-track="all track1">
+            <div class="session-meta"><div><strong>09:30–10:15</strong></div><div class="session-track">Opening</div></div>
+            <div class="session-title">Opening Ceremony — Auditorium</div>
+            <div class="small-muted">Welcome addresses by Chief Patron, Patron and Conference Chairs.</div>
+          </div>
+
+          <!-- more cards... -->
+        </div>
+      </div>
+-->
+      <!-- DAY 2 -->
+ <!--     <div id="day2" class="schedule-day" aria-labelledby="tab-day2">
+        <h3>Day 2 — 02 July 2027</h3>
+
+        <table class="schedule-table" role="table" aria-label="Day 2 schedule">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Session / Venue</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-track="all track2">
+              <td><strong>09:00–10:00</strong></td>
+              <td>Keynote 2 — Auditorium</td>
+              <td><span class="session-track">Track II</span> Computer vision and AI for imaging — speaker TBA</td>
+            </tr>
+
+            <tr data-track="all track4">
+              <td><strong>10:15–12:00</strong></td>
+              <td>Oral Session — Room 201</td>
+              <td>Intelligent Perception & Biometrics — 5 papers</td>
+            </tr>
+
+            <tr data-track="all track5">
+              <td><strong>14:00–16:00</strong></td>
+              <td>Workshop: Medical Imaging — Lab 3</td>
+              <td>Hands-on practical session (pre-registration required)</td>
+            </tr>
+
+            <tr data-track="all track6">
+              <td><strong>16:30–17:30</strong></td>
+              <td>Panel: 5G/6G & Networks — Conference Hall</td>
+              <td>Industry forum on future communication systems.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+-->
+      <!-- DAY 3 -->
+ <!--     <div id="day3" class="schedule-day" aria-labelledby="tab-day3">
+        <h3>Day 3 — 03 July 2027</h3>
+
+        <table class="schedule-table" role="table" aria-label="Day 3 schedule">
+          <thead>
+            <tr><th>Time</th><th>Session / Venue</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr data-track="all track1">
+              <td><strong>09:00–10:30</strong></td>
+              <td>Oral Session — Room 101</td>
+              <td>Intelligent Control & Automation — extended session</td>
+            </tr>
+
+            <tr data-track="all track3">
+              <td><strong>11:00–12:30</strong></td>
+              <td>Poster Session A — Exhibition Hall</td>
+              <td>Student posters & shortlisted papers</td>
+            </tr>
+
+            <tr data-track="all track8">
+              <td><strong>14:00–15:30</strong></td>
+              <td>Industry 4.0 Demo — Lab 5</td>
+              <td>Digital twins & IIoT demos</td>
+            </tr>
+
+            <tr data-track="all">
+              <td><strong>16:00–17:30</strong></td>
+              <td>Keynote 3 — Auditorium</td>
+              <td>Special lecture on interdisciplinary applications.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+-->
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2027 ICIMSP Organizing Committee | School of Electronic Sciences, OUTR</p>
+  </footer>
+
+  <script>
+    // Simple tabs + filter script for schedule page
+    (function(){
+      const tabs = document.querySelectorAll('.tab-btn');
+      const days = document.querySelectorAll('.schedule-day');
+      const filter = document.getElementById('track-filter');
+
+      // Switch tab
+      tabs.forEach(btn=>{
+        btn.addEventListener('click', ()=> {
+          tabs.forEach(b => { b.setAttribute('aria-selected','false'); });
+          btn.setAttribute('aria-selected','true');
+
+          const dayId = btn.dataset.day;
+          days.forEach(d => d.classList.toggle('active', d.id === dayId));
+
+          // reset filter to show all when switching days
+          if (filter) filter.value = 'all';
+          applyFilter();
+        });
+      });
+
+      // Filter rows/cards by track
+      function applyFilter(){
+        const selected = filter ? filter.value : 'all';
+        document.querySelectorAll('.schedule-day').forEach(day=>{
+          // Table rows
+          day.querySelectorAll('tbody tr').forEach(row=>{
+            if (selected === 'all') { row.style.display = ''; return; }
+            const tracks = row.getAttribute('data-track') || '';
+            row.style.display = tracks.includes(selected.replace('track','track')) ? '' : 'none';
+          });
+          // Mobile cards
+          day.querySelectorAll('.session-card

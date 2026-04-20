@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
+<style>
+/* Basic dropdown nav — move to main.css if you prefer */
+.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
+.main-nav li { position: relative; }
+.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
+
+.main-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+/* hide submenu by default */
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.2rem);
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0.4rem 0;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 10;
+}
+
+/* submenu items */
+.main-nav .submenu li a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+/* show submenu on hover/focus */
+.main-nav .dropdown:hover .submenu,
+.main-nav .dropdown:focus-within .submenu {
+  display: block;
+}
+
+/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
+@media (max-width: 700px) {
+  .main-nav { flex-direction: column; align-items: stretch; }
+  .main-nav .submenu { position: static; border: none; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+    <div class="header-center">
+      
+      <p style="font-size:2.23rem;font-weight:500;">International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027) </p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+
+
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero section is efficiently spaced and matches CSS proportions -->
+  <section class="hero" aria-label="Introduction">
+    <div class="container">
+      <div class="hero-text">
+        <h2>Connecting intelligent machines, AI & signal processing</h2>
+        <p>Join researchers, practitioners, and industry to explore advances in autonomous systems, AI-driven imaging, and signal processing.</p>
+        <p>Hybrid participation in-person and remote at OUTR, Bhubaneswar, Odisha.</p>
+        <div class="hero-buttons">
+          <a href="call-for-papers.html" class="btn">Submit Paper</a>
+          <a href="registration.html" class="btn secondary">Register</a>
+          <a href="schedule.html" class="btn tertiary">Program</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <img src="images/hero-figure.png" alt="Illustration representing ICIMSP 2027 conference" style="max-width:340px;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Key dates and reasons, optimized for new grid and container -->
+  <section class="key-dates" aria-label="Key dates and reasons to attend">
+    <div class="container grid-two-columns">
+      <div>
+        <h2>Key Dates</h2>
+        <ul>
+          <li><strong>Submission opens:</strong> 15 July 2026</li>
+          <li><strong>Submission deadline:</strong> 15 September 2026</li>
+          <li><strong>Acceptance notification:</strong> To be announced</li>
+          <li><strong>Camera-ready deadline:</strong> To be announced</li>
+          <li><strong>Conference dates:</strong> 1–3 July 2027</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Why Attend?</h2>
+        <ul>
+          <li>Plenary talks by international experts</li>
+          <li>Workshops, poster sessions, and industry demos</li>
+          <li>Student paper contest with cash prizes</li>
+          <li>Hybrid participation options</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue info now more compact with grid-four-cards -->
+  <section class="venue-info" aria-label="Visitor information and venue">
+    <div class="container grid-three-cards">
+      <article class="info-card">
+        <i class="fas fa-bus" aria-hidden="true"></i>
+        <h3>Transport</h3>
+        <p>Auto/cabs available from Railway Station, Bus Terminal, and Airport.</p>
+      </article>
+      <article class="info-card">
+        <i class="fas fa-utensils" aria-hidden="true"></i>
+        <h3>Food</h3>
+        <p>Working Lunch and High Tea will be provided throughout the event.</p>
+      </article>
+      <article class="info-card">
+        <i class="fas fa-hotel" aria-hidden="true"></i>
+        <h3>Accommodation</h3>
+        <p>Advance booking advised. Special pricing available for participants.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Featured highlights with adjusted grid and card content -->
+  <section class="featured" aria-label="Featured highlights">
+    <div class="container grid-three-cards">
+      <article class="card">
+        <h3>Keynote Speakers</h3>
+        <p>Top international experts on intelligent systems and signal processing.</p>
+        <a href="speakers.html">View Speakers</a>
+      </article>
+      <article class="card">
+        <h3>Student Paper Contest</h3>
+        <p>Poster presentation categories with cash prizes for winners.</p>
+        <a href="call-for-papers.html">Details</a>
+      </article>
+      <article class="card">
+        <h3>Workshops & Tutorials</h3>
+        <p>Hands-on workshops on AI imaging, edge computing, and more.</p>
+        <a href="schedule.html">Program</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+</footer>
+</body>
+</html>
