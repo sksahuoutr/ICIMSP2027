@@ -1,0 +1,511 @@
+/* ========================================================
+   ICIMSP 2027 - Conference Website Responsive CSS
+======================================================== */
+
+/* ---------- Reset & Base Styles ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Full width containers for main sections */
+body > header, .hero, body > footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* ---------- Utility Container ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 22px;
+  box-sizing: border-box;
+}
+
+/* ---------- Header & Navigation ---------- */
+header {
+  background: linear-gradient(180deg, #003366, #002a4a);
+  color: #fff;
+  padding: 24px 0 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+.logo-left img.logo-large { height: 92px; margin-left: 2px; }
+.logo-right img.logo-large { height: 92px; margin-left: 2px; }
+.header-center { flex: 2 1 340px; min-width: 330px; padding: 8px 0; }
+.header-center h1 {
+  margin: 0 0 2px 0;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+.header-center p {
+  font-size: 1.23rem;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.93;
+}
+
+/* ---------- Navigation Menu ---------- */
+nav[aria-label="Main navigation"] { margin-top: 15px; }
+.main-nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.main-nav a {
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.main-nav a.active, .main-nav a:hover, .main-nav a:focus {
+  background: #004a99;
+  outline: none;
+}
+
+/* ---------- Dropdown / Submenu Styles (for Committee menu) ---------- */
+/* Mark dropdown parent */
+.main-nav .dropdown { position: relative; }
+
+/* Add caret indicator for dropdown parents */
+.main-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+/* Submenu container */
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.2rem);
+  background: #ffffff;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0.25rem 0;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 10;
+  border-radius: 6px;
+}
+
+/* Submenu items */
+.main-nav .submenu li { margin: 0; }
+.main-nav .submenu li a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+  color: #003366;
+  font-weight: 600;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* Hover / focus states for submenu links */
+.main-nav .submenu li a:hover,
+.main-nav .submenu li a:focus {
+  background: #f1f7ff;
+  outline: none;
+}
+
+/* Show submenu on hover/focus for desktop */
+.main-nav .dropdown:hover .submenu,
+.main-nav .dropdown:focus-within .submenu {
+  display: block;
+}
+
+/* Ensure keyboard users can see focus */
+.main-nav .dropdown:focus-within > a {
+  background: #004a99;
+}
+
+/* Mobile / narrow screens: let submenu flow in-document */
+@media (max-width: 700px) {
+  .main-nav { flex-direction: column; align-items: stretch; }
+  .main-nav .submenu {
+    position: static;
+    border: none;
+    box-shadow: none;
+    display: none; /* keep collapsed by default on small screen */
+    padding-left: 1rem;
+  }
+  /* Simple reveal when parent has .open (JS can toggle this), fallback for keyboard: show on focus-within */
+  .main-nav .dropdown.open .submenu,
+  .main-nav .dropdown:focus-within .submenu {
+    display: block;
+  }
+  /* make submenu links match nav style on mobile */
+  .main-nav .submenu li a {
+    color: #fff;
+    padding-left: 1.6rem;
+    background: transparent;
+    font-weight: 600;
+  }
+  .main-nav .submenu li a:hover,
+  .main-nav .submenu li a:focus {
+    background: rgba(255,255,255,0.06);
+  }
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  background: #e1eaf8;
+  padding: 44px 0 38px 0;
+}
+.hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-text { flex: 1 1 410px; min-width: 300px; }
+.hero-text h2 {
+  font-size: 2.22rem;
+  color: #003366;
+  margin: 0 0 14px 0;
+  font-weight: 700;
+}
+.hero-text p { font-size: 1.10rem; color: #444; margin-bottom: 0.9rem; }
+.hero-buttons { display: flex; gap: 15px; margin-top: 10px; }
+.btn {
+  background: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn.secondary { background: #fff; color: #003366; border: 2px solid #003366; }
+.btn.tertiary { background: transparent; color: #003366; border: none; text-decoration: underline; font-size: 1rem; padding: 0.56rem 1rem; }
+
+/* ---------- Hero Image ---------- */
+.hero-image {
+  flex: 1 1 250px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image img {
+  max-width: 340px;
+  border-radius: 9px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+  background: #fff;
+  padding: 0;
+}
+
+/* ---------- Section Grids ---------- */
+.grid-two-columns, .key-dates .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 29px;
+}
+.grid-three-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 24px;
+  margin-top: 26px;
+}
+.grid-four-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 17px;
+  margin: 1.4rem 0;
+}
+
+/* ---------- Cards & Info Blocks ---------- */
+.card, .info-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.info-card i { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+.card h3, .info-card h3 { margin: 0.45rem 0 0.34rem 0; color: #003366; font-weight: 700; }
+.card p, .info-card p { margin: 0.32rem 0 0.32rem 0; font-size: 1rem; color: #555; }
+.card a { color: #003366; font-weight: 600; text-decoration: none; margin-top: 14px; display: inline-block; transition: color 0.2s; }
+.card a:hover, .card a:focus { text-decoration: underline; outline: none; }
+
+/* ---------- Schedule Table ---------- */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.schedule-table th, .schedule-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  text-align: left;
+}
+.schedule-table th { background: #f7fafc; color: #003057; font-weight: 700; }
+
+/* ---------- Schedule Tabs ---------- */
+.schedule-controls {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 11px;
+}
+.tab-btn {
+  background: #fff;
+  border: 1px solid #d7dbe0;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tab-btn[aria-selected="true"] {
+  background: #003366;
+  color: #fff;
+  border-color: #003366;
+}
+
+/* ---------- About Page Layout ---------- */
+.about-layout {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 15px;
+  margin: 1.3rem 0;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .about-layout { grid-template-columns: 1fr; gap: 12px; }
+}
+.about-aside {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.07);
+  padding: 0.55rem 0.36rem;
+  text-align: center;
+}
+.about-aside img {
+  width: 68px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.quick-facts h3 { font-size: 1.05rem; margin-bottom: 0.43rem; }
+.quick-facts ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.quick-facts ul li { margin: 0.05em 0; font-size: 0.96rem; }
+.about-aside figure img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.46rem;
+}
+.about-aside figcaption {
+  font-size: 0.81rem;
+  color: #555;
+  margin-bottom: 0.33rem;
+}
+.about-main section, .about-main h2, .about-main h3 {
+  margin-bottom: 0.8rem;
+}
+.conference-topics { margin-top: 0.95rem; }
+
+/* ---------- Forms ---------- */
+form { display: flex; flex-direction: column; gap: 1rem; }
+label { font-weight: 600; }
+input[type="text"], input[type="email"], textarea {
+  font-size: 1rem; padding: 7px 10px; border: 1px solid #bbb; border-radius: 6px; resize: vertical;
+}
+textarea { min-height: 90px; }
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  outline: none; border-color: #003366; box-shadow: 0 0 5px rgba(0,51,102,0.21);
+}
+button[type="submit"] { max-width: 160px; cursor: pointer; }
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1rem 7px;
+  font-size: 0.95rem;
+  color: #666;
+  background: #e9ecef;
+  margin-top: 2.1rem;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 1250px) {
+  .header-inner, .container { padding-left: 8px; padding-right: 8px; }
+  .about-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .header-inner { flex-direction: column; text-align: center; gap: 11px; }
+  .hero .container { flex-direction: column; align-items: stretch; gap: 14px; }
+  .main-nav { gap: 5px; }
+  .about-layout, .grid-two-columns, .grid-three-cards, .grid-four-cards {
+    grid-template-columns: 1fr; gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .main-nav a { padding: 5px 7px; font-size: 0.89rem; }
+  .header-center h1 { font-size: 1.09rem; }
+}
+
+/* ---------- committee-grid ---------- */
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 2rem 0;
+}
+.committee-col ul {
+  margin: 0 0 2rem 0;
+  padding-left: 1.2em;
+}
+.committee-col h2 {
+  font-size: 1.07rem;
+  color: #004a99;
+  margin: 1.2em 0 0.5em 0;
+}
+@media (max-width: 900px) {
+  .committee-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ---------- contact-grid  ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 2rem 0;
+}
+.contact-col {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-col ul {
+  padding-left: 1em;
+  margin-bottom: 1.2rem;
+}
+.contact-col h2 {
+  font-size: 1.1rem;
+  color: #003366;
+  margin: 1.2em 0 0.7em 0;
+}
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+.map-responsive iframe {
+  width: 100%;
+  min-height: 160px;
+  border: 0;
+  border-radius: 8px;
+}
+
+
+ /* ---------- speaker grid ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+.card img {
+  width: 100%;
+  max-height: 210px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- Conference Tracks grid ---------- */
+.cfp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 2.3rem;
+}
+.cfp-col {
+  min-width: 0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.9rem 0.7rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.cfp-col .card, .cfp-col .form-card {
+  margin-bottom: 18px;
+}
+.cfp-col details {
+  margin-bottom: 9px;
+}
+@media (max-width: 900px) {
+  .cfp-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+/* Committee photo cards */
+.committee-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.committee-card img {
+  width: 85px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #ddd;
+}
+
+.committee-card .info {
+  flex: 1;
+  font-size: 0.97rem;
+}
+
+.committee-card .info strong {
+  color: #003366;
+  font-size: 1rem;
+}
