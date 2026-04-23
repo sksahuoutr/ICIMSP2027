@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Registration - ICIMSP 2027</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  /* Additional registration-specific styles */
+  .registration-pricing {
+    margin: 2rem 0;
+  }
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .pricing-table th {
+    background: #003366;
+    color: #fff;
+    font-weight: 600;
+  }
+  .pricing-table tr:last-child td {
+    border-bottom: none;
+  }
+  .pricing-table tr:hover {
+    background: #f5f7fa;
+  }
+  .registration-form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin: 2rem 0;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  .submit-btn {
+    background: #003366;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover {
+    background: #004a99;
+  }
+  .note {
+    background: #e1eaf8;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    border-left: 4px solid #003366;
+  }
+  @media (max-width: 700px) {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .registration-form-container {
+      padding: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+    <div class="header-center">
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <section aria-label="Registration header">
+      <h1 style="color: #003366; margin: 1.5rem 0 0.5rem 0;">Registration</h1>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;">Secure your spot at ICIMSP 2027 – Early bird discounts available!</p>
+    </section>
+
+    <section class="registration-pricing" aria-label="Registration fees">
+      <h2>Registration Fees</h2>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Early Bird (until 31 March 2027)</th>
+            <th>Regular (from 1 April 2027)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Students (Indian)</strong></td>
+            <td>₹ 5,000</td>
+            <td>₹ 6,500</td>
+          </tr>
+          <tr>
+            <td><strong>Academic/Faculty (Indian)</strong></td>
+            <td>₹ 8,000</td>
+            <td>₹ 10,000</td>
+          </tr>
+          <tr>
+            <td><strong>Industry/Corporate (Indian)</strong></td>
+            <td>₹ 12,000</td>
+            <td>₹ 15,000</td>
+          </tr>
+          <tr>
+            <td><strong>International Participants</strong></td>
+            <td>$ 250</td>
+            <td>$ 300</td>
+          </tr>
+          <tr>
+            <td><strong>Listeners/Attendees (without paper)</strong></td>
+            <td>₹ 3,000 / $ 100</td>
+            <td>₹ 4,000 / $ 150</td>
+          </tr>
+          <tr>
+            <td><strong>Virtual/Online Participation</strong></td>
+            <td colspan="2">₹ 2,000 / $ 50</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <i class="fas fa-info-circle" style="color: #003366; margin-right: 8px;"></i>
+        <strong>Note:</strong> Registration fee includes conference kit, access to all sessions, lunch, tea/coffee breaks, and certificate of participation. 
+        Accommodation and travel are not included.
+      </div>
+    </section>
+
+    <section aria-label="What's included">
+      <h2>What's Included in Your Registration?</h2>
+      <div class="grid-three-cards" style="margin-bottom: 2rem;">
+        <div class="info-card">
+          <i class="fas fa-chalkboard-user"></i>
+          <h3>Full Access</h3>
+          <p>All technical sessions, keynotes, workshops, and panel discussions</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-utensils"></i>
+          <h3>Meals & Breaks</h3>
+          <p>Working lunch and high tea on all conference days</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-certificate"></i>
+          <h3>Certificate</h3>
+          <p>Participation/presentation certificate for all attendees</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="registration-form-container" aria-label="Registration form">
+      <h2>Register Now</h2>
+      <form action="#" method="post" id="registrationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="affiliation">Affiliation/Institution/Organization *</label>
+          <input type="text" id="affiliation" name="affiliation" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="">Select Country</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="Japan">Japan</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Category *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="category" value="student" required /> Student</label>
+            <label><input type="radio" name="category" value="academic" /> Academic/Faculty</label>
+            <label><input type="radio" name="category" value="industry" /> Industry</label>
+            <label><input type="radio" name="category" value="listener" /> Listener</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Participation Mode *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="mode" value="in-person" required /> In-Person</label>
+            <label><input type="radio" name="mode" value="online" /> Online/Virtual</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="paperId">Paper ID (if presenting)</label>
+          <input type="text" id="paperId" name="paperId" placeholder="e.g., ICIMSP-001" />
+        </div>
+
+        <div class="form-group">
+          <label for="specialRequests">Special Requests / Dietary Restrictions</label>
+          <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special accommodations or dietary requirements..."></textarea>
+        </div>
+
+        <div class="note">
+          <i class="fas fa-lock" style="color: #003366; margin-right: 8px;"></i>
+          <strong>Secure Payment:</strong> After submitting this form, you will be redirected to our secure payment gateway.
+        </div>
+
+        <button type="submit" class="submit-btn">Proceed to Payment</button>
+      </form>
+    </section>
+
+    <section aria-label="Cancellation policy" style="margin: 2rem 0;">
+      <h2>Cancellation & Refund Policy</h2>
+      <ul style="background: #fff; padding: 1.5rem 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <li>Cancellation before 31 May 2027: 80% refund</li>
+        <li>Cancellation between 1 June – 15 June 2027: 50% refund</li>
+        <li>Cancellation after 15 June 2027: No refund</li>
+        <li>All refunds will be processed within 30 days after the conference</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+</footer>
+
+<script>
+  // Simple form validation and submission handling
+  document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const affiliation = document.getElementById('affiliation').value.trim();
+    const country = document.getElementById('country').value;
+    const phone = document.getElementById('phone').value.trim();
+    
+    if (!firstName || !lastName || !email || !affiliation || !country || !phone) {
+      alert('Please fill in all required fields marked with *');
+      return;
+    }
+    
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // If validation passes, show success message (in production, this would submit to server)
+    alert('Thank you for registering! You will now be redirected to the payment gateway.');
+    
+    // In production, you would submit the form data to your server here
+    // this.submit();
+  });
+</script>
+</body>
+</html>

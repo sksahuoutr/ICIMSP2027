@@ -3,95 +3,160 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sponsorship & Exhibitor Opportunities | ICIMSP 2027</title>
-
+<title>Sponsorship - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
 <style>
-/* Page-specific styling (light, consistent with index) */
-
-.sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.sponsor-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.sponsor-card h3 {
-  margin-bottom: 10px;
-  color: #1a2a6c;
-}
-
-.table-wrap {
-  overflow-x: auto;
-}
-
-.sponsor-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-}
-
-.sponsor-table th, .sponsor-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-.sponsor-table th {
-  background: #1a2a6c;
-  color: #fff;
-}
-
-.cta-box {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.cta-btn {
-  background: #ff6b00;
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 5px;
-  text-decoration: none;
-}
+  /* Sponsorship page specific styles */
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin: 2rem 0;
+  }
+  
+  .sponsor-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  
+  .sponsor-card i {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .sponsor-card h3 {
+    color: #003366;
+    margin-bottom: 0.75rem;
+  }
+  
+  .sponsor-card p {
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .sponsor-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .sponsor-table th,
+  .sponsor-table td {
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .sponsor-table th {
+    background: #003366;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .sponsor-table tr:nth-child(even) {
+    background: #f9fafc;
+  }
+  
+  .sponsor-table td:first-child {
+    font-weight: 600;
+    background: #f5f7fa;
+  }
+  
+  .check-icon {
+    color: #28a745;
+    font-size: 1.2rem;
+  }
+  
+  .close-icon {
+    color: #dc3545;
+    font-size: 1.2rem;
+  }
+  
+  .cta-box {
+    text-align: center;
+    background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid #d0e0f0;
+  }
+  
+  .cta-box h3 {
+    color: #003366;
+    margin: 1rem 0;
+  }
+  
+  .past-sponsors {
+    margin: 2rem 0;
+  }
+  
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  
+  .sponsor-logos img {
+    max-height: 60px;
+    width: auto;
+    filter: grayscale(0%);
+    transition: filter 0.2s;
+  }
+  
+  .sponsor-logos img:hover {
+    filter: grayscale(0%);
+  }
+  
+  @media (max-width: 700px) {
+    .sponsor-table th,
+    .sponsor-table td {
+      padding: 8px 6px;
+      font-size: 0.85rem;
+    }
+  }
 </style>
-
 </head>
-
 <body>
-
-<!-- ===== HEADER (same as index) ===== -->
 <header>
   <div class="header-inner">
     <div class="logo-left">
-      <a href="index.html">
-        <img src="images/outr-logo.png" class="logo-large" />
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
       </a>
     </div>
-
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
       <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
-
     <div class="logo-right">
-      <a href="index.html">
-        <img src="images/ICIMSP.png" class="logo-large" />
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
       </a>
     </div>
   </div>
-
-  <!-- NAV -->
   <nav aria-label="Main navigation">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
@@ -100,162 +165,212 @@
       <li><a href="speakers.html">Speakers</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="committee.html">Committee</a></li>
-      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="sponsorship.html" class="active">Sponsorship</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- ===== MAIN ===== -->
 <main>
-
-<!-- Intro Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-text">
-      <h2>Sponsorship & Exhibitor Opportunities</h2>
-      <p>
-        Partner with ICIMSP 2027 to connect with global researchers, innovators,
-        and industry leaders shaping the future of intelligent systems.
-      </p>
+  <!-- Hero Section -->
+  <section class="hero" aria-label="Sponsorship introduction">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Sponsorship & Exhibitor Opportunities</h1>
+        <p>Partner with ICIMSP 2027 to connect with global researchers, innovators, and industry leaders shaping the future of intelligent systems.</p>
+        <div class="hero-buttons">
+          <a href="#sponsorship-tiers" class="btn">View Sponsorship Tiers</a>
+          <a href="contact.html" class="btn secondary">Become a Sponsor</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Benefits - NOW WITH 4 CATEGORIES (merged Competitive Edge into Drive Innovation) -->
-<section>
-  <div class="container">
+  <!-- Benefits Section -->
+  <section class="container">
     <h2>Why Partner with Us?</h2>
-
     <div class="sponsor-grid">
       <div class="sponsor-card">
+        <i class="fas fa-chart-line"></i>
         <h3>Grow Your Audience</h3>
         <p>Showcase your offerings to a global audience of researchers and innovators.</p>
       </div>
-
       <div class="sponsor-card">
+        <i class="fas fa-users"></i>
         <h3>Networking</h3>
-        <p>Connect with academicians and decision-makers.</p>
+        <p>Connect with academicians, decision-makers, and industry leaders.</p>
       </div>
-
       <div class="sponsor-card">
+        <i class="fas fa-bullhorn"></i>
         <h3>Brand Awareness</h3>
-        <p>Strengthen visibility through academic and industry outreach.</p>
+        <p>Strengthen visibility through extensive academic and industry outreach.</p>
       </div>
-
       <div class="sponsor-card">
-        <h3>Drive Innovation & Edge</h3>
+        <i class="fas fa-lightbulb"></i>
+        <h3>Drive Innovation</h3>
         <p>Explore cutting-edge technologies and stay ahead in a rapidly evolving landscape.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Sponsorship Table -->
-<section>
-  <div class="container">
+  <!-- Sponsorship Tiers Table -->
+  <section id="sponsorship-tiers" class="container">
     <h2>Sponsorship Tiers</h2>
-
     <div class="table-wrap">
       <table class="sponsor-table">
-        <tr>
-          <th>Type</th>
-          <th>Fund (₹)</th>
-          <th>Passes</th>
-          <th>Stall/Table</th>
-          <th>Website</th>
-          <th>Brochure</th>
-          <th>Session</th>
-          <th>Break Branding</th>
-        </tr>
-
-        <tr>
-          <td>Platinum</td>
-          <td>5 Lacs</td>
-          <td>7</td>
-          <td>Stall</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-        </tr>
-        <tr>
-          <td>Diamond</td>
-          <td>3 Lacs</td>
-          <td>4</td>
-          <td>Stall</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-        </tr>
-        <tr>
-          <td>Gold</td>
-          <td>2 Lacs</td>
-          <td>3</td>
-          <td>Stall</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Silver</td>
-          <td>1 Lac</td>
-          <td>2</td>
-          <td>Table</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Bronze</td>
-          <td>50 K</td>
-          <td>1</td>
-          <td>No</td>
-          <td>Yes</td>
-          <td>No</td>
-          <td>No</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Awards & Session</td>
-          <td>As per discussion</td>
-          <td>1</td>
-          <td>No</td>
-          <td>Yes</td>
-          <td>No</td>
-          <td>No</td>
-          <td>No</td>
-        </tr>
-      </table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Investment (₹)</th>
+            <th>Complimentary Passes</th>
+            <th>Exhibition Stall</th>
+            <th>Website Recognition</th>
+            <th>Brochure Listing</th>
+            <th>Session Opportunity</th>
+            <th>Break Branding</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Platinum</strong></td>
+            <td>₹5,00,000</td>
+            <td>7</td>
+            <td>✓ Stall</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓ Keynote</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td><strong>Diamond</strong></td>
+            <td>₹3,00,000</td>
+            <td>4</td>
+            <td>✓ Stall</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓ Invited Talk</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td><strong>Gold</strong></td>
+            <td>₹2,00,000</td>
+            <td>3</td>
+            <td>✓ Stall</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓ Session Chair</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td><strong>Silver</strong></td>
+            <td>₹1,00,000</td>
+            <td>2</td>
+            <td>✓ Table</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✗</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td><strong>Bronze</strong></td>
+            <td>₹50,000</td>
+            <td>1</td>
+            <td>✗</td>
+            <td>✓</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td><strong>Awards & Session</strong></td>
+            <td>As per discussion</td>
+            <td>1</td>
+            <td>✗</td>
+            <td>✓</td>
+            <td>✗</td>
+            <td>✓ Custom</td>
+            <td>✗</td>
+          </tr>
+        </tbody>
+       </table>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section>
-  <div class="container">
+  <!-- Additional Benefits Section -->
+  <section class="container">
+    <h2>Additional Benefits for All Sponsors</h2>
+    <div class="grid-three-cards">
+      <div class="card">
+        <i class="fas fa-certificate" style="font-size: 2rem; color: #003366;"></i>
+        <h3>Sponsorship Certificate</h3>
+        <p>Official recognition from the organizing committee</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-images" style="font-size: 2rem; color: #003366;"></i>
+        <h3>Logo Display</h3>
+        <p>Prominent logo placement in conference materials</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-envelope" style="font-size: 2rem; color: #003366;"></i>
+        <h3>Email Blast</h3>
+        <p>Mention in pre-conference email communications</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Sponsors Section -->
+  <section class="container past-sponsors">
+    <h2>Our Esteemed Partners</h2>
+    <div class="sponsor-logos">
+      <img src="images/sponsor-logo1.png" alt="Sponsor Logo" onerror="this.style.display='none'">
+      <img src="images/sponsor-logo2.png" alt="Sponsor Logo" onerror="this.style.display='none'">
+      <img src="images/sponsor-logo3.png" alt="Sponsor Logo" onerror="this.style.display='none'">
+      <img src="images/sponsor-logo4.png" alt="Sponsor Logo" onerror="this.style.display='none'">
+    </div>
+    <p style="text-align: center; color: #666;">Join our growing list of distinguished sponsors</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="container">
     <div class="cta-box">
-      <p>
-        ICIMSP 2027 attracts decision-makers, researchers, and industry leaders
-        seeking next-generation technologies and innovative solutions.
-      </p>
-
-      <h3>Position your organization at the forefront of innovation.</h3>
-
-      <a href="contact.html" class="cta-btn">Secure Your Sponsorship</a>
+      <i class="fas fa-handshake" style="font-size: 3rem; color: #ff6b00;"></i>
+      <h3>Position your organization at the forefront of innovation</h3>
+      <p>ICIMSP 2027 attracts decision-makers, researchers, and industry leaders seeking next-generation technologies and innovative solutions.</p>
+      <a href="contact.html" class="btn" style="background: #ff6b00; margin-top: 1rem; display: inline-block;">Secure Your Sponsorship</a>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Contact for Custom Packages -->
+  <section class="container" style="margin-bottom: 2rem;">
+    <div class="card" style="text-align: center; background: #f5f7fa;">
+      <i class="fas fa-comments" style="font-size: 2rem; color: #003366;"></i>
+      <h3>Custom Sponsorship Packages</h3>
+      <p>Looking for a tailored sponsorship solution? We'd be happy to discuss customized packages that meet your specific goals and budget.</p>
+      <a href="contact.html" class="btn-outline" style="display: inline-block; margin-top: 0.5rem;">Contact Sponsorship Committee</a>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
 </footer>
 
+<style>
+  .btn-outline {
+    background: transparent;
+    color: #003366;
+    border: 2px solid #003366;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    background: #003366;
+    color: #fff;
+  }
+</style>
 </body>
 </html>

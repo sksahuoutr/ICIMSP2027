@@ -3,56 +3,89 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<title>Speakers - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
 <style>
-/* Basic dropdown nav — move to main.css if you prefer */
-.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.main-nav li { position: relative; }
-.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
-
-.main-nav .dropdown > a::after {
-  content: " ▾";
-  font-size: 0.9em;
-  margin-left: 0.25rem;
-}
-
-/* hide submenu by default */
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.2rem);
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.4rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 10;
-}
-
-/* submenu items */
-.main-nav .submenu li a {
-  display: block;
-  padding: 0.45rem 0.8rem;
-  white-space: nowrap;
-}
-
-/* show submenu on hover/focus */
-.main-nav .dropdown:hover .submenu,
-.main-nav .dropdown:focus-within .submenu {
-  display: block;
-}
-
-/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
-@media (max-width: 700px) {
-  .main-nav { flex-direction: column; align-items: stretch; }
-  .main-nav .submenu { position: static; border: none; box-shadow: none; }
-}
+  /* Speakers page specific styles */
+  .speaker-section {
+    margin: 2rem 0;
+  }
+  
+  .section-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .speaker-card {
+    text-align: center;
+  }
+  
+  .speaker-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .speaker-card h3 {
+    color: #003366;
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.2rem;
+  }
+  
+  .speaker-card .affiliation {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .speaker-card .talk-title {
+    font-weight: 600;
+    color: #004a99;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  
+  .speaker-card .bio {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .coming-soon {
+    background: #f5f7fa;
+    border: 2px dashed #003366;
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .coming-soon i {
+    font-size: 3rem;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .coming-soon h3 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+  }
+  
+  .keynote-badge {
+    display: inline-block;
+    background: #ff8c42;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
@@ -63,14 +96,10 @@
         <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
       </a>
     </div>
-
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
       <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
-
     <div class="logo-right">
       <a href="index.html" aria-label="ICIMSP 2027 home">
         <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
@@ -83,7 +112,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="call-for-papers.html">Call for Papers</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="speakers.html" class="active">Speakers</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="committee.html">Committee</a></li>
       <li><a href="sponsorship.html">Sponsorship</a></li>
@@ -92,51 +121,104 @@
   </nav>
 </header>
 
+<main>
+  <div class="container">
+    <!-- Page Header -->
+    <section style="text-align: center; margin: 2rem 0 1rem;">
+      <h1 style="color: #003366;">Keynote Speakers</h1>
+      <p class="section-subtitle">World-renowned experts sharing insights on intelligent machines and signal processing</p>
+    </section>
 
-<main class="container">
-  <h2 style="margin-top:2rem;">Keynote Speakers (to be updated)</h2>
-  <div class="card-grid" style="margin-top:2rem;">
-    <!-- Speaker 1 -->
-    <div class="card">
-      <img src="images/speaker1.jpg" alt="Keynote Speaker 1" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
-    <!-- Speaker 2 -->
-    <div class="card">
-      <img src="images/speaker2.jpg" alt="Keynote Speaker 2" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
-    <!-- Speaker 3 -->
-    <div class="card">
-      <img src="images/speaker3.jpg" alt="Keynote Speaker 3" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
-    <!-- Speaker 4 -->
-    <div class="card">
-      <img src="images/speaker4.jpg" alt="Keynote Speaker 4" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
-    <!-- Speaker 5 -->
-    <div class="card">
-      <img src="images/speaker5.jpg" alt="Keynote Speaker 5" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
-    <!-- Speaker 6 -->
-    <div class="card">
-      <img src="images/speaker6.jpg" alt="Keynote Speaker 6" style="width:100%;height:210px;object-fit:cover;border-radius:8px;">
-      <h3>Name coming soon</h3>
-      <p>Brief bio will be updated soon.</p>
-    </div>
+    <!-- Confirmed Speakers Section -->
+    <section class="speaker-section">
+      <h2 style="color: #003366; border-bottom: 2px solid #ff8c42; display: inline-block; margin-bottom: 1.5rem;">Confirmed Speakers</h2>
+      
+      <div class="card-grid">
+        <!-- Speaker 1 - Example with sample data -->
+        <div class="card speaker-card">
+          <span class="keynote-badge">Keynote Speaker</span>
+          <img src="images/speaker1.jpg" alt="Dr. Sarah Johnson" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Dr. Sarah Johnson</h3>
+          <p class="affiliation">Stanford University, USA</p>
+          <p class="talk-title">"Advances in Deep Learning for Signal Processing"</p>
+          <p class="bio">Pioneering researcher in AI-driven signal processing with over 150 publications.</p>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="card speaker-card">
+          <span class="keynote-badge">Keynote Speaker</span>
+          <img src="images/speaker2.jpg" alt="Prof. Rajesh Kumar" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Prof. Rajesh Kumar</h3>
+          <p class="affiliation">IIT Delhi, India</p>
+          <p class="talk-title">"Intelligent Autonomous Systems: Challenges and Opportunities"</p>
+          <p class="bio">Leading expert in robotics and autonomous systems with multiple patents.</p>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="card speaker-card">
+          <span class="keynote-badge">Keynote Speaker</span>
+          <img src="images/speaker3.jpg" alt="Dr. Maria Garcia" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Dr. Maria Garcia</h3>
+          <p class="affiliation">Technical University of Munich, Germany</p>
+          <p class="talk-title">"Computer Vision for Medical Imaging"</p>
+          <p class="bio">Renowned for breakthroughs in AI-assisted medical diagnosis systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Speakers Coming Soon -->
+    <section class="speaker-section">
+      <div class="coming-soon">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>More Speakers Announcing Soon</h3>
+        <p>Additional keynote speakers, invited talks, and industry panelists will be announced in the coming months.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Check back regularly for updates!</p>
+      </div>
+    </section>
+
+    <!-- Invited Speakers Section -->
+    <section class="speaker-section">
+      <h2 style="color: #003366; border-bottom: 2px solid #ff8c42; display: inline-block; margin-bottom: 1.5rem;">Invited Speakers</h2>
+      
+      <div class="card-grid">
+        <!-- Invited Speaker 1 -->
+        <div class="card speaker-card">
+          <img src="images/invited1.jpg" alt="Dr. Wei Chen" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Dr. Wei Chen</h3>
+          <p class="affiliation">Tsinghua University, China</p>
+          <p class="talk-title">"Edge Computing for IoT Applications"</p>
+        </div>
+
+        <!-- Invited Speaker 2 -->
+        <div class="card speaker-card">
+          <img src="images/invited2.jpg" alt="Prof. Emily Watson" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Prof. Emily Watson</h3>
+          <p class="affiliation">University of Cambridge, UK</p>
+          <p class="talk-title">"Responsible AI: Ethics and Governance"</p>
+        </div>
+
+        <!-- Invited Speaker 3 -->
+        <div class="card speaker-card">
+          <img src="images/invited3.jpg" alt="Dr. Vikram Singh" onerror="this.src='https://via.placeholder.com/300x250?text=Photo+Coming+Soon'">
+          <h3>Dr. Vikram Singh</h3>
+          <p class="affiliation">Microsoft Research, India</p>
+          <p class="talk-title">"Industry Perspectives on AI Deployment"</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call for Speaker Nominations -->
+    <section class="card" style="background: #e8f0fe; margin: 2rem 0; text-align: center;">
+      <i class="fas fa-user-plus" style="font-size: 2rem; color: #003366; margin-bottom: 1rem;"></i>
+      <h3 style="color: #003366;">Interested in Speaking?</h3>
+      <p>We welcome speaker nominations and proposals for invited talks relevant to the conference themes.</p>
+      <a href="contact.html" class="btn" style="margin-top: 1rem; display: inline-block;">Contact Us</a>
+    </section>
   </div>
 </main>
 
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
 </footer>
 </body>
 </html>
