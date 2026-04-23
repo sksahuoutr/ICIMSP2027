@@ -3,79 +3,91 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<title>Author Guidelines - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
 <style>
-/* Basic dropdown nav — move to main.css if you prefer */
-.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.main-nav li { position: relative; }
-.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
-
-.main-nav .dropdown > a::after {
-  content: " ▾";
-  font-size: 0.9em;
-  margin-left: 0.25rem;
-}
-
-/* hide submenu by default */
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.2rem);
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.4rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 10;
-}
-
-/* submenu items */
-.main-nav .submenu li a {
-  display: block;
-  padding: 0.45rem 0.8rem;
-  white-space: nowrap;
-}
-
-/* show submenu on hover/focus */
-.main-nav .dropdown:hover .submenu,
-.main-nav .dropdown:focus-within .submenu {
-  display: block;
-}
-
-/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
-@media (max-width: 700px) {
-  .main-nav { flex-direction: column; align-items: stretch; }
-  .main-nav .submenu { position: static; border: none; box-shadow: none; }
-}
+  .guidelines-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .guidelines-card h2 {
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eef2f8;
+    padding-bottom: 0.5rem;
+  }
+  .quick-ref {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .ref-box {
+    background: #f5f7fa;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    border-left: 3px solid #ff8c42;
+  }
+  .ref-box .value { font-size: 1.3rem; font-weight: 700; color: #003366; }
+  .ref-box .label { font-size: 0.8rem; color: #666; }
+  .template-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  .template-btn {
+    background: #003366;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .template-btn:hover { background: #004a99; color: #fff; }
+  .warning {
+    background: #fee;
+    border-left: 4px solid #dc3545;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  .submission-box {
+    background: linear-gradient(135deg, #eef5ff 0%, #fff 100%);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .info-highlight {
+    background: #e8f0fe;
+    border-left: 4px solid #003366;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <div class="logo-left">
-      <a href="index.html" aria-label="OUTR home">
-        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
-      </a>
-    </div>
+    <div class="logo-left"><a href="index.html"><img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" /></a></div>
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
       <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
-    <div class="logo-right">
-      <a href="index.html" aria-label="ICIMSP 2027 home">
-        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
-      </a>
-    </div>
+    <div class="logo-right"><a href="index.html"><img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" /></a></div>
   </div>
-
   <nav aria-label="Main navigation">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
@@ -90,75 +102,121 @@
   </nav>
 </header>
 
-
-<main class="container">
-
-  <h2 style="margin-top:2rem;">Author Guidelines for ICIMSP 2027</h2>
-  <p>All submissions to ICIMSP 2027 must follow these rules. Download templates and check formatting and policy before uploading your manuscript.</p>
-
-  <!-- Author task/actions in row above grid -->
-  <div class="guidelines-actions">
-    <a class="btn" href="#" aria-label="Download LaTeX template for ICIMSP 2027">LaTeX Template</a>
-    <a class="btn btn-secondary" href="#" aria-label="Download Word template for ICIMSP 2027">Word Template</a>
-    <a class="btn btn-tertiary" href="#" aria-label="Open submission link for ICIMSP 2027">Submission Link</a>
-    <a class="btn btn-secondary" href="author-guidelines.html">Details</a>
-  </div>
-
-  <!-- 3-column main guideline grid -->
-  <div class="guidelines-grid">
-    <!-- Preparation/format column -->
-    <div class="guidelines-col">
-      <h3>Preparation & Formatting</h3>
-      <ul>
-        <li>Use official conference template (LaTeX/Word)</li>
-        <li>Length: max <strong>12 pages</strong> incl. references, figures, tables</li>
-        <li>Submit in <strong>PDF format</strong>, max size: 10MB</li>
-        <li>All fonts must be scalable and embedded</li>
-        <li>Images: No transparent pixels/alpha channels</li>
-        <li>No PDF document security/protection</li>
-      </ul>
+<main>
+  <div class="container">
+    <h1 style="color: #003366; text-align: center; margin-bottom: 1.5rem;">Author Guidelines</h1>
+    
+    <!-- Quick Reference -->
+    <div class="quick-ref">
+      <div class="ref-box"><div class="value">6-8 pages</div><div class="label">Page Length</div></div>
+      <div class="ref-box"><div class="value">PDF</div><div class="label">Format</div></div>
+      <div class="ref-box"><div class="value">10 MB</div><div class="label">Max Size</div></div>
+      <div class="ref-box"><div class="value">15 Sep 2026</div><div class="label">Deadline</div></div>
     </div>
-    <!-- Submission/system column -->
-    <div class="guidelines-col">
-      <h3>Submission Instructions</h3>
-      <ul>
-        <li>Submit manuscript via <strong>CMT portal</strong> (see link above)</li>
-        <li>Check page limit, formatting, PDF compatibility</li>
-        <li>Enter all authors’ names and affiliations accurately</li>
-        <li>Remove embedded metadata that could violate double-blind review if required</li>
-        <li>Fix any font, reference, or figure issues before upload</li>
-      </ul>
-      <p><strong>Submission Link:</strong> <a href="#">Insert CMT submission link here</a></p>
+
+    <!-- Important Update Notice -->
+    <div class="info-highlight">
+      <i class="fas fa-info-circle" style="color: #003366; margin-right: 8px;"></i>
+      <strong>Important Update:</strong> ICIMSP 2027 proceedings will be published in <strong>Springer LNCS</strong> (Lecture Notes in Computer Science) - Subjected to final approval. Authors must follow Springer LNCS template strictly.
     </div>
-    <!-- Ethics/policy column -->
-    <div class="guidelines-col">
-      <h3>Cautions & Ethical Policy</h3>
-      <ul>
-        <li>No simultaneous/concurrent submission to other conferences/journals</li>
-        <li>No plagiarism or self-plagiarism</li>
-        <li>All co-authors must approve manuscript and submission</li>
-        <li>Late submissions are not accepted</li>
-        <li>Papers violating policy will be rejected without review</li>
-      </ul>
-      <p>
-        For questions on formatting or upload issues, contact <a href="contact.html">ICIMSP 2027 organizers</a>.
+
+    <!-- Templates -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-download"></i> Templates</h2>
+      <p>Download the official ICIMSP 2027 templates (Springer LNCS format):</p>
+      <div class="template-links">
+        <a href="author_template.html" class="template-btn"><i class="fab fa-microsoft"></i> Word Template</a>
+        <a href="LaTeX2e_ICIMSP_2027.zip" class="template-btn" download><i class="fas fa-code"></i> LaTeX Template (.zip)</a>
+        <a href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi" target="_blank" class="template-btn"><i class="fas fa-cloud-upload-alt"></i> Overleaf</a>
+      </div>
+      <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #666;">
+        <i class="fas fa-file-word"></i> Word template available in .zip format<br>
+        <i class="fas fa-code"></i> LaTeX template available for download
       </p>
     </div>
+
+    <!-- Formatting -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-edit"></i> Formatting Requirements</h2>
+      <ul>
+        <li>Use official conference template (Word/LaTeX) - <strong>Springer LNCS format</strong></li>
+        <li>Minimum <strong>6 pages</strong>, Maximum <strong>8 pages</strong> including references, figures, tables</li>
+        <li>Submit in <strong>PDF format</strong>, max size <strong>10 MB</strong></li>
+        <li>All fonts must be scalable and embedded</li>
+        <li>No transparent pixels in images</li>
+        <li>No PDF security/protection enabled</li>
+        <li>Extra page charges: ₹1,770 per page (India) / $40 per page (International) beyond 6 pages</li>
+      </ul>
+    </div>
+
+    <!-- Submission -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-upload"></i> Submission Process</h2>
+      <div class="submission-box">
+        <strong>Submit via Microsoft CMT Portal:</strong><br>
+        <a href="https://cmt3.research.microsoft.com/ICIMSP2027" target="_blank" style="color: #003366; font-weight: bold;">https://cmt3.research.microsoft.com/ICIMSP2027</a>
+      </div>
+      <ul>
+        <li>Enter all authors' names and affiliations accurately</li>
+        <li>Ensure manuscript follows Springer LNCS template</li>
+        <li>Remove any identifying information for blind review (if applicable)</li>
+        <li>Fix font, reference, or figure issues before upload</li>
+        <li>At least one author must register for the conference upon acceptance</li>
+      </ul>
+    </div>
+
+    <!-- Ethics & Policies -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-balance-scale"></i> Ethics & Policies</h2>
+      <ul>
+        <li><strong>Originality:</strong> Papers must be original and unpublished</li>
+        <li><strong>Plagiarism:</strong> All submissions will be checked for plagiarism</li>
+        <li><strong>Authorship:</strong> All listed authors must have contributed significantly</li>
+        <li><strong>Conflicts of Interest:</strong> Must be disclosed during submission</li>
+        <li><strong>Multiple Submissions:</strong> Not allowed</li>
+      </ul>
+    </div>
+
+    <!-- Proceedings -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-book"></i> Proceedings Publication</h2>
+      <p><strong>Springer LNCS (Lecture Notes in Computer Science)</strong></p>
+      <ul>
+        <li>Scopus indexed</li>
+        <li>DBLP, Google Scholar, EI-Compendex, SCImago</li>
+        <li>Subjected to final approval by Springer</li>
+      </ul>
+    </div>
+
+    <!-- Important Dates -->
+    <div class="guidelines-card">
+      <h2><i class="far fa-calendar-alt"></i> Important Dates</h2>
+      <ul>
+        <li><strong>Submission opens:</strong> 15 July 2026</li>
+        <li><strong>Submission deadline:</strong> 15 September 2026</li>
+        <li><strong>Notification of acceptance:</strong> To be announced</li>
+        <li><strong>Camera-ready deadline:</strong> To be announced</li>
+        <li><strong>Conference dates:</strong> 1–3 July 2027</li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="guidelines-card">
+      <h2><i class="fas fa-question-circle"></i> Need Help?</h2>
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:icimsp2027@outr.ac.in">icimsp2027@outr.ac.in</a></p>
+      <p><i class="fas fa-phone"></i> Phone: +91-XXXXXXXXXX</p>
+      <p><i class="fas fa-globe"></i> Visit <a href="contact.html">Contact Page</a> for more information</p>
+    </div>
+
+    <!-- Acknowledgment -->
+    <div class="ack-box" style="background: #f0f4f0; padding: 1rem; border-radius: 8px; text-align: center;">
+      <i class="fab fa-microsoft"></i> <strong>Acknowledgment:</strong> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+    </div>
   </div>
-
-  <!-- Optionally add additional notes/help below grid -->
-  <section class="form-card" style="margin-top:2rem;">
-    <h3>Need help?</h3>
-    <p>
-      For formatting, template, or portal support, please contact the technical committee via the <a href="contact.html">Contact</a> page.<br>
-      Please check FAQ on the conference website before sending queries.
-    </p>
-  </section>
-
 </main>
 
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee | School of Electronic Sciences, OUTR</p>
+  <p>© 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
 </footer>
 </body>
 </html>

@@ -3,56 +3,156 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<title>Contact - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-<!-- Small dropdown styles so the Committee menu shows Organizing / Advisory links -->
 <style>
-/* Basic dropdown nav — move to main.css if you prefer */
-.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.main-nav li { position: relative; }
-.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
-
-.main-nav .dropdown > a::after {
-  content: " ▾";
-  font-size: 0.9em;
-  margin-left: 0.25rem;
-}
-
-/* hide submenu by default */
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.2rem);
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.4rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 10;
-}
-
-/* submenu items */
-.main-nav .submenu li a {
-  display: block;
-  padding: 0.45rem 0.8rem;
-  white-space: nowrap;
-}
-
-/* show submenu on hover/focus */
-.main-nav .dropdown:hover .submenu,
-.main-nav .dropdown:focus-within .submenu {
-  display: block;
-}
-
-/* small mobile friendly tweak: allow submenu to flow in document if viewport too narrow */
-@media (max-width: 700px) {
-  .main-nav { flex-direction: column; align-items: stretch; }
-  .main-nav .submenu { position: static; border: none; box-shadow: none; }
-}
+  /* Contact page specific styles */
+  .contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin: 2rem 0;
+  }
+  
+  .contact-info-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  
+  .contact-info-card i {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info-card h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info-card p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .contact-info-card a {
+    color: #003366;
+    text-decoration: none;
+  }
+  
+  .contact-info-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-form-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin: 2rem 0;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #003366;
+    box-shadow: 0 0 5px rgba(0,51,102,0.21);
+  }
+  
+  .submit-btn {
+    background: #003366;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .submit-btn:hover {
+    background: #004a99;
+  }
+  
+  .map-container {
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .social-links a {
+    color: #003366;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+  }
+  
+  .social-links a:hover {
+    color: #ff6b00;
+  }
+  
+  @media (max-width: 700px) {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .contact-form-container {
+      padding: 1.5rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -64,21 +164,15 @@
       </a>
     </div>
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
       <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
-
-
     <div class="logo-right">
       <a href="index.html" aria-label="ICIMSP 2027 home">
         <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
       </a>
     </div>
   </div>
-
-
   <nav aria-label="Main navigation">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
@@ -88,81 +182,203 @@
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="committee.html">Committee</a></li>
       <li><a href="sponsorship.html">Sponsorship</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 </header>
 
+<main>
+  <div class="container">
+    <!-- Page Header -->
+    <section style="text-align: center; margin: 2rem 0 1rem;">
+      <h1 style="color: #003366;">Get in Touch</h1>
+      <p style="font-size: 1.1rem; color: #666;">Have questions? We're here to help!</p>
+    </section>
 
-<main class="container">
-  <section class="contact-grid">
- 
-<!-- Column 1: Coordinators -->
-<div class="contact-col">
-  <h2>Conference Coordinators</h2>
-  <ul>
-    <li>
-      <strong>Dr. Jibitesh Mishra</strong><br>
-      School of Computer Sciences (SOCS), cum Dean, SW
-    </li>
-    <li>
-      <strong>Dr. Tapas Kumar Patra</strong><br>
-      School of Electronics Sciences (SELS), cum Dean, CDCE
-    </li>
-    <li>
-      <strong>Prof. Sushanta Kumar Sahu</strong><br>
-      School of Electronics Sciences (SELS)
-    </li>
-  </ul>
-
-  <p style="margin-top:10px;">
-    Odisha University of Technology and Research (OUTR)<br>
-    Bhubaneswar, Odisha, India – 751029
-  </p>
-</div>
-
-
-<!-- Column 2: Official Contact Info -->
-<div class="contact-col">
-  <h2>Official Contact</h2>
-  
-  <p><strong>Email:</strong><br> 
-    <a href="mailto:icimp2027@outr.ac.in">icimp2027@outr.ac.in</a><br>
-    	<a href="mailto:icimsp2027@gmail.com">icimsp2027@gmail.com</a>
-  </p>
-
-  <p><strong>Phone:</strong> 
-    <a href="tel:+918249274300">+91 8249274300</a>
-  </p>
-
-  <h2>Address</h2>
-  <p>
-    School of Electronic Sciences (SELS)<br>
-    Odisha University of Technology and Research (OUTR)<br>
-    Bhubaneswar, Odisha, India
-  </p>
-</div>
-
-
-
-    <!-- Column 3: Map -->
-    <div class="contact-col">
-      <h2>Location Map</h2>
-      <div class="map-responsive">
-        <iframe
-          title="OUTR Location"
-          src="https://www.google.com/maps?q=OUTR%20bhubaneswar&output=embed"
-          frameborder="0"
-          allowfullscreen=""
-          loading="lazy"
-          style="width:100%;height:220px;border-radius:8px;"></iframe>
+    <!-- Contact Information Cards -->
+    <div class="contact-info-grid">
+      <div class="contact-info-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p><a href="mailto:icimsp2027@outr.ac.in">icimsp2027@outr.ac.in</a></p>
+        <p><a href="mailto:icimsp2027@gmail.com">icimsp2027@gmail.com</a></p>
+      </div>
+      <div class="contact-info-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call Us</h3>
+        <p><a href="tel:+918249274300">+91 8249274300</a></p>
+        <p>Mon-Fri, 10 AM - 6 PM IST</p>
+      </div>
+      <div class="contact-info-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Us</h3>
+        <p>Odisha University of Technology and Research (OUTR)</p>
+        <p>Bhubaneswar, Odisha, India - 751029</p>
       </div>
     </div>
-  </section>
+
+    <!-- Contact Form and Map Section -->
+    <div class="contact-grid">
+      <!-- Column 1: Contact Form -->
+      <div class="contact-col" style="grid-column: span 2;">
+        <h2>Send Us a Message</h2>
+        <div class="contact-form-container">
+          <form action="#" method="post" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="registration">Registration Inquiry</option>
+                <option value="submission">Paper Submission</option>
+                <option value="sponsorship">Sponsorship Opportunity</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Column 2: Conference Coordinators -->
+      <div class="contact-col">
+        <h2>Conference Coordinators</h2>
+        <ul>
+          <li>
+            <strong>Dr. Jibitesh Mishra</strong><br />
+            School of Computer Sciences (SOCS), cum Dean, SW
+          </li>
+          <li style="margin-top: 1rem;">
+            <strong>Dr. Tapas Kumar Patra</strong><br />
+            School of Electronics Sciences (SELS), cum Dean, CDCE
+          </li>
+          <li style="margin-top: 1rem;">
+            <strong>Prof. Sushanta Kumar Sahu</strong><br />
+            School of Electronics Sciences (SELS)
+          </li>
+        </ul>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+          Odisha University of Technology and Research (OUTR)<br />
+          Bhubaneswar, Odisha, India – 751029
+        </p>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <h2>Find Us Here</h2>
+    <div class="map-container">
+      <iframe
+        title="OUTR Location Map"
+        src="https://www.google.com/maps?q=OUTR%20bhubaneswar&output=embed"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="card" style="text-align: center; margin: 2rem 0;">
+      <h3>Connect With Us</h3>
+      <p>Follow ICIMSP 2027 on social media for the latest updates and announcements</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Frequently Asked Questions Section -->
+    <section style="margin: 2rem 0;">
+      <h2>Frequently Asked Questions</h2>
+      <div class="grid-two-columns">
+        <div class="card" style="text-align: left;">
+          <i class="fas fa-question-circle" style="color: #003366; font-size: 1.5rem;"></i>
+          <h3>How do I register for the conference?</h3>
+          <p>Visit our <a href="about.html#registration-section">Registration page</a> for detailed information on registration fees and process.</p>
+        </div>
+        <div class="card" style="text-align: left;">
+          <i class="fas fa-file-alt" style="color: #003366; font-size: 1.5rem;"></i>
+          <h3>Where can I submit my paper?</h3>
+          <p>Papers can be submitted through our <a href="call-for-papers.html">Call for Papers</a> page via the Microsoft CMT portal.</p>
+        </div>
+        <div class="card" style="text-align: left;">
+          <i class="fas fa-hotel" style="color: #003366; font-size: 1.5rem;"></i>
+          <h3>Is accommodation available?</h3>
+          <p>Yes, we have partnered with local hotels to provide special rates for conference participants.</p>
+        </div>
+        <div class="card" style="text-align: left;">
+          <i class="fas fa-passport" style="color: #003366; font-size: 1.5rem;"></i>
+          <h3>Do you offer visa assistance?</h3>
+          <p>Yes, we provide invitation letters for visa purposes. Contact us for assistance.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee | Odisha University of Technology & Research</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
 </footer>
+
+<script>
+  // Simple form validation and handling
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value.trim();
+    
+    if (!firstName || !lastName || !email || !subject || !message) {
+      alert('Please fill in all required fields marked with *');
+      return;
+    }
+    
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // Show success message
+    alert('Thank you for your message! We will get back to you within 2-3 business days.');
+    
+    // In production, you would submit the form data to your server here
+    // this.submit();
+    
+    // Optionally reset the form
+    // this.reset();
+  });
+</script>
 </body>
 </html>

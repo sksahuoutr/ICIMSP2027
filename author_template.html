@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Author Template - ICIMSP 2027</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  .template-hero {
+    background: linear-gradient(135deg, #003366, #004a99);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .template-hero h1 { margin: 0 0 0.5rem; font-size: 1.8rem; }
+  .template-hero p { margin: 0; opacity: 0.9; }
+  
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+  }
+  .card:last-child { margin-bottom: 0; }
+  
+  .card-header {
+    background: #f5f7fa;
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #003366;
+  }
+  .card-header h2 {
+    margin: 0;
+    color: #003366;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .card-body { padding: 1.5rem; }
+  
+  /* Primary Download Button - Word Template */
+  .btn-download-primary {
+    background: linear-gradient(135deg, #003366, #004a99);
+    color: #ffffff !important;
+    padding: 18px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,51,102,0.3);
+  }
+  .btn-download-primary:hover { 
+    background: linear-gradient(135deg, #004a99, #0055aa); 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,51,102,0.4);
+    color: #ffffff !important;
+  }
+  .btn-download-primary i { font-size: 1.8rem; color: #ffffff; }
+  .btn-download-primary span { color: #ffffff; }
+  
+  /* Secondary Download Buttons */
+  .btn-download-secondary {
+    background: #f0f4f8;
+    color: #003366;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+    width: 100%;
+    border: 2px solid #003366;
+    cursor: pointer;
+  }
+  .btn-download-secondary:hover { 
+    background: #003366;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+  .btn-download-secondary:hover i { color: #ffffff; }
+  
+  .format-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .format-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .format-item:hover { background: #eef2f7; }
+  .format-item i { font-size: 1.8rem; color: #003366; margin-bottom: 0.5rem; display: block; }
+  .format-item strong { display: block; color: #003366; font-size: 1rem; }
+  .format-item span { font-size: 0.85rem; color: #666; display: block; margin: 4px 0; }
+  .format-item a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #003366;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .format-item a:hover { text-decoration: underline; }
+  
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .info-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .info-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #ff8c42;
+  }
+  .info-list li:last-child { margin-bottom: 0; }
+  
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .checklist-item {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .checklist-item i { color: #28a745; font-size: 0.8rem; }
+  
+  .alert-box {
+    background: #fff3e0;
+    border-left: 4px solid #ff8c42;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  .separator {
+    text-align: center;
+    margin: 1rem 0;
+    position: relative;
+  }
+  .separator span {
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+    font-size: 0.85rem;
+  }
+  .separator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #ddd;
+    z-index: 0;
+  }
+  .separator span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (max-width: 900px) {
+    .two-column { grid-template-columns: 1fr; gap: 1rem; }
+    .format-grid, .checklist-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html"><img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" /></a>
+    </div>
+    <div class="header-center">
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+    <div class="logo-right">
+      <a href="index.html"><img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" /></a>
+    </div>
+  </div>
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero -->
+    <div class="template-hero">
+      <h1><i class="fas fa-file-alt"></i> ICIMSP 2027 Paper Template</h1>
+      <p>Prepare your manuscript using the official conference template (Springer LNCS format)</p>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="two-column">
+      
+      <!-- LEFT COLUMN -->
+      <div>
+        <!-- Download Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-download"></i> Download Templates</h2>
+          </div>
+          <div class="card-body">
+            <!-- Prominent Word Template Download Button with White Text -->
+            <a href="Microsoft_Word_ICIMSP_2027.zip" class="btn-download-primary" download>
+              <i class="fas fa-file-word"></i> 
+              <span>Download Microsoft Word Template (.zip)</span>
+              <i class="fas fa-download"></i>
+            </a>
+            
+            <div class="separator">
+              <span>OR</span>
+            </div>
+            
+            <!-- LaTeX and Overleaf Options -->
+            <div class="format-grid">
+              <div class="format-item">
+                <i class="fas fa-code"></i>
+                <strong>LaTeX Template</strong>
+                <span>For LaTeX users</span>
+                <a href="LaTeX2e_ICIMSP_2027.zip" download>
+                  <i class="fas fa-download"></i> Download ZIP
+                </a>
+              </div>
+              <div class="format-item">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <strong>Overleaf</strong>
+                <span>Online LaTeX editor</span>
+                <a href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Open Template
+                </a>
+              </div>
+            </div>
+            
+            <div class="alert-box">
+              <i class="fas fa-info-circle"></i> 
+              <strong>Template Instructions:</strong> Download the template, replace placeholder text, and follow formatting guidelines. The templates follow Springer LNCS format.
+            </div>
+          </div>
+        </div>
+
+        <!-- Formatting Guidelines -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-list-check"></i> Formatting Guidelines</h2>
+          </div>
+          <div class="card-body">
+            <ul class="info-list">
+              <li><strong>Page Limit:</strong> Minimum 6 pages, Maximum 8 pages (including references)</li>
+              <li><strong>Format:</strong> Springer LNCS (Lecture Notes in Computer Science)</li>
+              <li><strong>Font:</strong> 10pt Times New Roman or LaTeX default</li>
+              <li><strong>Spacing:</strong> As per Springer LNCS template</li>
+              <li><strong>Margins:</strong> As per Springer LNCS template</li>
+              <li><strong>Figures/Tables:</strong> Properly captioned and referenced</li>
+              <li><strong>References:</strong> Springer LNCS format</li>
+              <li><strong>Extra Pages:</strong> ₹1,770 per page (India) / $40 per page (International)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pre-Submission Checklist -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-clipboard-list"></i> Pre-Submission Checklist</h2>
+          </div>
+          <div class="card-body">
+            <div class="checklist-grid">
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> PDF format</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> 6-8 pages</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Max 10 MB</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Fonts embedded</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> No transparent images</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> No security protection</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> All authors listed</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> References complete</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <!-- Springer Information -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-book"></i> Springer LNCS Format</h2>
+          </div>
+          <div class="card-body">
+            <ul class="info-list">
+              <li>All accepted papers will be published in <strong>Springer LNCS</strong> (subject to final approval)</li>
+              <li>Authors must follow the Springer LNCS template strictly</li>
+              <li>Papers not following the template may be returned for reformatting</li>
+              <li>Maximum 8 pages allowed (6 pages minimum)</li>
+              <li>Additional page charges apply beyond 6 pages</li>
+            </ul>
+            
+            <div class="alert-box" style="margin-top: 1rem;">
+              <i class="fas fa-globe"></i>
+              <strong>Springer LNCS Guidelines:</strong><br>
+              <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank" style="color: #003366;">
+                View Official Guidelines →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-exclamation-triangle"></i> Important Notes</h2>
+          </div>
+          <div class="card-body">
+            <ul class="info-list">
+              <li>Use the template as-is — do not modify style definitions</li>
+              <li>Ensure all fonts are embedded when converting to PDF</li>
+              <li>Remove any document protection before submission</li>
+              <li>Verify images have no transparent pixels</li>
+              <li>Check PDF file size does not exceed 10 MB</li>
+              <li>Papers must be original and unpublished</li>
+              <li>At least one author must register for the conference</li>
+            </ul>
+            
+            <div class="alert-box" style="margin-top: 1rem;">
+              <i class="fas fa-envelope"></i>
+              <strong>Need Help?</strong><br>
+              <a href="mailto:icimsp2027@outr.ac.in">icimsp2027@outr.ac.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+</footer>
+</body>
+</html>

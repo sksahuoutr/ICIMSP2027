@@ -6,193 +6,203 @@
 <title>About & Registration - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
 <style>
-/* Basic dropdown nav */
-.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.main-nav li { position: relative; }
-.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
-.main-nav .dropdown > a::after { content: " ▾"; font-size: 0.9em; margin-left: 0.25rem; }
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.2rem);
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.4rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 10;
-}
-.main-nav .submenu li a { display: block; padding: 0.45rem 0.8rem; white-space: nowrap; }
-.main-nav .dropdown:hover .submenu, .main-nav .dropdown:focus-within .submenu { display: block; }
-@media (max-width: 700px) {
-  .main-nav { flex-direction: column; align-items: stretch; }
-  .main-nav .submenu { position: static; border: none; box-shadow: none; }
-}
-
-/* Registration table styles */
-.reg-table-wrapper {
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-.reg-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.reg-table th, .reg-table td {
-  border: 1px solid #ddd;
-  padding: 12px 10px;
-  text-align: center;
-  vertical-align: middle;
-}
-.reg-table th {
-  background: #1a2a6c;
-  color: white;
-  font-weight: 600;
-}
-.reg-table tr:nth-child(even) {
-  background: #f9fafc;
-}
-.reg-note {
-  font-size: 0.85rem;
-  background: #eef2fa;
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
-.process-steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 1.2rem 0;
-  background: #f0f4fa;
-  padding: 1.2rem 1.8rem;
-  border-radius: 24px;
-}
-.process-step {
-  flex: 1;
-  min-width: 180px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.process-step .step-icon {
-  background: #1a2a6c;
-  color: white;
-  width: 42px;
-  height: 42px;
-  border-radius: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.inclusion-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  background: #ffffff;
-  padding: 0.8rem 1rem;
-  border-radius: 18px;
-  border: 1px solid #e2edf2;
-  margin: 1rem 0;
-}
-.inclusion-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-}
-.inclusion-item i {
-  color: #1f7b4d;
-  width: 20px;
-}
-.policy-list {
-  background: #fefaf5;
-  padding: 0.8rem 1.5rem;
-  border-radius: 20px;
-  border-left: 4px solid #ff8c42;
-  margin-top: 1.2rem;
-}
-.policy-list li {
-  margin-bottom: 0.5rem;
-}
-.section-title {
-  font-size: 1.8rem;
-  color: #003366;
-  border-bottom: 3px solid #ff8c42;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-.reg-cta {
-  background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
-  padding: 1rem 1.5rem;
-  border-radius: 28px;
-  margin: 1.5rem 0;
-  text-align: center;
-}
-.reg-button {
-  background: #ff6b00;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 8px;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-.about-card {
-  background: white;
-  border-radius: 28px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  border: 1px solid #eef2f8;
-}
-.about-card h2 {
-  color: #003366;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.about-card p {
-  line-height: 1.6;
-  color: #2c3e4e;
-  margin-bottom: 1rem;
-}
-.key-dates {
-  background: #f8fafc;
-  border-radius: 28px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-}
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.grid-two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-@media (max-width: 800px) {
-  .about-grid, .grid-two-columns { grid-template-columns: 1fr; }
-  .container { padding: 0 1.2rem; }
-}
+  /* About page specific styles */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .about-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #eef2f8;
+  }
+  
+  .about-card h2 {
+    color: #003366;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .about-card p {
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    color: #003366;
+    border-bottom: 3px solid #ff8c42;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .reg-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .reg-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .reg-table th,
+  .reg-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .reg-table th {
+    background: #003366;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .reg-table tr:nth-child(even) {
+    background: #f9fafc;
+  }
+  
+  .reg-note {
+    font-size: 0.85rem;
+    background: #eef2fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
+  
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    background: #f0f4fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .process-step {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .process-step .step-icon {
+    background: #003366;
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  
+  .inclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2edf2;
+    margin: 1rem 0;
+  }
+  
+  .inclusion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .inclusion-item i {
+    color: #1f7b4d;
+    width: 20px;
+  }
+  
+  .policy-list {
+    background: #fefaf5;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #ff8c42;
+    margin: 1rem 0;
+  }
+  
+  .policy-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  .reg-cta {
+    background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+    border: 1px solid #d0e0f0;
+  }
+  
+  .reg-button {
+    background: #ff6b00;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 12px;
+    transition: background 0.2s;
+  }
+  
+  .reg-button:hover {
+    background: #e05a00;
+  }
+  
+  .key-dates-section {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 800px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .process-steps {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .process-step {
+      min-width: auto;
+    }
+    .inclusion-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -204,9 +214,7 @@
       </a>
     </div>
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
       <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
     <div class="logo-right">
@@ -230,25 +238,27 @@
 </header>
 
 <main>
-  <!-- About OUTR + About ICIMSP (replaces old hero) -->
   <div class="container">
+    <!-- About Section -->
     <div class="about-grid">
       <div class="about-card">
         <h2><i class="fas fa-university"></i> About OUTR</h2>
-        <p>The State Government established the <strong>Odisha University of Technology and Research</strong> located at Bhubaneswar by upgrading the College of Engineering & Technology, Bhubaneswar through the Odisha University of Technology and Research Act, 2021 (known as Odisha Act 17 of 2021). The University started functioning with effect from 8th October, 2021 through Notification No. SDTE-HTE-HTE-II-0012-2021/4578 dated 08.10.2021 of SD&TE Department, Government of Odisha.</p>
-        <p>The First Statutes 2022 of the University was notified vide Notification No. SDTE-HTE-HTE-II-0012-2022/1075 dated 09.02.2023. The University is governed by the Odisha University of Technology and Research Act, 2021 and its First Statutes, 2022.</p>
-        <p>OUTR is committed to fostering excellence in technical education, research, and innovation, serving as a hub for cutting-edge technological advancements in the region and beyond.</p>
+
+
+<p>The Government of Odisha established the Odisha University of Technology and Research (OUTR), Bhubaneswar, by upgrading the College of Engineering & Technology under the Odisha University of Technology and Research Act, 2021 (Odisha Act 17 of 2021). The University became operational on 8 October 2021, as per Notification No. SDTE-HTE-HTE-II-0012-2021/4578. 
+<p> Its First Statutes, 2022 were notified on 9 February 2023 (Notification No. SDTE-HTE-HTE-II-0012-2022/1075). The University is governed by the Act and its Statutes. OUTR aims to promote excellence in technical education, research, and innovation, serving as a center for advanced technological development.<p>
+       
       </div>
       <div class="about-card">
         <h2><i class="fas fa-microchip"></i> About ICIMSP 2027</h2>
         <p>The <strong>International Conference on Intelligent Machine and Signal Processing (ICIMSP 2027)</strong> is a premier forum that brings together researchers, academicians, industry professionals, and students to share recent advances in intelligent systems, machine learning, signal processing, embedded technologies, and allied interdisciplinary fields.</p>
-        <p>The conference aims to promote innovation, collaboration, and knowledge exchange through keynote lectures, technical paper presentations, and networking opportunities, creating a vibrant platform for discussing emerging challenges and future directions in intelligent machine and signal processing research.</p>
-        <p>ICIMSP 2027 will be held in hybrid mode, welcoming both in-person and virtual participants to engage with global experts and peers. The event features renowned keynote speakers, industry panels, paper presentations, and student contests.</p>
+        <p>The conference fosters innovation, collaboration, and knowledge exchange through keynote talks, technical sessions, and networking opportunities, addressing emerging challenges and future research directions.</p>
+        <p>ICIMSP 2027 will be held in hybrid mode, enabling both in-person and virtual participation. The program includes keynote lectures, industry panels, paper presentations, and student competitions.</p>
       </div>
     </div>
 
-    <!-- Key dates and reasons (preserved but updated date) -->
-    <div class="key-dates">
+    <!-- Key Dates Section -->
+    <div class="key-dates-section">
       <div class="grid-two-columns">
         <div>
           <h2><i class="far fa-calendar-alt"></i> Key Dates</h2>
@@ -267,16 +277,16 @@
             <li>Workshops, poster sessions, and industry demos</li>
             <li>Student paper contest with cash prizes</li>
             <li>Hybrid participation options</li>
+            <li>Networking opportunities with global experts</li>
+            <li>Publication in indexed proceedings</li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- REGISTRATION SECTION (full details) -->
-  <section id="registration-section" style="scroll-margin-top: 80px;">
-    <div class="container">
-      <h2 class="section-title"><i class="fas fa-id-card" style="margin-right: 12px;"></i> ICIMSP 2027 Registration</h2>
+    <!-- Registration Section -->
+    <section id="registration-section" style="scroll-margin-top: 80px;">
+      <h2 class="section-title"><i class="fas fa-id-card"></i> ICIMSP 2027 Registration</h2>
       
       <!-- Registration Fees Table -->
       <h3>Registration Fees <span style="font-size: 0.9rem; font-weight: normal;">(All INR fees are inclusive of 18% GST)</span></h3>
@@ -294,28 +304,28 @@
           <tbody>
             <tr>
               <td><strong>Student (Undergraduate only)</strong></td>
-              <td>₹4000</td>
-              <td>₹5000</td>
+              <td>₹4,000</td>
+              <td>₹5,000</td>
               <td>$180</td>
               <td>$200</td>
             </tr>
             <tr>
               <td><strong>Research Scholar / Academician (PG, PhD, Faculty)</strong></td>
-              <td>₹5000</td>
-              <td>₹6000</td>
+              <td>₹5,000</td>
+              <td>₹6,000</td>
               <td>$200</td>
               <td>$250</td>
             </tr>
             <tr>
               <td><strong>Industrial Participant</strong></td>
-              <td>₹7000</td>
-              <td>₹8000</td>
+              <td>₹7,000</td>
+              <td>₹8,000</td>
               <td>$250</td>
               <td>$280</td>
             </tr>
             <tr>
               <td><strong>Participants (Co-authors / Others)</strong></td>
-              <td colspan="2">₹3000</td>
+              <td colspan="2">₹3,000</td>
               <td colspan="2">$100</td>
             </tr>
           </tbody>
@@ -334,8 +344,7 @@
         </div>
         <div class="process-step">
           <span class="step-icon">2</span>
-          <span>Fill out the registration form after payment using the link below:<br/>
-          <strong>👉 Google Form:</strong> <a href="https://forms.gle/your-registration-link" target="_blank">https://forms.gle/your-registration-link</a></span>
+          <span>Fill out the registration form after payment using the link below.</span>
         </div>
       </div>
 
@@ -358,36 +367,36 @@
         <li><strong>2. Paper Presentation:</strong> At least one author must present the paper. No-show papers will be excluded from the proceedings.</li>
         <li><strong>3. Refund Policy:</strong> Registration fees are non-refundable. No cancellations allowed.</li>
         <li><strong>4. Multiple Papers:</strong> For two papers by the same author, an additional 50% of the base registration fee will be charged. Policies for more than two papers will be communicated separately.</li>
-        <li><strong>5. Extra Pages:</strong> ₹1770 per page (India) / $40 per page (International) beyond 6 pages (maximum 8 pages allowed).</li>
+        <li><strong>5. Extra Pages:</strong> ₹1,770 per page (India) / $40 per page (International) beyond 6 pages (maximum 8 pages allowed).</li>
         <li><strong>6. Verification:</strong> Students and academicians must provide a valid institute ID. IEEE/IAPR members must provide a valid membership card.</li>
         <li><strong>7. Certificates & Receipts:</strong> Presentation certificates will be issued to presenting authors. Payment receipts will be provided upon successful registration.</li>
       </ul>
 
       <!-- CTA box for registration -->
       <div class="reg-cta">
-        <i class="fas fa-hand-holding-usd" style="font-size: 1.6rem; color:#ff6b00;"></i>
-        <p style="margin: 8px 0 0;"><strong>Secure your spot at ICIMSP 2027</strong> — early registration discounts available for a limited time.</p>
+        <i class="fas fa-hand-holding-usd" style="font-size: 1.8rem; color:#ff6b00;"></i>
+        <p style="margin: 12px 0;"><strong>Secure your spot at ICIMSP 2027</strong> — early registration discounts available for a limited time.</p>
         <a href="https://forms.gle/your-registration-link" class="reg-button" target="_blank">Register Now via Google Form</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- Venue info preserved from original about (kept as reference) -->
+  <!-- Venue Information -->
   <section class="venue-info" aria-label="Visitor information and venue">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-        <article class="info-card" style="background: white; border-radius: 20px; padding: 1.2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <i class="fas fa-bus" style="font-size: 2rem; color:#1a2a6c;"></i>
+      <div class="grid-three-cards">
+        <article class="info-card">
+          <i class="fas fa-bus"></i>
           <h3>Transport</h3>
           <p>Auto/cabs available from Railway Station, Bus Terminal, and Airport.</p>
         </article>
-        <article class="info-card" style="background: white; border-radius: 20px; padding: 1.2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <i class="fas fa-utensils" style="font-size: 2rem; color:#1a2a6c;"></i>
+        <article class="info-card">
+          <i class="fas fa-utensils"></i>
           <h3>Food</h3>
           <p>Working Lunch and High Tea will be provided throughout the event.</p>
         </article>
-        <article class="info-card" style="background: white; border-radius: 20px; padding: 1.2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <i class="fas fa-hotel" style="font-size: 2rem; color:#1a2a6c;"></i>
+        <article class="info-card">
+          <i class="fas fa-hotel"></i>
           <h3>Accommodation</h3>
           <p>Advance booking advised. Special pricing available for participants.</p>
         </article>
@@ -395,22 +404,22 @@
     </div>
   </section>
 
-  <!-- Featured highlights -->
+  <!-- Featured Highlights -->
   <section class="featured" aria-label="Featured highlights">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 1rem 0 2rem;">
-        <article class="card" style="background: white; padding: 1.2rem; border-radius: 24px;">
+      <div class="grid-three-cards">
+        <article class="card">
           <h3>Keynote Speakers</h3>
           <p>Top international experts on intelligent systems and signal processing.</p>
           <a href="speakers.html">View Speakers →</a>
         </article>
-        <article class="card" style="background: white; padding: 1.2rem; border-radius: 24px;">
+        <article class="card">
           <h3>Student Paper Contest</h3>
           <p>Poster presentation categories with cash prizes for winners.</p>
           <a href="call-for-papers.html">Details →</a>
         </article>
-        <article class="card" style="background: white; padding: 1.2rem; border-radius: 24px;">
-          <h3>Workshops & Tutorials</h3>
+        <article class="card">
+          <h3>Workshops &amp; Tutorials</h3>
           <p>Hands-on workshops on AI imaging, edge computing, and more.</p>
           <a href="schedule.html">Program →</a>
         </article>
@@ -420,7 +429,7 @@
 </main>
 
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
 </footer>
 </body>
 </html>

@@ -3,244 +3,174 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
+<title>Committee - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-<!-- Dropdown & additional styling (keeping original look) -->
 <style>
-/* Basic dropdown nav — consistent with original */
-.main-nav { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.main-nav li { position: relative; }
-.main-nav a { text-decoration: none; padding: 0.5rem 0.6rem; display: inline-block; }
-
-.main-nav .dropdown > a::after {
-  content: " ▾";
-  font-size: 0.9em;
-  margin-left: 0.25rem;
-}
-
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.2rem);
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.4rem 0;
-  min-width: 220px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 10;
-}
-
-.main-nav .submenu li a {
-  display: block;
-  padding: 0.45rem 0.8rem;
-  white-space: nowrap;
-}
-
-.main-nav .dropdown:hover .submenu,
-.main-nav .dropdown:focus-within .submenu {
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .main-nav { flex-direction: column; align-items: stretch; }
-  .main-nav .submenu { position: static; border: none; box-shadow: none; }
-}
-
-.visitor-counter {
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
-  padding: 10px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-/* New 3-column grid for Overall Organizing Committee */
-.overall-committee-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0 1rem;
-}
-
-.overall-col {
-  background: #fefefe;
-  border-radius: 12px;
-  padding: 0.2rem 0.2rem 0.8rem 0.2rem;
-}
-
-.overall-col h2 {
-  font-size: 1.4rem;
-  color: #003366;
-  border-left: 5px solid #2c7da0;
-  padding-left: 0.9rem;
-  margin: 1rem 0 0.8rem 0;
-  font-weight: 600;
-}
-
-.overall-col ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.overall-col li {
-  margin-bottom: 0.65rem;
-  padding-left: 1.3rem;
-  position: relative;
-  line-height: 1.4;
-  font-size: 0.98rem;
-}
-
-.overall-col li:before {
-  content: "▹";
-  color: #2c7da0;
-  position: absolute;
-  left: 0;
-  font-size: 0.9rem;
-}
-
-/* maintain responsive: on tablets, 2 columns; on mobile, 1 column */
-@media (max-width: 850px) {
-  .overall-committee-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  /* Committee page specific styles */
+  .section-title {
+    font-size: 1.8rem;
+    color: #003366;
+    border-bottom: 3px solid #ff8c42;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
   }
-}
-
-@media (max-width: 550px) {
-  .overall-committee-grid {
-    grid-template-columns: 1fr;
+  
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 2rem 0;
   }
-}
-
-/* preserve all original styles for committee, advisory, header, etc */
-.committee-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-.committee-col {
-  flex: 1;
-  min-width: 250px;
-  background: #fff;
-  border-radius: 14px;
-  padding: 0.2rem 1rem 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-.committee-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  background: #fafafc;
-  padding: 0.6rem;
-  border-radius: 32px;
-}
-.committee-photo {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-.committee-info strong {
-  display: block;
-  font-size: 1rem;
-}
-.advisory-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-}
-.advisory-card {
-  flex: 1;
-  background: #f9f9fe;
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.advisory-list {
-  list-style: none;
-  padding-left: 0;
-}
-.advisory-list li {
-  margin-bottom: 0.6rem;
-  padding-left: 1.4rem;
-  position: relative;
-}
-.advisory-list li:before {
-  content: "•";
-  color: #1f6392;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-.section-center {
-  text-align: center;
-}
-.footer-note {
-  background: #eef2f7;
-  padding: 1rem;
-  border-radius: 40px;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-.logo-left img, .logo-right img {
-  max-height: 85px;
-  width: auto;
-}
-.header-center {
-  text-align: center;
-  flex: 2;
-}
-header nav {
-  background: #f0f4f9;
-  padding: 0.6rem 1rem;
-  border-radius: 50px;
-  margin-top: 0.5rem;
-}
-footer {
-  text-align: center;
-  padding: 1.2rem;
-  background: #003366;
-  color: white;
-  margin-top: 2rem;
-}
-body {
-  font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  margin: 0;
-  background: #ffffff;
-  color: #1e2f3e;
-}
-h2 {
-  color: #003366;
-}
-a {
-  color: #003366;
-  text-decoration: none;
-}
+  
+  .committee-col h2 {
+    font-size: 1.3rem;
+    color: #004a99;
+    margin: 0 0 1rem 0;
+    border-left: 4px solid #ff8c42;
+    padding-left: 12px;
+  }
+  
+  .committee-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  .committee-card:hover {
+    background: #f5f7fa;
+  }
+  
+  .committee-photo {
+    width: 75px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ddd;
+  }
+  
+  .committee-info {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .committee-info strong {
+    color: #003366;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .advisory-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 28px;
+    margin: 2rem 0;
+  }
+  
+  .advisory-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .advisory-card h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #eef2f8;
+    padding-bottom: 0.5rem;
+  }
+  
+  .advisory-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .advisory-list li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  
+  .advisory-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #ff8c42;
+  }
+  
+  .update-note {
+    color: #888;
+    font-style: italic;
+    margin-top: 0.8rem;
+  }
+  
+  .overall-committee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 2rem 0;
+  }
+  
+  .overall-col {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .overall-col h2 {
+    font-size: 1.1rem;
+    color: #003366;
+    margin: 1.2rem 0 0.8rem 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #eef2f8;
+  }
+  
+  .overall-col h2:first-of-type {
+    margin-top: 0;
+  }
+  
+  .overall-col ul {
+    margin: 0 0 1rem 0;
+    padding-left: 1.2rem;
+  }
+  
+  .overall-col ul li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .footer-note {
+    background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1rem 0;
+    border-left: 4px solid #ff8c42;
+  }
+  
+  @media (max-width: 900px) {
+    .committee-grid,
+    .overall-committee-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .advisory-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -252,10 +182,8 @@ a {
       </a>
     </div>
     <div class="header-center">
-      <p style="font-size:2.2rem;font-weight:500;margin:0;">
-        International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)
-      </p>
-      <p style="margin:0.2rem 0 0;">1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
     </div>
     <div class="logo-right">
       <a href="index.html" aria-label="ICIMSP 2027 home">
@@ -263,7 +191,6 @@ a {
       </a>
     </div>
   </div>
-
   <nav aria-label="Main navigation">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
@@ -271,207 +198,224 @@ a {
       <li><a href="call-for-papers.html">Call for Papers</a></li>
       <li><a href="speakers.html">Speakers</a></li>
       <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="committee.html">Committee</a></li>
+      <li><a href="committee.html" class="active">Committee</a></li>
       <li><a href="sponsorship.html">Sponsorship</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
-  <div id="organizing-section"></div>
-  
-  <!-- ORGANIZING COMMITTEE section (unchanged, same as original) -->
-  <section aria-label="Organizing Committee" style="margin-top: 0.5rem;">
-    <h2 class="section-center" style="display: block; text-align: center;">Organizing Committee</h2>
-    <div class="committee-grid">
-      <div class="committee-col">
-        <h2>Chief Patron</h2>
-        <div class="committee-card">
-          <img class="committee-photo" src="images/vc.png" alt="Prof. Bibhuti Bhusan Biswal">
-          <div class="committee-info">
-            <strong>Prof. Bibhuti Bhusan Biswal</strong>
-            Vice Chancellor, OUTR
+<main>
+  <div class="container">
+    <!-- Page Header -->
+    <section style="text-align: center; margin: 2rem 0 1rem;">
+      <h1 style="color: #003366;">Conference Committees</h1>
+      <p style="font-size: 1.1rem; color: #666;">Distinguished experts and leaders shaping ICIMSP 2027</p>
+    </section>
+
+    <!-- Organizing Committee -->
+    <section aria-label="Organizing Committee">
+      <h2 class="section-title">Organizing Committee</h2>
+      <div class="committee-grid">
+        <div class="committee-col">
+          <h2>Chief Patron</h2>
+          <div class="committee-card">
+            <img class="committee-photo" src="images/vc.png" alt="Prof. Bibhuti Bhusan Biswal" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <div class="committee-info">
+              <strong>Prof. Bibhuti Bhusan Biswal</strong>
+              Vice Chancellor, OUTR
+            </div>
+          </div>
+          <h2>General Chair</h2>
+          <div class="committee-card">
+            <img class="committee-photo" src="images/Yudong.jpg" alt="Prof. Yudong Zhang" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <div class="committee-info">
+              <strong>Prof. Yudong Zhang</strong>
+              School of Computing and Mathematical Sciences, University of Leicester, UK
+            </div>
           </div>
         </div>
-        <h2>General Chair</h2>
-        <div class="committee-card">
-          <img class="committee-photo" src="images/Yudong.jpg" alt="Prof. Yudong Zhang">
-          <div class="committee-info">
-            <strong>Prof. Yudong Zhang</strong>
-            School of Computing and Mathematical Sciences, University of Leicester, UK
+        <div class="committee-col">
+          <h2>Conference Convenors</h2>
+          <div class="committee-card">
+            <img class="committee-photo" src="images/tkp.jpg" alt="Prof. Tapas Kumar Patra" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <div class="committee-info">
+              <strong>Prof. Tapas Kumar Patra</strong>
+              SELS, OUTR
+            </div>
+          </div>
+          <div class="committee-card">
+            <img class="committee-photo" src="images/jmishra.jpg" alt="Prof. Jibitesh Mishra" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <div class="committee-info">
+              <strong>Prof. Jibitesh Mishra</strong>
+              SoCS, OUTR
+            </div>
+          </div>
+          <div class="committee-card">
+            <img class="committee-photo" src="images/sks.jpg" alt="Prof. Sushanta Kumar Sahu" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <div class="committee-info">
+              <strong>Prof. Sushanta Kumar Sahu</strong>
+              SELS, OUTR
+            </div>
           </div>
         </div>
-      </div>
-      <div class="committee-col">
-        <h2>Conference Convenors</h2>
-        <div class="committee-card">
-          <img class="committee-photo" src="images/tkp.jpg" alt="Prof. Tapas Kumar Patra">
-          <div class="committee-info">
-            <strong>Prof. Tapas Kumar Patra</strong>
-            SELS, OUTR
-          </div>
-        </div>
-        <div class="committee-card">
-          <img class="committee-photo" src="images/jmishra.jpg" alt="Prof. Jibitesh Mishra">
-          <div class="committee-info">
-            <strong>Prof. Jibitesh Mishra</strong>
-            SoCS, OUTR
-          </div>
-        </div>
-        <div class="committee-card">
-          <img class="committee-photo" src="images/sks.jpg" alt="Prof. Sushanta Kumar Sahu">
-          <div class="committee-info">
-            <strong>Prof. Sushanta Kumar Sahu</strong>
-            SELS, OUTR
-          </div>
+        <div class="committee-col">
+          <h2>Event Management Committee</h2>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 0.75rem;">▹ Prof. Jagannath Sethi, SELS, OUTR</li>
+            <li style="margin-bottom: 0.75rem;">▹ Prof. Rashmita Routray, SELS, OUTR</li>
+            <li style="margin-bottom: 0.75rem;">▹ Prof. Naresh Chandra Naik, SELS, OUTR</li>
+            <li style="margin-bottom: 0.75rem;">▹ Prof. Ananya Dastidar, SELS, OUTR</li>
+          </ul>
         </div>
       </div>
-      <div class="committee-col">
-        <h2>EVENT MANAGEMENT COMMITTEE</h2>
-        <ul>
-          <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-          <li>Prof. Rashmita Routray, SELS, OUTR</li>
-          <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-          <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-        </ul>
+    </section>
+
+    <!-- Advisory Committee -->
+    <section aria-label="Advisory Committee" style="margin-top: 2rem;">
+      <h2 class="section-title">Advisory Committee</h2>
+      <div class="advisory-wrapper">
+        <!-- International Advisory -->
+        <div class="advisory-card">
+          <h3><i class="fas fa-globe-americas"></i> International Advisory Committee</h3>
+          <ul class="advisory-list">
+            <li><strong>Prof. Md Fazley Rafy</strong>, West Virginia University, USA</li>
+            <li><strong>Prof. Turgay Celik</strong>, Centre for Artificial Intelligence Research (CAIR), University of Agder, Norway</li>
+            <li><strong>Prof. Ruppa Thulasiram</strong>, Computer Science, University of Manitoba, Canada</li>
+            <li><strong>Prof. Sanjib Kumar Panda</strong>, National University of Singapore (NUS), Singapore</li>
+            <li><strong>Prof. Lalit Goel</strong>, Nanyang Technological University (NTU), Singapore</li>
+            <li><strong>Prof. Gautam Srivastava</strong>, Dept. of Mathematics & Computer Science, Brandon University (BU), Canada</li>
+            <li><strong>Prof. Chanchal Roy</strong>, Dept. of Computer Science, University of Saskatchewan, Canada</li>
+          </ul>
+        </div>
+
+        <!-- National Advisory Committee -->
+        <div class="advisory-card">
+          <h3><i class="fas fa-flag-checkered"></i> National Advisory Committee</h3>
+          <ul class="advisory-list">
+            <li><strong>Prof. Aurobinda Routray</strong>, IIT Kharagpur</li>
+            <li><strong>Prof. (Dr.) Raja Datta</strong>, FIE, FIETE, SMIEEE, IIT Kharagpur</li>
+            <li><strong>Dr. Debi Prasanna Kanungo</strong>, Chief Scientist & Professor (AcSIR), CSIR-CBRI, Roorkee</li>
+            <li><strong>Hare Krishna Ratha</strong>, Advisor - IEEE Bhubaneswar Section</li>
+            <li><strong>Dr. R. K. Panigrahi</strong>, Professor, IIT Roorkee</li>
+            <li><strong>Dr. P. Sumathi</strong>, Professor, IIT Roorkee</li>
+            <li><strong>Prof. K. P. Ray</strong>, Professor of Practice, IIT Gandhinagar</li>
+            <li><strong>Prof. Padmalochan Bera</strong>, Associate Professor, IIT Bhubaneswar</li>
+            <li><strong>Prof. Manoj Tripathy</strong>, Professor, IIT Roorkee</li>
+            <li><strong>Dr. Chandrasekhar Perumalla</strong>, Associate Professor, IIT Bhubaneswar</li>
+            <li class="update-note"><i class="fas fa-clock"></i> More updates soon</li>
+          </ul>
+        </div>
+
+        <!-- University Advisory Committee -->
+        <div class="advisory-card">
+          <h3><i class="fas fa-university"></i> University Advisory Committee</h3>
+          <ul class="advisory-list">
+            <li><strong>Dr. Pramod Kumar Parida</strong> — Dean Faculty and Planning</li>
+            <li><strong>Prof. Ajit Kumar Barisal</strong> — Dean Sponsored Research & Industrial Consultancy</li>
+            <li><strong>Prof. Aruna Tripathy</strong> — Dean Post Graduate Studies & Research</li>
+            <li><strong>Prof. Jibitesh Mishra</strong> — Dean Students Welfare</li>
+            <li><strong>Prof. Tapas Kumar Patra</strong> — Dean, Centre for Distance & Continuing Education</li>
+            <li><strong>Prof. Ranjam Kumar Jena</strong> — Dean, Academic Affairs</li>
+            <li><strong>Prof. Madhab Chandra Tripathy</strong> — Head, School of Electronic Sciences</li>
+            <li><strong>Dr. Ranjan Kumar Dash</strong> — Head, School of Computer Sciences</li>
+            <li><strong>Prof. Sudhansu Sekhar Sahoo</strong> — Head, School of Mechanical Sciences</li>
+            <li><strong>Prof. Sabita Dash</strong> — Head, School of Infrastructure and Planning</li>
+            <li><strong>Prof. Lokanath Tripathy</strong> — Head, School of Electrical Sciences</li>
+            <li><strong>Dr. Bijnyan Ranjan Das</strong> — Head, School of Basic Sciences and Humanities</li>
+            <li><strong>Dr. Ranjan Kumar Pradhan</strong> — Head, Biotechnology Department</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ADVISORY COMMITTEE section (unchanged, same structure) -->
-  <div id="advisory-section" style="scroll-margin-top: 70px;"></div>
-  <section aria-label="Advisory Committee" style="margin-top: 1rem;">
-    <h2 class="section-center" style="display: block; text-align: center;">Advisory Committee</h2>
-    <div class="advisory-wrapper">
-      <div class="advisory-card">
-        <h3><i class="fas fa-globe-americas" style="margin-right: 8px; font-size: 1.2rem;"></i> International Advisory Committee</h3>
-        <ul class="advisory-list">
-          <li>Prof. Md Fazley Rafy, West Virginia University, USA</li>
-          <li>Prof. Turgay Celik, Centre for Artificial Intelligence Research (CAIR), University of Agder, Norway</li>
-          <li>Prof. Ruppa Thulasiram, Computer Science, University of Manitoba, Canada</li>
-          <li>Prof. Sanjib Kumar Panda, National University of Singapore (NUS), Singapore</li>
-          <li>Prof. Lalit Goel, Nanyang Technological University (NTU), Singapore</li>
-          <li>Prof. Gautam Srivastava, Department of Mathematics & Computer Science, Brandon University (BU), Manitoba, Canada</li>
-          <li>Prof. Chanchal Roy, Department of Computer Science, University of Saskatchewan, Canada</li>
-        </ul>
+    <!-- Overall Organizing Committee -->
+    <section aria-label="Overall Organizing Committee members" style="margin: 2rem 0;">
+      <h2 class="section-title">Overall Organizing Committee</h2>
+      <div class="overall-committee-grid">
+        <!-- Column 1 -->
+        <div class="overall-col">
+          <h2>Technical Program Chairs</h2>
+          <ul>
+            <li>Prof. Chandrasekhar N. Bhende (Chair), IIT Bhubaneswar</li>
+            <li>Prof. P. Chandrasekhar, IIT Bhubaneswar</li>
+            <li>Prof. Aruna Tripathy, SELS, OUTR</li>
+          </ul>
+          <h2>Electronics Submission & Publication Chairs</h2>
+          <ul>
+            <li>Prof. Karmila Soren, SELS, OUTR</li>
+            <li>Prof. Rashmita Routray, SELS, OUTR</li>
+            <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
+          </ul>
+          <h2>Travel & Hospitality Chairs</h2>
+          <ul>
+            <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
+            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
+          </ul>
+          <h2>Finance, Sponsorship & Industry Liaison</h2>
+          <ul>
+            <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
+            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
+            <li>Prof. Jagannath Sethi, SELS, OUTR</li>
+            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="overall-col">
+          <h2>Keynotes, Tutorials & Workshops</h2>
+          <ul>
+            <li>Prof. Suman Bala Behera, SELS, OUTR</li>
+            <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
+            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
+            <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
+          </ul>
+          <h2>Website & Publicity Chairs</h2>
+          <ul>
+            <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
+            <li>Prof. Debi Prasad Dash, SELS, OUTR</li>
+            <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
+            <li>Prof. R.B. Keskar, VNIT Nagpur</li>
+            <li>Prof. M. H. Kolekar, IIT Patna</li>
+            <li>Prof. Tapas Kumar Patra, SELS, OUTR</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="overall-col">
+          <h2>Departmental Committee Members</h2>
+          <ul>
+            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
+            <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
+            <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
+            <li>Prof. Rashmi Rekha Sahoo, SELS, OUTR</li>
+            <li>Prof. Sribatsa Behera, SELS, OUTR</li>
+            <li>Prof. Tapas Kumar Patra, SELS, OUTR</li>
+            <li>Prof. Jagannath Sethi, SELS, OUTR</li>
+            <li>Prof. Karmila Soren, SELS, OUTR</li>
+            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
+            <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
+            <li>Prof. Rashmita Routray, SELS, OUTR</li>
+            <li>Prof. Satyabhama Dash, SELS, OUTR</li>
+            <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
+            <li>Prof. Suman Bala Behera, SELS, OUTR</li>
+            <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
+          </ul>
+        </div>
       </div>
-      <div class="advisory-card">
-        <h3><i class="fas fa-flag-checkered" style="margin-right: 8px;"></i> National Advisory Committee</h3>
-        <ul class="advisory-list">
-          <li>Prof. Sukumar Mishra, IIT (ISM) Dhanbad</li>
-          <li>Prof. Bidyadhar Subudhi, NIT Warangal</li>
-          <li>Prof. Sarat Kumar Patra, NIT Rourkela</li>
-          <li>Prof. Laxmidhar Behera, IIT Mandi / IIT Kanpur</li>
-          <li>Prof. Debi Prosad Dogra, IIT Bhubaneswar</li>
-          <li>Prof. Srikanta Patnaik, SOA University, Bhubaneswar</li>
-          <li>Prof. K. C. Pati, NIT Rourkela</li>
-          <li>Prof. Renu Sharma, DTU Delhi</li>
-          <li>Prof. Pradipta Kishore Dash, Former Professor, SOA (Ex-IIT Bhubaneswar)</li>
-          <li>Prof. Banshidhar Majhi, KIIT Deemed to be University</li>
-        </ul>
+      
+      <div class="footer-note">
+        <i class="fas fa-microphone-alt"></i> ICIMSP 2027 brings together distinguished international & national experts, fostering innovation in intelligent machine learning, signal processing, and emerging technologies.
       </div>
-    </div>
-
-  </section>
-
-  <!-- ===================================================== -->
-  <!-- OVERALL ORGANIZING COMMITTEE - REARRANGED INTO 3 COLUMNS -->
-  <!-- Content preserved exactly, only layout changed to grid  -->
-  <!-- ===================================================== -->
-  <section aria-label="Overall Organizing Committee members" style="margin: 1.5rem 0 2rem;">
-    <h2 style="text-align: center; font-size: 1.8rem; color:#003366; margin-bottom: 1rem;">Overall Organizing Committee</h2>
-    
-    <div class="overall-committee-grid">
-      <!-- COLUMN 1 -->
-      <div class="overall-col">
-        <h2>Technical Program Chairs</h2>
-        <ul>
-          <li>Prof. Chandrasekhar N. Bhende (Chair), IIT Bhubaneswar</li>
-          <li>Prof. P. Chandrasekhar, IIT Bhubaneswar</li>
-          <li>Prof. Aruna Tripathy, SELS, OUTR</li>
-        </ul>
-
-        <h2>Electronics Submission & Publication Chairs</h2>
-        <ul>
-          <li>Prof. Karmila Soren, SELS, OUTR</li>
-          <li>Prof. Rashmita Routray, SELS, OUTR</li>
-          <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
-        </ul>
-
-        <h2>Travel & Hospitality Chairs</h2>
-        <ul>
-          <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
-          <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-        </ul>
-
-        <h2>Finance, Sponsorship, Exhibition & Industry Liaison Chairs</h2>
-        <ul>
-          <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
-          <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-          <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-          <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-        </ul>
-
-      </div>
-
-      <!-- COLUMN 2 -->
-      <div class="overall-col">
-
-        <h2>Keynotes, Tutorials, Workshops & Technical Program Committee</h2>
-        <ul>
-          <li>Prof. Suman Bala Behera, SELS, OUTR</li>
-          <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
-          <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-          <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
-        </ul>
-
-        <h2>Website & Publicity Chairs</h2>
-        <ul>
-          <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
-          <li>Prof. Debi Prasad Dash, SELS, OUTR</li>
-          <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
-          <li>Prof. R.B. Keskar, VNIT Nagpur</li>
-          <li>Prof. M. H. Kolekar, IIT Patna</li>
-          <li>Prof. Tapas Kumar Patra, SELS, OUTR</li>
-        </ul>
-
-      </div>
-
-      <!-- COLUMN 3 -->
-      <div class="overall-col">
-
-
-        <h2>Other Departmental Committee Members</h2>
-        <ul>
-          <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-          <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
-          <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
-          <li>Prof. Rashmi Rekha Sahoo, SELS, OUTR</li>
-          <li>Prof. Sribatsa Behera, SELS, OUTR</li>
-          <li>Prof. Tapas Kumar Patra, SELS, OUTR</li>
-          <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-          <li>Prof. Karmila Soren, SELS, OUTR</li>
-          <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-          <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
-          <li>Prof. Rashmita Routray, SELS, OUTR</li>
-          <li>Prof. Satyabhama Dash, SELS, OUTR</li>
-          <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
-          <li>Prof. Suman Bala Behera, SELS, OUTR</li>
-          <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
-        </ul>
-      </div>
-    </div>
-    <!-- note: all committee members, categories and data are exactly as in original version, only layout rearranged to 3-column grid -->
-  </section>
-
-
+    </section>
+  </div>
 </main>
-    <div class="footer-note" style="margin-top: 1.2rem;">
-      <i class="fas fa-users" style="margin-right: 8px;"></i> ICIMSP 2027 unites world-renowned and national experts across intelligent machine learning, signal processing, and emerging technologies.
-    </div>
+
 <footer>
-  <p>© 2027 ICIMSP Organizing Committee | OUTR, Bhubaneswar | Hybrid Conference 1–3 July 2027</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+  <p style="font-size: 0.85rem; margin-top: 6px;">
+    <i class="fas fa-envelope"></i> icimsp2027@outr.ac.in | Hybrid Conference 1–3 July 2027
+  </p>
 </footer>
 </body>
 </html>
