@@ -362,7 +362,7 @@
     <div class="reg-cta">
       <i class="fas fa-hand-holding-usd" style="font-size: 1.8rem; color:#ff6b00;"></i>
       <p style="margin: 12px 0;"><strong>Secure your spot at ICIMSP 2027</strong> — early registration discounts available for a limited time.</p>
-      <a href="https://forms.gle/your-registration-link" class="reg-button" target="_blank">Register Now via Google Form</a>
+      <a href="https://forms.gle/Do6Y4G2pq2TZL4bT9" class="reg-button" target="_blank">Register Now via Google Form</a>
     </div>
   </div>
 </main>
@@ -371,29 +371,5 @@
   <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
 </footer>
 
-<script>
-  document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const affiliation = document.getElementById('affiliation').value.trim();
-    const country = document.getElementById('country').value;
-    const phone = document.getElementById('phone').value.trim();
-    
-    if (!firstName || !lastName || !email || !affiliation || !country || !phone) {
-      alert('Please fill in all required fields marked with *');
-      return;
-    }
-    
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address');
-      return;
-    }
-    
-    alert('Thank you for registering! You will now be redirected to the payment gateway.');
-  });
-</script>
 </body>
 </html>

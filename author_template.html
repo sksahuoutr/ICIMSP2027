@@ -3,183 +3,145 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Author Template - ICIMSP 2027</title>
+<title>Paper Templates - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
+  /* Page specific styles - complements main.css */
+  
+  /* Hero section */
   .template-hero {
     background: linear-gradient(135deg, #003366, #004a99);
     color: #fff;
-    padding: 2rem;
+    padding: 2rem 2rem;
     border-radius: 12px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
   }
-  .template-hero h1 { margin: 0 0 0.5rem; font-size: 1.8rem; }
-  .template-hero p { margin: 0; opacity: 0.9; }
+  .template-hero h1 { 
+    margin: 0 0 0.5rem; 
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .template-hero p { 
+    margin: 0; 
+    opacity: 0.92;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .template-hero i {
+    margin-right: 12px;
+  }
   
-  .two-column {
+  /* Grid layouts - 2 and 3 columns */
+  .grid-2cols {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 1.8rem;
   }
   
+  .grid-3cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  /* Card styling */
   .card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  .card:last-child { margin-bottom: 0; }
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+  }
   
   .card-header {
-    background: #f5f7fa;
-    padding: 1rem 1.5rem;
-    border-bottom: 2px solid #003366;
+    background: linear-gradient(135deg, #f8fafc, #f0f4f8);
+    padding: 1.2rem 1.2rem;
+    border-bottom: 3px solid #003366;
+    text-align: center;
   }
   .card-header h2 {
     margin: 0;
     color: #003366;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .card-header h2 i {
+    color: #004a99;
+    font-size: 1.3rem;
   }
   
-  .card-body { padding: 1.5rem; }
+  .card-body { 
+    padding: 1.2rem;
+    text-align: left;
+    flex: 1;
+  }
   
-  /* Primary Download Button - Word Template */
+  /* Primary Download Button */
   .btn-download-primary {
     background: linear-gradient(135deg, #003366, #004a99);
     color: #ffffff !important;
-    padding: 18px 32px;
-    border-radius: 12px;
+    padding: 16px 24px;
+    border-radius: 10px;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     font-weight: 700;
-    font-size: 1.2rem;
-    transition: all 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     width: 100%;
     border: none;
     cursor: pointer;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,51,102,0.3);
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 14px rgba(0,51,102,0.3);
+    text-align: center;
   }
   .btn-download-primary:hover { 
     background: linear-gradient(135deg, #004a99, #0055aa); 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,51,102,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,51,102,0.4);
     color: #ffffff !important;
   }
-  .btn-download-primary i { font-size: 1.8rem; color: #ffffff; }
-  .btn-download-primary span { color: #ffffff; }
-  
-  /* Secondary Download Buttons */
-  .btn-download-secondary {
-    background: #f0f4f8;
-    color: #003366;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.2s;
-    width: 100%;
-    border: 2px solid #003366;
-    cursor: pointer;
+  .btn-download-primary i { 
+    font-size: 1.4rem; 
+    color: #ffffff; 
   }
-  .btn-download-secondary:hover { 
-    background: #003366;
-    color: #ffffff;
-    transform: translateY(-1px);
-  }
-  .btn-download-secondary:hover i { color: #ffffff; }
-  
-  .format-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-  .format-item {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.2s;
-  }
-  .format-item:hover { background: #eef2f7; }
-  .format-item i { font-size: 1.8rem; color: #003366; margin-bottom: 0.5rem; display: block; }
-  .format-item strong { display: block; color: #003366; font-size: 1rem; }
-  .format-item span { font-size: 0.85rem; color: #666; display: block; margin: 4px 0; }
-  .format-item a {
-    display: inline-block;
-    margin-top: 8px;
-    color: #003366;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-  .format-item a:hover { text-decoration: underline; }
-  
-  .info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .info-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    line-height: 1.5;
-  }
-  .info-list li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: #ff8c42;
-  }
-  .info-list li:last-child { margin-bottom: 0; }
-  
-  .checklist-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
-  }
-  .checklist-item {
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .checklist-item i { color: #28a745; font-size: 0.8rem; }
-  
-  .alert-box {
-    background: #fff3e0;
-    border-left: 4px solid #ff8c42;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-top: 1rem;
+  .btn-download-primary span { 
+    color: #ffffff; 
   }
   
+  /* Separator */
   .separator {
     text-align: center;
-    margin: 1rem 0;
+    margin: 1.2rem 0;
     position: relative;
   }
   .separator span {
     background: #fff;
-    padding: 0 10px;
+    padding: 0 12px;
     color: #999;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .separator::before {
     content: "";
@@ -188,7 +150,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: #ddd;
+    background: #e0e4e8;
     z-index: 0;
   }
   .separator span {
@@ -196,9 +158,279 @@
     z-index: 1;
   }
   
+  /* Format grid for template options */
+  .format-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .format-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid #eef2f6;
+  }
+  .format-item:hover { 
+    background: #f0f4f9;
+    transform: translateY(-2px);
+    border-color: #004a99;
+  }
+  .format-item i { 
+    font-size: 1.8rem; 
+    color: #003366; 
+    margin-bottom: 0.5rem; 
+    display: block; 
+  }
+  .format-item strong { 
+    display: block; 
+    color: #003366; 
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .format-item span { 
+    font-size: 0.8rem; 
+    color: #666; 
+    display: block; 
+    margin: 3px 0;
+  }
+  .format-item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: #004a99;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: rgba(0,51,102,0.08);
+    transition: background 0.2s;
+  }
+  .format-item a:hover { 
+    background: rgba(0,51,102,0.15);
+    text-decoration: none;
+  }
+  
+  /* Info lists */
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  .info-list li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.4rem;
+    position: relative;
+    line-height: 1.5;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  .info-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #ff8c42;
+    font-size: 0.85rem;
+  }
+  .info-list li strong {
+    color: #003366;
+  }
+  .info-list li:last-child { margin-bottom: 0; }
+  
+  /* Checklist grid */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    text-align: left;
+  }
+  .checklist-item {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    text-align: left;
+  }
+  .checklist-item i { 
+    color: #28a745; 
+    font-size: 0.85rem;
+    width: 18px;
+  }
+  
+  /* Alert box */
+  .alert-box {
+    background: #fff8f0;
+    border-left: 4px solid #ff8c42;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .alert-box i {
+    color: #ff8c42;
+    margin-right: 8px;
+  }
+  .alert-box a {
+    color: #004a99;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .alert-box a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contact info */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  .contact-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 0.9rem;
+    background: #f5f7fa;
+    border-radius: 8px;
+    transition: background 0.2s;
+    text-align: left;
+  }
+  .contact-email:hover {
+    background: #eef2f6;
+  }
+  .contact-email i {
+    color: #003366;
+    font-size: 1rem;
+    width: 22px;
+  }
+  .contact-email a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  .contact-email a:hover {
+    text-decoration: underline;
+  }
+  .contact-email span {
+    color: #003366;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  /* Springer link box */
+  .springer-link {
+    margin-top: 1rem;
+    padding: 0.9rem;
+    background: #e8f0fe;
+    border-radius: 8px;
+    border-left: 4px solid #003366;
+    text-align: left;
+  }
+  .springer-link i {
+    color: #003366;
+    margin-right: 8px;
+  }
+  .springer-link a {
+    color: #003366;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .springer-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Quick stats boxes */
+  .quick-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .stat-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    border-left: 4px solid #ff8c42;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .stat-box .value { 
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    color: #003366; 
+  }
+  .stat-box .label { 
+    font-size: 0.8rem; 
+    color: #666;
+    margin-top: 0.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+  }
+  footer .container p {
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .grid-3cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
   @media (max-width: 900px) {
-    .two-column { grid-template-columns: 1fr; gap: 1rem; }
-    .format-grid, .checklist-grid { grid-template-columns: 1fr; }
+    .quick-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-2cols,
+    .grid-3cols {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    .template-hero h1 {
+      font-size: 1.5rem;
+    }
+    .format-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .quick-stats {
+      grid-template-columns: 1fr;
+    }
+    .card-header h2 {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+    .checklist-item {
+      font-size: 0.8rem;
+    }
   }
 </style>
 </head>
@@ -209,8 +441,9 @@
       <a href="index.html"><img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" /></a>
     </div>
     <div class="header-center">
-      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
-      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+      <h1>ICIMSP 2027</h1>
+      <p>International Conference on Intelligent Machine & Signal Processing</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha, India | Hybrid Mode</p>
     </div>
     <div class="logo-right">
       <a href="index.html"><img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" /></a>
@@ -232,156 +465,196 @@
 
 <main>
   <div class="container">
-    <!-- Hero -->
+    <!-- Hero Section -->
     <div class="template-hero">
-      <h1><i class="fas fa-file-alt"></i> ICIMSP 2027 Paper Template</h1>
-      <p>Prepare your manuscript using the official conference template (Springer LNCS format)</p>
+      <i class="fas fa-file-alt" style="font-size: 2.5rem;"></i>
+      <h1>Paper Preparation Templates</h1>
+      <p>Download the official ICIMSP 2027 templates following Springer LNCS format</p>
+    </div>
+    
+    <!-- Quick Stats - 4 column grid -->
+    <div class="quick-stats">
+      <div class="stat-box">
+        <div class="value">6-8 pages</div>
+        <div class="label">Page Length</div>
+      </div>
+      <div class="stat-box">
+        <div class="value">Springer LNCS</div>
+        <div class="label">Publication Format</div>
+      </div>
+      <div class="stat-box">
+        <div class="value">10 MB</div>
+        <div class="label">Max File Size</div>
+      </div>
+      <div class="stat-box">
+        <div class="value">PDF</div>
+        <div class="label">Submission Format</div>
+      </div>
     </div>
 
-    <!-- Two Column Layout -->
-    <div class="two-column">
-      
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- Download Card -->
-        <div class="card">
-          <div class="card-header">
-            <h2><i class="fas fa-download"></i> Download Templates</h2>
+    <!-- 3 Column Grid for Templates and Downloads -->
+    <div class="grid-3cols">
+      <!-- Microsoft Word Template Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fab fa-microsoft"></i> Microsoft Word</h2>
+        </div>
+        <div class="card-body">
+          <a href="Microsoft_Word_ICIMSP_2027.zip" class="btn-download-primary" download>
+            <i class="fas fa-file-word"></i> 
+            <span>Download Word Template</span>
+            <i class="fas fa-download"></i>
+          </a>
+          <ul class="info-list">
+            <li>Compatible with Microsoft Word 2016 and later</li>
+            <li>Pre-formatted with Springer LNCS styles</li>
+            <li>Includes instructions and examples</li>
+            <li>Ready-to-use template structure</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LaTeX Template Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-code"></i> LaTeX Template</h2>
+        </div>
+        <div class="card-body">
+          <a href="LaTeX2e_ICIMSP_2027.zip" class="btn-download-primary" download>
+            <i class="fas fa-code"></i> 
+            <span>Download LaTeX Template</span>
+            <i class="fas fa-download"></i>
+          </a>
+          <ul class="info-list">
+            <li>Complete LaTeX2e source files</li>
+            <li>Springer LNCS class file included</li>
+            <li>Sample bibliography style (.bst)</li>
+            <li>Ready to compile with pdflatex</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Overleaf Template Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-cloud-upload-alt"></i> Overleaf</h2>
+        </div>
+        <div class="card-body">
+          <a href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi" target="_blank" class="btn-download-primary">
+            <i class="fas fa-external-link-alt"></i> 
+            <span>Open in Overleaf</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <ul class="info-list">
+            <li>Online LaTeX editor - no installation needed</li>
+            <li>Real-time collaboration features</li>
+            <li>Auto-save and version control</li>
+            <li>Direct PDF compilation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Column Grid for Guidelines and Checklist -->
+    <div class="grid-2cols">
+      <!-- Formatting Guidelines Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-list-check"></i> Formatting Guidelines</h2>
+        </div>
+        <div class="card-body">
+          <ul class="info-list">
+            <li><strong>Page Limit:</strong> 6–8 pages (including references, figures, and tables)</li>
+            <li><strong>Format:</strong> Springer LNCS (Lecture Notes in Computer Science)</li>
+            <li><strong>Font:</strong> 10pt Times New Roman (Word) or default LaTeX font</li>
+            <li><strong>Paper Size:</strong> A4 (210mm × 297mm)</li>
+            <li><strong>Margins:</strong> Follow Springer LNCS template specifications</li>
+            <li><strong>Figures & Tables:</strong> Properly captioned and cited in text</li>
+            <li><strong>References:</strong> Use Springer LNCS citation style</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pre-Submission Checklist Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-clipboard-list"></i> Pre-Submission Checklist</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist-grid">
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> PDF format only</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> 6–8 pages length</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> File size ≤ 10 MB</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> All fonts embedded</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> No transparent images</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> No security protection</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> All authors listed</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> References complete</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> Corresponding author identified</div>
+            <div class="checklist-item"><i class="fas fa-check-circle"></i> ORCID IDs included</div>
           </div>
-          <div class="card-body">
-            <!-- Prominent Word Template Download Button with White Text -->
-            <a href="Microsoft_Word_ICIMSP_2027.zip" class="btn-download-primary" download>
-              <i class="fas fa-file-word"></i> 
-              <span>Download Microsoft Word Template (.zip)</span>
-              <i class="fas fa-download"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Column Grid for Important Notes and Publication Info -->
+    <div class="grid-2cols">
+      <!-- Important Notes Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-exclamation-triangle"></i> Important Notes</h2>
+        </div>
+        <div class="card-body">
+          <ul class="info-list">
+            <li>Use the template as provided — <strong>do not alter style definitions</strong></li>
+            <li>Embed all fonts when converting to PDF (no font subsetting)</li>
+            <li>Remove any document protection or editing restrictions</li>
+            <li>Ensure all images have no transparent pixels (flatten if needed)</li>
+            <li>Keep PDF file size under 10 MB</li>
+            <li>Submit only original, unpublished work</li>
+            <li>At least one author must register for the conference</li>
+            <li>Papers must be submitted via the online submission system only</li>
+          </ul>
+          <div class="alert-box">
+            <i class="fas fa-info-circle"></i> 
+            <strong>Template Instructions:</strong> Download the appropriate template and replace placeholder text with your content. All submissions must strictly follow the Springer LNCS formatting guidelines.
+          </div>
+        </div>
+      </div>
+
+      <!-- Springer Publication Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-book"></i> Springer LNCS Publication</h2>
+        </div>
+        <div class="card-body">
+          <ul class="info-list">
+            <li>All accepted & presented papers will be published in <strong>Springer LNCS</strong> (subject to final approval)</li>
+            <li>Springer maintains high standards for publication ethics and originality</li>
+            <li>Authors must strictly follow the Springer LNCS template</li>
+            <li>Papers not following the template may be returned for reformatting</li>
+            <li>Maximum 8 pages allowed (6 pages minimum required)</li>
+            <li><strong>Extra Page Charges:</strong> ₹1,770 per extra page (India) / $40 (International)</li>
+          </ul>
+          
+          <div class="springer-link">
+            <i class="fas fa-external-link-alt"></i>
+            <strong>Springer LNCS Guidelines:</strong><br />
+            <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank">
+              View Official Author Guidelines →
             </a>
-            
-            <div class="separator">
-              <span>OR</span>
-            </div>
-            
-            <!-- LaTeX and Overleaf Options -->
-            <div class="format-grid">
-              <div class="format-item">
-                <i class="fas fa-code"></i>
-                <strong>LaTeX Template</strong>
-                <span>For LaTeX users</span>
-                <a href="LaTeX2e_ICIMSP_2027.zip" download>
-                  <i class="fas fa-download"></i> Download ZIP
-                </a>
-              </div>
-              <div class="format-item">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <strong>Overleaf</strong>
-                <span>Online LaTeX editor</span>
-                <a href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi" target="_blank">
-                  <i class="fas fa-external-link-alt"></i> Open Template
-                </a>
-              </div>
-            </div>
-            
-            <div class="alert-box">
-              <i class="fas fa-info-circle"></i> 
-              <strong>Template Instructions:</strong> Download the template, replace placeholder text, and follow formatting guidelines. The templates follow Springer LNCS format.
-            </div>
-          </div>
-        </div>
-
-        <!-- Formatting Guidelines -->
-        <div class="card">
-          <div class="card-header">
-            <h2><i class="fas fa-list-check"></i> Formatting Guidelines</h2>
-          </div>
-          <div class="card-body">
-            <ul class="info-list">
-              <li><strong>Page Limit:</strong> Minimum 6 pages, Maximum 8 pages (including references)</li>
-              <li><strong>Format:</strong> Springer LNCS (Lecture Notes in Computer Science)</li>
-              <li><strong>Font:</strong> 10pt Times New Roman or LaTeX default</li>
-              <li><strong>Spacing:</strong> As per Springer LNCS template</li>
-              <li><strong>Margins:</strong> As per Springer LNCS template</li>
-              <li><strong>Figures/Tables:</strong> Properly captioned and referenced</li>
-              <li><strong>References:</strong> Springer LNCS format</li>
-              <li><strong>Extra Pages:</strong> ₹1,770 per page (India) / $40 per page (International)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Pre-Submission Checklist -->
-        <div class="card">
-          <div class="card-header">
-            <h2><i class="fas fa-clipboard-list"></i> Pre-Submission Checklist</h2>
-          </div>
-          <div class="card-body">
-            <div class="checklist-grid">
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> PDF format</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> 6-8 pages</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> Max 10 MB</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> Fonts embedded</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> No transparent images</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> No security protection</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> All authors listed</div>
-              <div class="checklist-item"><i class="fas fa-check-circle"></i> References complete</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div>
-        <!-- Springer Information -->
-        <div class="card">
-          <div class="card-header">
-            <h2><i class="fas fa-book"></i> Springer LNCS Format</h2>
-          </div>
-          <div class="card-body">
-            <ul class="info-list">
-              <li>All accepted papers will be published in <strong>Springer LNCS</strong> (subject to final approval)</li>
-              <li>Authors must follow the Springer LNCS template strictly</li>
-              <li>Papers not following the template may be returned for reformatting</li>
-              <li>Maximum 8 pages allowed (6 pages minimum)</li>
-              <li>Additional page charges apply beyond 6 pages</li>
-            </ul>
-            
-            <div class="alert-box" style="margin-top: 1rem;">
-              <i class="fas fa-globe"></i>
-              <strong>Springer LNCS Guidelines:</strong><br>
-              <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank" style="color: #003366;">
-                View Official Guidelines →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Important Notes -->
-        <div class="card">
-          <div class="card-header">
-            <h2><i class="fas fa-exclamation-triangle"></i> Important Notes</h2>
-          </div>
-          <div class="card-body">
-            <ul class="info-list">
-              <li>Use the template as-is — do not modify style definitions</li>
-              <li>Ensure all fonts are embedded when converting to PDF</li>
-              <li>Remove any document protection before submission</li>
-              <li>Verify images have no transparent pixels</li>
-              <li>Check PDF file size does not exceed 10 MB</li>
-              <li>Papers must be original and unpublished</li>
-              <li>At least one author must register for the conference</li>
-            </ul>
-            
-            <div class="alert-box" style="margin-top: 1rem;">
-              <i class="fas fa-envelope"></i>
-              <strong>Need Help?</strong><br>
-              <a href="mailto:icimsp2027@outr.ac.in">icimsp2027@outr.ac.in</a>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
+
+    
 
 <footer>
-  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
+  <div class="container">
+    <p>&copy; 2027 ICIMSP Organizing Committee | Odisha University of Technology and Research, Bhubaneswar, Odisha, India</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">All rights reserved.</p>
+  </div>
 </footer>
 </body>
 </html>
