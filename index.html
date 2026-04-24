@@ -6,6 +6,202 @@
 <title>ICIMSP 2027 - International Conference on Intelligent Machine & Signal Processing</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  /* Countdown Timer Styles */
+  .countdown-container {
+    background: linear-gradient(135deg, #003366, #004a99);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .countdown-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .countdown-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  .countdown-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Three Column Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .info-card-custom {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .info-card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  
+  .info-card-custom h2 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff8c42;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  .info-card-custom ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .info-card-custom ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.4;
+  }
+  
+  .info-card-custom ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #ff8c42;
+  }
+  
+  .proceedings-content {
+    text-align: center;
+  }
+  
+  .proceedings-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  
+  .proceedings-link {
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+  }
+  
+  .proceedings-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .proceedings-img {
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .proceedings-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    background: #e8f0fe;
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 900px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .countdown-item {
+      padding: 0.8rem 1rem;
+      min-width: 70px;
+    }
+    .countdown-number {
+      font-size: 1.5rem;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+    }
+    .proceedings-img {
+      max-height: 50px;
+    }
+    .proceedings-link {
+      padding: 0.8rem 1rem;
+    }
+  }
+  
+  /* Uniform Buttons */
+  .hero-buttons .btn {
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.65rem 1.3rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  
+  .hero-buttons .btn:hover {
+    background: #004a99;
+  }
+  
+  .hero-buttons .btn.secondary,
+  .hero-buttons .btn.tertiary {
+    background: #003366;
+    color: #fff;
+    border: none;
+  }
+  
+  .hero-buttons .btn.secondary:hover,
+  .hero-buttons .btn.tertiary:hover {
+    background: #004a99;
+  }
+</style>
 </head>
 <body>
 <header>
@@ -46,14 +242,13 @@
   <section class="hero" aria-label="Introduction">
     <div class="container">
       <div class="hero-text">
-        <h2>Connecting Intelligent Machines, AI &amp; Signal Processing</h2>  <!-- Changed to h2 -->
+        <h2>Connecting Intelligent Machines, AI &amp; Signal Processing</h2>
         <p>
           Join researchers, practitioners, and industry to explore advances in autonomous systems,
           AI-driven imaging, and signal processing.
         </p>
         <p>
-          Hybrid participation - in-person and remote, at OUTR, Bhubaneswar, Odisha.        </p>
-        <p> Proceedings Publication: ICIMSP 2027 proceedings will be published in Springer LNCS (Subjected to Final Approval).
+          Hybrid participation - in-person and remote, at OUTR, Bhubaneswar, Odisha.
         </p>
         <div class="hero-buttons">
           <a href="call-for-papers.html" class="btn">Submit Paper</a>
@@ -67,10 +262,39 @@
     </div>
   </section>
 
-  <section class="key-dates" aria-label="Key dates and reasons to attend">
-    <div class="container grid-two-columns">
-      <div>
-        <h2>Key Dates</h2>
+  <!-- Countdown Timer Section -->
+  <div class="container">
+    <div class="countdown-container">
+      <div class="countdown-title">
+        <i class="fas fa-hourglass-half"></i> Conference Starts In
+      </div>
+      <div class="countdown-timer" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three Column Info Grid: Key Dates | Why Attend | Proceedings By -->
+  <div class="container">
+    <div class="info-grid">
+      <!-- Key Dates Column -->
+      <div class="info-card-custom">
+        <h2><i class="far fa-calendar-alt"></i> Key Dates</h2>
         <ul>
           <li><strong>Submission opens:</strong> 15 July 2026</li>
           <li><strong>Submission deadline:</strong> 15 September 2026</li>
@@ -79,18 +303,41 @@
           <li><strong>Conference dates:</strong> 1–3 July 2027</li>
         </ul>
       </div>
-      <div>
-        <h2>Why Attend?</h2>
+
+      <!-- Why Attend Column -->
+      <div class="info-card-custom">
+        <h2><i class="fas fa-star"></i> Why Attend?</h2>
         <ul>
           <li>Plenary talks by international experts</li>
           <li>Workshops, poster sessions, and industry demos</li>
           <li>Student paper contest with cash prizes</li>
           <li>Hybrid participation options</li>
+          <li>Networking with global researchers</li>
+          <li>Publication in Springer LNCS</li>
         </ul>
       </div>
-    </div>
-  </section>
 
+      <!-- Proceedings By Column -->
+      <div class="info-card-custom">
+        <h2><i class="fas fa-book"></i> Proceedings By</h2>
+        <div class="proceedings-content">
+          <div class="proceedings-logos">
+            <a href="https://www.springer.com/series/7899" class="proceedings-link" target="_blank" rel="noopener noreferrer">
+              <img src="images/springer.png" alt="Springer Logo" class="proceedings-img" loading="lazy" />
+            </a>
+            <a href="https://www.springer.com/series/7899" class="proceedings-link" target="_blank" rel="noopener noreferrer">
+              <img src="images/ccis.png" alt="CCIS Logo" class="proceedings-img" loading="lazy" />
+            </a>
+          </div>
+          <div class="proceedings-note">
+            <i class="fas fa-info-circle"></i> ICIMSP 2027 proceedings will be published in <strong>Springer LNCS</strong> (Subjected to Final Approval)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Venue Information -->
   <section class="venue-info" aria-label="Visitor information and venue">
     <div class="container grid-three-cards">
       <article class="info-card">
@@ -111,6 +358,7 @@
     </div>
   </section>
 
+  <!-- Featured Highlights -->
   <section class="featured" aria-label="Featured highlights">
     <div class="container grid-three-cards">
       <article class="card">
@@ -135,5 +383,42 @@
 <footer>
   <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
 </footer>
+
+<script>
+  // Countdown Timer Script
+  function updateCountdown() {
+    // Conference date: 1 July 2027 at 09:00:00
+    const conferenceDate = new Date("July 1, 2027 09:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = conferenceDate - now;
+    
+    if (distance < 0) {
+      // Conference has started
+      document.getElementById('countdown').innerHTML = `
+        <div class="countdown-item">
+          <div class="countdown-number">🎉</div>
+          <div class="countdown-label">Conference Started!</div>
+        </div>
+      `;
+      return;
+    }
+    
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Update the DOM with leading zeros
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+  }
+  
+  // Update countdown every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
