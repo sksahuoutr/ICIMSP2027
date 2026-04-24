@@ -7,10 +7,7 @@
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-  /* Additional registration-specific styles */
-  .registration-pricing {
-    margin: 2rem 0;
-  }
+  /* Registration page specific styles */
   .pricing-table {
     width: 100%;
     border-collapse: collapse;
@@ -20,23 +17,108 @@
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
+  
   .pricing-table th,
   .pricing-table td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #eee;
   }
+  
   .pricing-table th {
     background: #003366;
     color: #fff;
     font-weight: 600;
   }
+  
   .pricing-table tr:last-child td {
     border-bottom: none;
   }
+  
   .pricing-table tr:hover {
     background: #f5f7fa;
   }
+  
+  .reg-note {
+    background: #eef2fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    border-left: 4px solid #003366;
+  }
+  
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    background: #f0f4fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .process-step {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .step-icon {
+    background: #003366;
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  
+  .policy-list {
+    background: #fefaf5;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #ff8c42;
+    margin: 1rem 0;
+  }
+  
+  .policy-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  .reg-cta {
+    background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+    border: 1px solid #d0e0f0;
+  }
+  
+  .reg-button {
+    background: #ff6b00;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 12px;
+    transition: background 0.2s;
+  }
+  
+  .reg-button:hover {
+    background: #e05a00;
+    color: #fff;
+  }
+  
   .registration-form-container {
     background: #fff;
     padding: 2rem;
@@ -44,15 +126,18 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     margin: 2rem 0;
   }
+  
   .form-group {
     margin-bottom: 1.2rem;
   }
+  
   .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: #333;
   }
+  
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -62,23 +147,37 @@
     border-radius: 6px;
     font-size: 1rem;
   }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #003366;
+    box-shadow: 0 0 5px rgba(0,51,102,0.21);
+  }
+  
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+  
   .radio-group {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    flex-wrap: wrap;
   }
+  
   .radio-group label {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-weight: normal;
     margin-bottom: 0;
+    cursor: pointer;
   }
+  
   .submit-btn {
     background: #003366;
     color: #fff;
@@ -90,9 +189,11 @@
     cursor: pointer;
     transition: background 0.2s;
   }
+  
   .submit-btn:hover {
     background: #004a99;
   }
+  
   .note {
     background: #e1eaf8;
     padding: 1rem;
@@ -101,6 +202,7 @@
     font-size: 0.9rem;
     border-left: 4px solid #003366;
   }
+  
   @media (max-width: 700px) {
     .form-row {
       grid-template-columns: 1fr;
@@ -108,6 +210,16 @@
     }
     .registration-form-container {
       padding: 1.5rem;
+    }
+    .process-steps {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .process-step {
+      min-width: auto;
+    }
+    .radio-group {
+      gap: 0.8rem;
     }
   }
 </style>
@@ -130,7 +242,6 @@
       </a>
     </div>
   </div>
-
   <nav aria-label="Main navigation">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
@@ -147,186 +258,123 @@
 
 <main>
   <div class="container">
-    <section aria-label="Registration header">
-      <h1 style="color: #003366; margin: 1.5rem 0 0.5rem 0;">Registration</h1>
-      <p style="font-size: 1.1rem; margin-bottom: 2rem;">Secure your spot at ICIMSP 2027 – Early bird discounts available!</p>
-    </section>
+    <!-- Page Header -->
+    <h1 style="color: #003366; margin: 1.5rem 0 0.5rem 0;">Registration</h1>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Secure your spot at ICIMSP 2027 – Early bird discounts available!</p>
 
-    <section class="registration-pricing" aria-label="Registration fees">
-      <h2>Registration Fees</h2>
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Early Bird (until 31 March 2027)</th>
-            <th>Regular (from 1 April 2027)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Students (Indian)</strong></td>
-            <td>₹ 5,000</td>
-            <td>₹ 6,500</td>
-          </tr>
-          <tr>
-            <td><strong>Academic/Faculty (Indian)</strong></td>
-            <td>₹ 8,000</td>
-            <td>₹ 10,000</td>
-          </tr>
-          <tr>
-            <td><strong>Industry/Corporate (Indian)</strong></td>
-            <td>₹ 12,000</td>
-            <td>₹ 15,000</td>
-          </tr>
-          <tr>
-            <td><strong>International Participants</strong></td>
-            <td>$ 250</td>
-            <td>$ 300</td>
-          </tr>
-          <tr>
-            <td><strong>Listeners/Attendees (without paper)</strong></td>
-            <td>₹ 3,000 / $ 100</td>
-            <td>₹ 4,000 / $ 150</td>
-          </tr>
-          <tr>
-            <td><strong>Virtual/Online Participation</strong></td>
-            <td colspan="2">₹ 2,000 / $ 50</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Registration Fees Table -->
+    <h3>Registration Fees <span style="font-size: 0.9rem; font-weight: normal;">(All INR fees are inclusive of 18% GST)</span></h3>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Author Category</th>
+          <th>India (Early)</th>
+          <th>India (Late)</th>
+          <th>International (Early)</th>
+          <th>International (Late)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Student (Undergraduate only)</strong></td>
+          <td>₹4,000</td>
+          <td>₹5,000</td>
+          <td>$180</td>
+          <td>$200</td>
+        </tr>
+        <tr>
+          <td><strong>Research Scholar / Academician</strong></td>
+          <td>₹5,000</td>
+          <td>₹6,000</td>
+          <td>$200</td>
+          <td>$250</td>
+        </tr>
+        <tr>
+          <td><strong>Industrial Participant</strong></td>
+          <td>₹7,000</td>
+          <td>₹8,000</td>
+          <td>$250</td>
+          <td>$280</td>
+        </tr>
+        <tr>
+          <td><strong>Participants (Co-authors / Others)</strong></td>
+          <td colspan="2">₹3,000</td>
+          <td colspan="2">$100</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="reg-note">
+      <i class="fas fa-info-circle"></i> <strong>Note:</strong> Non-author rates apply to attendees without a registered paper.
+    </div>
 
-      <div class="note">
-        <i class="fas fa-info-circle" style="color: #003366; margin-right: 8px;"></i>
-        <strong>Note:</strong> Registration fee includes conference kit, access to all sessions, lunch, tea/coffee breaks, and certificate of participation. 
-        Accommodation and travel are not included.
+    <!-- What's Included -->
+    <h2>What's Included in Your Registration?</h2>
+    <div class="grid-three-cards" style="margin-bottom: 2rem;">
+      <div class="info-card">
+        <i class="fas fa-chalkboard-user"></i>
+        <h3>Full Access</h3>
+        <p>All technical sessions, keynotes, workshops, and panel discussions</p>
       </div>
-    </section>
-
-    <section aria-label="What's included">
-      <h2>What's Included in Your Registration?</h2>
-      <div class="grid-three-cards" style="margin-bottom: 2rem;">
-        <div class="info-card">
-          <i class="fas fa-chalkboard-user"></i>
-          <h3>Full Access</h3>
-          <p>All technical sessions, keynotes, workshops, and panel discussions</p>
-        </div>
-        <div class="info-card">
-          <i class="fas fa-utensils"></i>
-          <h3>Meals & Breaks</h3>
-          <p>Working lunch and high tea on all conference days</p>
-        </div>
-        <div class="info-card">
-          <i class="fas fa-certificate"></i>
-          <h3>Certificate</h3>
-          <p>Participation/presentation certificate for all attendees</p>
-        </div>
+      <div class="info-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Meals & Breaks</h3>
+        <p>Working lunch and high tea on all conference days</p>
       </div>
-    </section>
+      <div class="info-card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certificate</h3>
+        <p>Participation/presentation certificate for all attendees</p>
+      </div>
+    </div>
 
-    <section class="registration-form-container" aria-label="Registration form">
-      <h2>Register Now</h2>
-      <form action="#" method="post" id="registrationForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" required />
-          </div>
-        </div>
+    <div class="note">
+      <i class="fas fa-info-circle"></i>
+      <strong>Note:</strong> Registration fee includes conference kit, access to all sessions, lunch, tea/coffee breaks, and certificate of participation. Accommodation and travel are not included.
+    </div>
 
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required />
-        </div>
+    <!-- Registration Process -->
+    <h3>Registration Process</h3>
+    <div class="process-steps">
+      <div class="process-step">
+        <span class="step-icon">1</span>
+        <span>Complete the payment via the official payment portal.</span>
+      </div>
+      <div class="process-step">
+        <span class="step-icon">2</span>
+        <span>Fill out the registration form after payment using the link below.</span>
+      </div>
+    </div>
 
-        <div class="form-group">
-          <label for="affiliation">Affiliation/Institution/Organization *</label>
-          <input type="text" id="affiliation" name="affiliation" required />
-        </div>
+    <!-- Key Policies -->
+    <h3>Key Policies</h3>
+    <ul class="policy-list">
+      <li><strong>1. Mandatory Registration:</strong> At least one author per accepted paper must register for inclusion in the proceedings.</li>
+      <li><strong>2. Paper Presentation:</strong> At least one author must present the paper. No-show papers will be excluded.</li>
+      <li><strong>3. Refund Policy:</strong> Registration fees are non-refundable. No cancellations allowed.</li>
+      <li><strong>4. Multiple Papers:</strong> For two papers by the same author, an additional 50% of the base fee will be charged.</li>
+      <li><strong>5. Extra Pages:</strong> ₹1,770 per page (India) / $40 per page (International) beyond 6 pages (max 8 pages).</li>
+      <li><strong>6. Verification:</strong> Students must provide a valid institute ID. IEEE members must provide membership card.</li>
+      <li><strong>7. Certificates:</strong> Presentation certificates issued to presenting authors. Payment receipts provided.</li>
+    </ul>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="country">Country *</label>
-            <select id="country" name="country" required>
-              <option value="">Select Country</option>
-              <option value="India">India</option>
-              <option value="USA">USA</option>
-              <option value="UK">United Kingdom</option>
-              <option value="Canada">Canada</option>
-              <option value="Australia">Australia</option>
-              <option value="Germany">Germany</option>
-              <option value="Japan">Japan</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Category *</label>
-          <div class="radio-group">
-            <label><input type="radio" name="category" value="student" required /> Student</label>
-            <label><input type="radio" name="category" value="academic" /> Academic/Faculty</label>
-            <label><input type="radio" name="category" value="industry" /> Industry</label>
-            <label><input type="radio" name="category" value="listener" /> Listener</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Participation Mode *</label>
-          <div class="radio-group">
-            <label><input type="radio" name="mode" value="in-person" required /> In-Person</label>
-            <label><input type="radio" name="mode" value="online" /> Online/Virtual</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="paperId">Paper ID (if presenting)</label>
-          <input type="text" id="paperId" name="paperId" placeholder="e.g., ICIMSP-001" />
-        </div>
-
-        <div class="form-group">
-          <label for="specialRequests">Special Requests / Dietary Restrictions</label>
-          <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special accommodations or dietary requirements..."></textarea>
-        </div>
-
-        <div class="note">
-          <i class="fas fa-lock" style="color: #003366; margin-right: 8px;"></i>
-          <strong>Secure Payment:</strong> After submitting this form, you will be redirected to our secure payment gateway.
-        </div>
-
-        <button type="submit" class="submit-btn">Proceed to Payment</button>
-      </form>
-    </section>
-
-    <section aria-label="Cancellation policy" style="margin: 2rem 0;">
-      <h2>Cancellation & Refund Policy</h2>
-      <ul style="background: #fff; padding: 1.5rem 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <li>Cancellation before 31 May 2027: 80% refund</li>
-        <li>Cancellation between 1 June – 15 June 2027: 50% refund</li>
-        <li>Cancellation after 15 June 2027: No refund</li>
-        <li>All refunds will be processed within 30 days after the conference</li>
-      </ul>
-    </section>
+   
+    <!-- CTA Box -->
+    <div class="reg-cta">
+      <i class="fas fa-hand-holding-usd" style="font-size: 1.8rem; color:#ff6b00;"></i>
+      <p style="margin: 12px 0;"><strong>Secure your spot at ICIMSP 2027</strong> — early registration discounts available for a limited time.</p>
+      <a href="https://forms.gle/your-registration-link" class="reg-button" target="_blank">Register Now via Google Form</a>
+    </div>
   </div>
 </main>
 
 <footer>
-  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research</p>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
 </footer>
 
 <script>
-  // Simple form validation and submission handling
   document.getElementById('registrationForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Basic validation
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -344,11 +392,7 @@
       return;
     }
     
-    // If validation passes, show success message (in production, this would submit to server)
     alert('Thank you for registering! You will now be redirected to the payment gateway.');
-    
-    // In production, you would submit the form data to your server here
-    // this.submit();
   });
 </script>
 </body>
