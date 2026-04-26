@@ -1,0 +1,135 @@
+:root {
+  --ink: #1f2a44;
+  --accent: #0d7a8a;
+  --accent-soft: #e6f6f8;
+  --paper: #f8fbff;
+  --line: #c9d8eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 10%, #eaf5ff 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, #d6f2ee 0%, transparent 40%),
+    #f1f6fb;
+}
+
+.flyer-wrap {
+  max-width: 940px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.flyer {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 35px rgba(31, 42, 68, 0.14);
+}
+
+.flyer-head {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(125deg, #ffffff, #edf5ff);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  margin: 0.2rem 0 0.6rem;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.subline {
+  margin: 0;
+  font-weight: 600;
+}
+
+.flyer-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.08rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+.dates p {
+  margin: 0.32rem 0;
+}
+
+.actions {
+  padding: 0 1.25rem 1.4rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.64rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #096674;
+}
+
+.btn-secondary {
+  color: var(--ink);
+  border-color: var(--line);
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  background: #f4f8ff;
+}
+
+@media (max-width: 760px) {
+  .flyer-grid {
+    grid-template-columns: 1fr;
+  }
+}
