@@ -35,10 +35,11 @@ body > header, .hero, body > footer {
 
 /* ---------- Header & Navigation ---------- */
 header {
-  background: linear-gradient(180deg, #003366, #002a4a);
-  color: #fff;
+  background: #062a57;
+  color: #ffffff;
   padding: 24px 0 0 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-bottom: 1px solid #0d3d79;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   text-align: center;
 }
 .header-inner {
@@ -58,12 +59,19 @@ header {
   font-size: 2.1rem;
   font-weight: 700;
   letter-spacing: 1.2px;
+  color: #ffffff;
 }
 .header-center p {
   font-size: 1.23rem;
   font-weight: 500;
   margin: 4px 0;
-  opacity: 0.93;
+  opacity: 1;
+  color: #e6eef8;
+}
+/* Normalize home header inline font override */
+.header-center p:first-child {
+  font-size: 1.23rem !important;
+  font-weight: 500 !important;
 }
 
 /* ---------- Navigation Menu ---------- */
@@ -78,17 +86,20 @@ nav[aria-label="Main navigation"] { margin-top: 15px; }
   flex-wrap: wrap;
 }
 .main-nav a {
-  color: #fff;
-  background: transparent;
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
   text-decoration: none;
   font-weight: 600;
   padding: 9px 18px;
   border-radius: 6px;
   display: inline-block;
-  transition: background 0.2s, color 0.2s;
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .main-nav a.active, .main-nav a:hover, .main-nav a:focus {
-  background: #004a99;
+  background: #0b3f7a;
+  color: #ffffff;
+  border-color: #2f66a4;
   outline: none;
 }
 
@@ -98,7 +109,7 @@ nav[aria-label="Main navigation"] { margin-top: 15px; }
 
 /* Add caret indicator for dropdown parents */
 .main-nav .dropdown > a::after {
-  content: " ▾";
+  content: " ▼";
   font-size: 0.9em;
   margin-left: 0.25rem;
 }
@@ -146,7 +157,9 @@ nav[aria-label="Main navigation"] { margin-top: 15px; }
 
 /* Ensure keyboard users can see focus */
 .main-nav .dropdown:focus-within > a {
-  background: #004a99;
+  background: #0b3f7a;
+  color: #ffffff;
+  border-color: #2f66a4;
 }
 
 /* Mobile / narrow screens: let submenu flow in-document */
@@ -166,14 +179,15 @@ nav[aria-label="Main navigation"] { margin-top: 15px; }
   }
   /* make submenu links match nav style on mobile */
   .main-nav .submenu li a {
-    color: #fff;
+    color: #ffffff;
     padding-left: 1.6rem;
-    background: transparent;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.22);
     font-weight: 600;
   }
   .main-nav .submenu li a:hover,
   .main-nav .submenu li a:focus {
-    background: rgba(255,255,255,0.06);
+    background: #0b3f7a;
   }
 }
 
@@ -364,8 +378,9 @@ footer {
   text-align: center;
   padding: 1rem 7px;
   font-size: 0.95rem;
-  color: #666;
-  background: #e9ecef;
+  color: #e6eef8;
+  background: #062a57;
+  border-top: 1px solid #0d3d79;
   margin-top: 2.1rem;
 }
 
@@ -508,4 +523,127 @@ footer {
 .committee-card .info strong {
   color: #003366;
   font-size: 1rem;
+}
+
+/* ---------- Home consistency overrides ---------- */
+.hero {
+  background: #edf3fa;
+}
+.hero-text h2 {
+  color: #0a2f5d;
+}
+.hero-buttons .btn.secondary,
+.hero-buttons .btn.tertiary {
+  border: 1px solid #2f66a4;
+  background: #0b3f7a;
+  color: #ffffff;
+  text-decoration: none;
+}
+.info-card-custom {
+  border-radius: 8px !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05) !important;
+}
+.info-card-custom h2 {
+  color: #0a2f5d !important;
+  border-bottom: 2px solid #2f66a4 !important;
+}
+.countdown-container {
+  background: linear-gradient(135deg, #0a2f5d, #0b3f7a) !important;
+}
+
+/* ---------- Committee page layout fix ---------- */
+.committee-hero {
+  background: #edf3fa;
+  border: 1px solid #d4e1ef;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.6rem;
+  text-align: center;
+  color: #0a2f5d;
+}
+.section-title {
+  color: #0a2f5d;
+  margin: 1.8rem 0 1rem;
+}
+.grid-3cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+.grid-2cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.committee-card-item,
+.advisory-card {
+  background: #ffffff;
+  border: 1px solid #dbe6f2;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+.committee-card-header,
+.advisory-card-header {
+  background: #f2f7fd;
+  border-bottom: 1px solid #dbe6f2;
+  padding: 0.7rem 0.9rem;
+}
+.committee-card-header h2,
+.advisory-card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0a2f5d;
+}
+.committee-card-body,
+.advisory-card-body {
+  padding: 0.85rem 0.95rem;
+}
+.committee-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.committee-list li {
+  margin-bottom: 0.42rem;
+}
+.person-card {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  margin-bottom: 0.65rem;
+}
+.person-photo {
+  width: 75px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #dde6f0;
+}
+.person-info {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.update-note,
+.footer-note {
+  background: #edf3fa;
+  border: 1px solid #d4e1ef;
+  color: #2c4560;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.8rem;
+}
+@media (max-width: 1024px) {
+  .grid-3cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .grid-3cols,
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
 }
