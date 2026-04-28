@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Social Events - ICIMSP 2027</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  /* ========== Social Events Page Specific Styles ========== */
+  
+  /* Hero / intro section for social events */
+  .events-intro {
+    background: linear-gradient(135deg, #f9f7f3 0%, #fff 100%);
+    border-radius: 20px;
+    padding: 2rem 2rem 1.8rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #eaecef;
+  }
+  
+  .events-intro p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #2c3e4e;
+  }
+  
+  /* Two-column layout for social cards */
+  .social-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .social-card {
+    flex: 1;
+    min-width: 280px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e9edf2;
+  }
+  
+  .social-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 32px rgba(0,0,0,0.12);
+  }
+  
+  .card-header {
+    background: #003366;
+    padding: 1.2rem 1.5rem;
+    color: white;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .card-header h2 i {
+    font-size: 1.7rem;
+    color: #ffd966;
+  }
+  
+  .card-header .event-date {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 30px;
+  }
+  
+  .card-body {
+    padding: 1.6rem 1.8rem 1.8rem;
+  }
+  
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.4rem 0;
+  }
+  
+  .highlight-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    color: #1e2f3a;
+  }
+  
+  .highlight-list li i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #003366;
+    font-size: 1rem;
+    width: 20px;
+  }
+  
+  .badge-included {
+    background: #e6f4ea;
+    color: #1e6f3f;
+    border-radius: 40px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .badge-included i {
+    margin-right: 6px;
+    font-size: 0.8rem;
+  }
+  
+  .temples-glimpse {
+    background: #fef7e0;
+    border-radius: 18px;
+    padding: 0.2rem 1.2rem 0.8rem 1.2rem;
+    margin-top: 1.2rem;
+    border-left: 4px solid #d4a373;
+  }
+  
+  .temples-glimpse p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .venue-highlight {
+    background: #f0f4fa;
+    border-radius: 16px;
+    padding: 0.8rem 1.2rem;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .venue-highlight i {
+    font-size: 1.4rem;
+    color: #003366;
+  }
+  
+  .venue-highlight span {
+    font-weight: 600;
+    color: #003366;
+  }
+  
+  .btn-event {
+    display: inline-block;
+    margin-top: 1.2rem;
+    background: transparent;
+    border: 2px solid #003366;
+    color: #003366;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  
+  .btn-event:hover {
+    background: #003366;
+    color: #fff;
+  }
+  
+  .extra-note {
+    background: #eef2fa;
+    padding: 1.2rem 1.8rem;
+    border-radius: 18px;
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+    border: 1px solid #dce3ec;
+  }
+  
+  .extra-note i {
+    margin-right: 10px;
+    color: #003366;
+  }
+  
+  /* Responsive */
+  @media (max-width: 780px) {
+    .social-grid {
+      flex-direction: column;
+    }
+    .card-header h2 {
+      font-size: 1.3rem;
+    }
+    .card-body {
+      padding: 1.2rem;
+    }
+  }
+  
+  /* global consistency with original header/footer */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .btn, .btn-outline {
+    transition: all 0.2s;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+    <div class="header-center">
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="social-events.html" class="active">Social Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Social Events Hero / Description -->
+    <div class="events-intro">
+      <h1 style="color: #003366; margin-bottom: 0.5rem;"><i class="fas fa-glass-cheers"></i> Social Events @ ICIMSP 2027</h1>
+      <p>ICIMSP features a thoughtfully curated social programme that encourages networking, collaboration, and informal engagement beyond the technical sessions. These events also offer a chance to experience the cultural richness of <strong>Bhubaneswar — the Temple City of India</strong>.</p>
+      <p style="margin-bottom: 0;">All registered attendees are warmly invited to join these memorable gatherings, included with your conference registration.</p>
+    </div>
+
+    <!-- Two main event cards -->
+    <div class="social-grid">
+      <!-- Cultural Tour Card -->
+      <div class="social-card">
+        <div class="card-header">
+          <h2><i class="fas fa-landmark"></i> Cultural Tour – Temples of Bhubaneswar</h2>
+          <div class="event-date"><i class="far fa-calendar-alt"></i> Friday, 2 July 2027 | Afternoon/Evening (TBC)</div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:1rem; font-weight:500; margin-bottom:1rem;"><i class="fas fa-route" style="color:#003366; margin-right:8px;"></i> A guided journey through Kalingan architectural splendour</p>
+          <ul class="highlight-list">
+            <li><i class="fas fa-arrow-right"></i> Guided visits to renowned temples, including <strong>Lingaraj, Mukteshvara, and Rajarani</strong></li>
+            <li><i class="fas fa-history"></i> Insights into Kalingan architecture and regional history from expert guides</li>
+            <li><i class="fas fa-user-friends"></i> Relaxed setting for informal interactions with fellow participants from across the globe</li>
+            <li><i class="fas fa-camera-retro"></i> Ample photography opportunities at heritage marvels</li>
+          </ul>
+          <div class="temples-glimpse">
+            <p><i class="fas fa-info-circle"></i> <strong>Did you know?</strong> Bhubaneswar is known as the "Temple City of India", with over 500 ancient temples showcasing exquisite Kalingan architecture. Our tour focuses on the most iconic masterpieces.</p>
+          </div>
+          <div class="badge-included"><i class="fas fa-ticket-alt"></i> Included with conference registration</div>
+          <div style="margin-top: 16px;">
+            <span class="badge-included" style="background:#e9ecef; color:#2c3e4f;"><i class="fas fa-bus"></i> Transport & entry included</span>
+          </div>
+          <a href="#" class="btn-event"><i class="fas fa-calendar-week"></i> Add to schedule</a>
+        </div>
+      </div>
+
+      <!-- Welcome Reception & Gala Dinner Card -->
+      <div class="social-card">
+        <div class="card-header">
+          <h2><i class="fas fa-utensils"></i> Welcome Reception & Gala Dinner</h2>
+          <div class="event-date"><i class="far fa-calendar-alt"></i> Monday, 3 July 2027 | Evening (TBC)</div>
+        </div>
+        <div class="card-body">
+          <div class="venue-highlight">
+            <i class="fas fa-location-dot"></i>
+            <span>Venue: The Sky Lantern, Bhubaneswar</span> 
+            <span style="font-size:0.85rem; font-weight:normal;">(Panoramic city views & elegant ambience)</span>
+          </div>
+          <ul class="highlight-list">
+            <li><i class="fas fa-champagne-glasses"></i> Formal sit-down gala dinner with curated multi-course menu</li>
+            <li><i class="fas fa-award"></i> Awards and recognition ceremony for outstanding contributions & student paper contest winners</li>
+            <li><i class="fas fa-users"></i> Networking with keynote speakers, senior researchers, industry leaders, and peers</li>
+            <li><i class="fas fa-handshake"></i> Opportunity to connect with attendees and organisers in an elegant setting</li>
+            <li><i class="fas fa-music"></i> Live cultural performances reflecting Odisha’s rich heritage</li>
+          </ul>
+          <div class="badge-included"><i class="fas fa-ticket-alt"></i> Both Welcome Reception & Gala Dinner — included with registration</div>
+          <div style="margin-top: 12px;">
+            <span class="badge-included" style="background:#f1e5d3; color:#8a5a2b;"><i class="fas fa-wine-glass-alt"></i> Dress code: Smart casual / Festive attire</span>
+          </div>
+          <a href="#" class="btn-event"><i class="fas fa-map-marker-alt"></i> View venue preview</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Joint highlights and extra networking info -->
+    <div class="extra-note">
+      <i class="fas fa-exchange-alt"></i> <strong>Connect & Celebrate:</strong> Both events are designed to foster meaningful connections — whether sharing stories at ancient temples or toasting breakthroughs at the gala dinner. <strong>Your registration includes access to all social events.</strong> Accompanying guests may register separately (contact us for details).
+    </div>
+
+    <!-- cultural schedule details in a charming row -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0 1rem;">
+      <div style="flex:1; min-width: 200px; background: #fef9ef; border-radius: 20px; padding: 1rem 1.5rem; border: 1px solid #ffe0b5;">
+        <i class="fas fa-clock" style="font-size: 1.6rem; color: #b4652d;"></i>
+        <h3 style="margin: 10px 0 5px 0; font-size: 1.1rem;">Tour highlights snapshot</h3>
+        <p style="font-size:0.9rem"><strong>Lingaraj Temple:</strong> 11th-century marvel, 55m high tower<br>
+        <strong>Mukteshvara Temple:</strong> "Gem of Kalingan architecture" with torana arch<br>
+        <strong>Rajarani Temple:</strong> Known for ornate sculptures, serene garden setting</p>
+      </div>
+      <div style="flex:1; min-width: 200px; background: #eff3f8; border-radius: 20px; padding: 1rem 1.5rem; border: 1px solid #cbdbe2;">
+        <i class="fas fa-drumstick-bite" style="font-size: 1.6rem; color: #003366;"></i>
+        <h3 style="margin: 10px 0 5px 0; font-size: 1.1rem;">Gala dinner experience</h3>
+        <p style="font-size:0.9rem">Authentic Odia cuisine alongside global favourites. Dietary preferences can be accommodated — please indicate during registration.</p>
+      </div>
+      <div style="flex:1; min-width: 200px; background: #e9f2ef; border-radius: 20px; padding: 1rem 1.5rem; border: 1px solid #bfd9cf;">
+        <i class="fas fa-people-arrows" style="font-size: 1.6rem; color: #2c6e4e;"></i>
+        <h3 style="margin: 10px 0 5px 0; font-size: 1.1rem;">Why attend?</h3>
+        <p style="font-size:0.9rem">Share insights with leading researchers, build collaborations for future projects, and create lasting memories in Bhubaneswar’s cultural heart.</p>
+      </div>
+    </div>
+
+    <!-- Quick info / Timing reminder block -->
+    <div style="border-top: 2px dashed #d4dee8; margin: 0.8rem 0 1.5rem; padding: 1rem 0 0.5rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+        <div><i class="fas fa-question-circle" style="color: #003366;"></i> <strong>Need assistance?</strong> Social events coordination desk: <i class="fas fa-envelope"></i> social@icimsp2027.org</div>
+        <div><i class="fas fa-clock"></i> Final timings will be updated on the conference schedule by May 2027.</div>
+      </div>
+    </div>
+
+    <!-- Registration callout (connects to registration page) -->
+    <div class="springer-notice" style="background: #e9f0f5; border-left-color:#d4af37; margin-top: 0.5rem; margin-bottom: 2rem;">
+      <i class="fas fa-hand-holding-heart"></i> <strong>Don't miss out:</strong> All social activities are covered under conference registration. <a href="registration.html" style="color: #003366; font-weight: 600; text-decoration: underline;">Register now</a> to secure your spot at the Cultural Tour and Gala Dinner. Early bird registration closes 31 March 2027.
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
+</footer>
+
+</body>
+</html>
