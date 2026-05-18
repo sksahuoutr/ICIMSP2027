@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Call for Papers - ICIMSP 2027</title>
+<title>Committees - ICIMSP 2027</title>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-  /* Call for Papers specific styles */
+  /* Committee page specific styles */
   .springer-notice {
     background: #e8f0fe;
     border-left: 5px solid #003366;
@@ -108,6 +108,201 @@
     display: inline-block;
     color: #003366;
   }
+
+  /* Committee styles */
+  .committee-card-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .committee-card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .committee-card-header {
+    background: #003366;
+    color: #fff;
+    padding: 0.9rem 1.2rem;
+  }
+  /* Ensure all heading text inside header is white */
+  .committee-card-header h2, 
+  .committee-card-header h3, 
+  .committee-card-header .heading-text {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff !important;
+  }
+  .committee-card-header i {
+    color: #ffffff;
+  }
+  .committee-card-header h3 {
+    font-size: 1rem;
+  }
+  .committee-card-body {
+    padding: 1.2rem;
+    flex: 1;
+  }
+  .person-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #eee;
+  }
+  .person-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .person-photo {
+    width: 60px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f0f0f0;
+    flex-shrink: 0;
+  }
+  .person-info {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .person-info strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #003366;
+    margin-bottom: 4px;
+  }
+  .person-dept {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 2px;
+  }
+  .committee-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .committee-list li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .committee-list li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #003366;
+  }
+  .committee-list strong {
+    color: #003366;
+  }
+  .grid-4cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .grid-3cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .grid-2cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  /* Specific 3-col layout for TPC: first column chairs, next two columns members */
+  .tpc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    color: #003366;
+    border-left: 5px solid #003366;
+    padding-left: 1rem;
+    margin: 2rem 0 1.5rem 0;
+  }
+  .footer-note {
+    background: #eef2f7;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+  .committee-hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+  }
+  .committee-hero h1 {
+    margin: 0.5rem 0 0;
+    color: #003366;
+  }
+  .two-column-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .two-column-list ul {
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .tpc-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 768px) {
+    .grid-4cols, .grid-3cols, .grid-2cols { grid-template-columns: 1fr; }
+    .person-card { flex-direction: column; text-align: center; align-items: center; }
+    .person-photo { margin-bottom: 8px; }
+    .two-column-list { grid-template-columns: 1fr; }
+  }
+  .affiliation-text {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-top: 2px;
+  }
+  .member-name {
+    font-weight: 600;
+    color: #003366;
+  }
+  /* Split members into two equal columns */
+  .members-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1rem;
+  }
+  .members-two-col ul {
+    margin: 0;
+  }
+  @media (max-width: 600px) {
+    .members-two-col {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -132,14 +327,13 @@
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="call-for-papers.html" class="active">Call for Papers</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
       <li><a href="speakers.html">Speakers</a></li>
       <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="committee.html">Committee</a></li>
+      <li><a href="committee.html" class="active">Committee</a></li>
       <li><a href="sponsorship.html">Sponsorship</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="social-events.html" class="active">Social Events</a></li>
-
+      <li><a href="social-events.html">Social Events</a></li>
     </ul>
   </nav>
 </header>
@@ -153,300 +347,287 @@
       <p>Distinguished experts and leaders shaping ICIMSP 2027</p>
     </div>
 
-    <!-- Organizing Committee - 3 Column Grid for Leadership -->
-    <h2 class="section-title">Organizing Committee</h2>
+    <!-- Leadership Section -->
+    <h2 class="section-title">Leadership</h2>
     <div class="grid-3cols">
-      <!-- Chief Patron Card -->
+      <!-- Chief Patron -->
       <div class="committee-card-item">
         <div class="committee-card-header">
           <h2><i class="fas fa-crown"></i> Chief Patron</h2>
         </div>
         <div class="committee-card-body">
           <div class="person-card">
-            <img class="person-photo" src="images/vc.png" alt="Prof. Bibhuti Bhusan Biswal" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/vc.png" alt="Prof. Bibhuti Bhusan Biswal" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Bibhuti Bhusan Biswal</strong>
-              Vice Chancellor, OUTR, Bhubaneswar, India
+              Vice Chancellor
+              <span class="affiliation-text">Odisha University of Technology and Research, Bhubaneswar, India</span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- General Chair Card -->
+      <!-- General Chairs -->
       <div class="committee-card-item">
         <div class="committee-card-header">
-          <h2><i class="fas fa-chair"></i> General Chair</h2>
+          <h2><i class="fas fa-chair"></i> General Chairs</h2>
         </div>
         <div class="committee-card-body">
           <div class="person-card">
-            <img class="person-photo" src="images/Yudong.jpg" alt="Prof. Yudong Zhang" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/Yudong.jpg" alt="Prof. Yudong Zhang" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Yudong Zhang</strong>
-              School of Computing and Mathematical Sciences, University of Leicester, UK
+              School of Computing and Mathematical Sciences
+              <span class="affiliation-text">University of Leicester, United Kingdom</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- General Co-Chair Card -->
-      <div class="committee-card-item">
-        <div class="committee-card-header">
-          <h2><i class="fas fa-chair"></i> General Co-Chair</h2>
-        </div>
-        <div class="committee-card-body">
           <div class="person-card">
-            <img class="person-photo" src="images/Gautam_Srivastava.jpg" alt="Prof. Gautam Srivastava" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/Gautam_Srivastava.jpg" alt="Prof. Gautam Srivastava" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Gautam Srivastava</strong>
-              Mathematics and Computer Science Department, Brandon University, Manitoba, Canada
+              Department of Mathematics and Computer Science
+              <span class="affiliation-text">Brandon University, Canada</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 3 Column Grid for Conference Convenors, Event Management, Industry Liaison -->
-    <div class="grid-3cols">
-      <!-- Conference Convenors Card -->
+      <!-- Program Chairs -->
       <div class="committee-card-item">
         <div class="committee-card-header">
-          <h2><i class="fas fa-users"></i> Conference Convenors</h2>
+          <h2><i class="fas fa-code-branch"></i> Program Chairs</h2>
+        </div>
+        <div class="committee-card-body">
+          <ul class="committee-list">
+            <li><strong>Prof. Md Fazley Rafy</strong><br>Department of Computer Science, West Virginia University, USA</li>
+            <li><strong>Prof. Turgay Celik</strong><br>Department of Engineering Sciences, University of Agder, Norway</li>
+            <li><strong>Prof. Ruppa Thulasiram</strong><br>Department of Computer Science, University of Manitoba, Canada</li>
+            <li><strong>Prof. Sanjib Kumar Panda</strong><br>Department of Electrical and Computer Engineering, National University of Singapore, Singapore</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organizing & Operations -->
+    <h2 class="section-title">Organizing & Operations</h2>
+    <div class="grid-3cols">
+      <!-- Organizing Chairs -->
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-users"></i> Organizing Chairs / Conference Convenors</h2>
         </div>
         <div class="committee-card-body">
           <div class="person-card">
-            <img class="person-photo" src="images/tkp.jpg" alt="Prof. Tapas Kumar Patra" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/tkp.jpg" alt="Prof. Tapas Kumar Patra" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Tapas Kumar Patra</strong>
-              School of Electronic Sciences, OUTR, Bhubaneswar, India
+              School of Electronic Sciences, OUTR, India
             </div>
           </div>
           <div class="person-card">
-            <img class="person-photo" src="images/jmishra.jpg" alt="Prof. Jibitesh Mishra" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/jmishra.jpg" alt="Prof. Jibitesh Mishra" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Jibitesh Mishra</strong>
-              School of Computer Sciences, OUTR, Bhubaneswar, India
+              School of Computer Sciences, OUTR, India
             </div>
           </div>
           <div class="person-card">
-            <img class="person-photo" src="images/sks.jpg" alt="Prof. Sushanta Kumar Sahu" onerror="this.src='https://via.placeholder.com/75x85?text=Photo'">
+            <img class="person-photo" src="images/sks.jpg" alt="Prof. Sushanta Kumar Sahu" onerror="this.src='https://via.placeholder.com/60x70?text=Photo'">
             <div class="person-info">
               <strong>Prof. Sushanta Kumar Sahu</strong>
-              School of Electronic Sciences, OUTR, Bhubaneswar, India
+              School of Electronic Sciences, OUTR, India
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Event Management Committee Card -->
+      <!-- Publication Chairs -->
       <div class="committee-card-item">
         <div class="committee-card-header">
-          <h2><i class="fas fa-calendar-alt"></i> Event Management Committee</h2>
+          <h2><i class="fas fa-book-open"></i> Publication Chairs</h2>
         </div>
         <div class="committee-card-body">
           <ul class="committee-list">
-            <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-            <li>Prof. Rashmita Routray, SELS, OUTR</li>
+            <li><strong>Prof. Lalit Garg</strong><br>Faculty of ICT, University of Malta, Malta</li>
+            <li><strong>Prof. Satchidananda Dehuri</strong><br>Dept. of Computer Science, Fakir Mohan University, India</li>
+            <li><strong>Dr. Anji Reddy Vaka</strong><br>Dept. of CSE, Lendi Institute of Engineering and Technology, India</li>
+            <li><strong>Dr. Gyanendra Verma</strong><br>Dept. of IT, NIT Raipur, India</li>
+            <li><strong>Prof. Sushanta Kumar Sahu</strong><br>School of Electronic Sciences, OUTR, India</li>
           </ul>
         </div>
       </div>
-      
-      <!-- Industry Liaison Card -->
+      <!-- Finance & Sponsorship -->
       <div class="committee-card-item">
         <div class="committee-card-header">
-          <h2><i class="fas fa-handshake"></i> Industry Liaison</h2>
+          <h2><i class="fas fa-chart-line"></i> Finance & Sponsorship Chairs</h2>
         </div>
         <div class="committee-card-body">
           <ul class="committee-list">
-            <li><strong>Nilesh Bhandarwar</strong>, Senior Software Engineer, Microsoft, United States</li>
-            <li>Ravinder Singh Rathore</strong>, Senior Engineer, Minnesota, United States</li>
-            <li><strong>More Coming Soon</strong></li>
-            <li>For sponsorship inquiries, please contact us</li>
+            <li><strong>Prof. Lalit Goel</strong><br>School of EEE, NTU, Singapore</li>
+            <li><strong>Prof. Chanchal Roy</strong><br>Dept. of Computer Science, University of Saskatchewan, Canada</li>
+            <li><strong>Prof. Jagannath Sethi</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Ananya Dastidar</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Biswajit Samantaray</strong><br>School of Basic Sciences and Humanities, OUTR, India</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Advisory Committee - 3 Column Grid -->
-    <h2 class="section-title">Advisory Committee</h2>
+    <!-- Technical Program Committee - 3 column grid: First column Chairs, next two columns Members -->
+    <h2 class="section-title">Technical Program Committee</h2>
+    <div class="tpc-grid">
+      <!-- Column 1: TPC Chairs (including all chair-level members) -->
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-laptop-code"></i> TPC Chairs</h2>
+        </div>
+        <div class="committee-card-body">
+          <ul class="committee-list">
+            <li><strong>Dr. Chandrasekhar Perumalla (Chair)</strong><br>Dept. of CSE, IIT Bhubaneswar, India</li>
+            <li><strong>Prof. Rajib Kumar Panigrahi</strong><br>Dept. of ECE, IIT Roorkee, India</li>
+            <li><strong>Prof. Aruna Tripathy</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Aurobinda Routray</strong><br>Dept. of Electrical Engg., IIT Kharagpur</li>
+            <li><strong>Prof. Raja Datta</strong><br>Dept. of ECE, IIT Kharagpur</li>
+            <li><strong>Dr. Debi Prasanna Kanungo</strong><br>CSIR-CBRI, Roorkee</li>
+            <li><strong>Hare Krishna Ratha</strong><br>IEEE Bhubaneswar Section</li>
+            <li><strong>Dr. P. Sumathi</strong><br>IIT Roorkee</li>
+            <li><strong>Prof. K. P. Ray</strong><br>IIT Gandhinagar</li>
+            <li><strong>Prof. Padmalochan Bera</strong><br>IIT Bhubaneswar</li>
+            <li><strong>Prof. Manoj Tripathy</strong><br>IIT Roorkee</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Column 2: TPC Members (first half) -->
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-microchip"></i> TPC Members</h2>
+        </div>
+        <div class="committee-card-body">
+          <ul class="committee-list">
+            <li><strong>Dr. Amit Rathi</strong><br>Dept. of ECE, Manipal University Jaipur</li>
+            <li><strong>Dr. M. Giri</strong><br>Dept. of AI & CS, Mother Theresa IET</li>
+            <li><strong>Dr. S. Mangayarkarasi</strong><br>Dept. of Advanced Computing, VISTAS</li>
+            <li><strong>Dr. N. Moganarangan</strong><br>Dept. of CSE, Sri Manakula Vinayagar EC</li>
+            <li><strong>Dr. V. J. Chakravarthy</strong><br>Faculty of Computer Applications, Dr. M.G.R. University</li>
+            <li><strong>Dr. Saipriya Vissapragada</strong><br>Dept. of CSE, Srinivasa IET</li>
+            <li><strong>Dr. T. V. Ananthan</strong><br>Dept. of AI, Dr. M.G.R. University</li>
+            <li><strong>Dr. Chandra Prakash Gupta</strong><br>School of Computing, Madanapalle ITS</li>
+            <li><strong>Dr. R. Kaviyarasi</strong><br>Dept. of CS & IT, Yenepoya University</li>
+            <li><strong>Dr. J. Thasleen Fathima</strong><br>Dept. of IT, Hajee Karutha College</li>
+            <li><strong>Dr. Gowri Choudhary</strong><br>Dept. of CSE, Rajasthan Technical University</li>
+            <li><strong>Dr. Nimisha</strong><br>Applied Sciences, ABES Engineering College</li>
+            <li><strong>Dr. Elangovan Guruva Reddy</strong><br>Dept. of CSE, KL University</li>
+            <li><strong>Dr. Mrinal Paliwal</strong><br>Dept. of CSE, Chitkara University</li>
+            <li><strong>Dr. Jenifer M.</strong><br>Dept. of AI & DS, Akshaya CET</li>
+	<li><strong>Dr. R. Varalakshmi</strong> SDNB Vaishnav College for Women</li>
+	<li><strong>Dr. Chetna Laroiya</strong>Jagan Institute of Management Studies, Rohini, Delhi, India</li>
+	<li><strong>Dr. Shaik Munawar</strong> CMR Engineering College, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Column 3: TPC Members (second half) -->
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-microchip"></i> TPC Members</h2>
+        </div>
+        <div class="committee-card-body">
+          <ul class="committee-list">
+            <li><strong>Dr. Sundar Rajan M.</strong><br>Dept. of EEE, Akshaya CET</li>
+            <li><strong>Dr. Chetna Laroiya</strong><br>Dept. of IT, JIMS Delhi</li>
+            <li><strong>Dr. Sesha Bhargavi Velagaleti</strong><br>Dept. of IT, GNITS</li>
+            <li><strong>Dr. Aditya Dubey</strong><br>Dept. of Cyber Security, NFSU Jaipur</li>
+            <li><strong>Dr. Ashwini S.</strong><br>Dept. of Computer Technology, SRM IST</li>
+            <li><strong>Dr. Harinee S.</strong><br>Dept. of CSE, JAIN University</li>
+            <li><strong>Dr. Hema Deenadayalan</strong><br>Dept. of CS, Sri Ramakrishna College</li>
+            <li><strong>Dr. Naitik S. T.</strong><br>Dept. of CSE, Dayananda Sagar University</li>
+            <li><strong>Dr. P. Ramya</strong><br>Dept. of CSE, Anna University</li>
+            <li><strong>Dr. Roohi Ali</strong><br>Dept. of MCA, Govt. Geetanjali Girls College</li>
+            <li><strong>Dr. Sunilgar Laxmangar Gusai</strong><br>Faculty of Computer Applications, Marwadi University</li>
+            <li><strong>Dr. Vinayagam P. S.</strong><br>Dept. of CS, Pondicherry University Community College</li>
+            <li><strong>Dr. Asha Rajaram Patil</strong><br>Dept. of Computer Applications, IMRD Shirpur</li>
+            <li><strong>Dr. Malathi T.</strong><br>Dept. of ECE, Sathyabama IST</li>
+            <li><strong>Prof. Naresh Chandra Naik</strong><br>School of Electronic Sciences, OUTR</li>
+            <li><strong>Prof. Rashmita Routray</strong><br>School of Electronic Sciences, OUTR</li>
+		<li><strong>Abhishek Verma</strong> Product Development & Management, DISH Wireless, India</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry & Special Sessions -->
     <div class="grid-3cols">
-      <!-- International Advisory -->
-      <div class="advisory-card">
-        <div class="advisory-card-header">
-          <h3><i class="fas fa-globe-americas"></i> International Advisory</h3>
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-industry"></i> Industry Liaison Chairs</h2>
         </div>
-        <div class="advisory-card-body">
+        <div class="committee-card-body">
           <ul class="committee-list">
-            <li><strong>Prof. Md Fazley Rafy</strong>, West Virginia University, USA</li>
-            <li><strong>Prof. Turgay Celik</strong>, University of Agder, Norway</li>
-            <li><strong>Prof. Ruppa Thulasiram</strong>, University of Manitoba, Canada</li>
-            <li><strong>Prof. Sanjib Kumar Panda</strong>, NUS, Singapore</li>
-            <li><strong>Prof. Lalit Goel</strong>, NTU, Singapore</li>
-            <li><strong>Prof. Gautam Srivastava</strong>, Brandon University, Canada</li>
-            <li><strong>Prof. Chanchal Roy</strong>, University of Saskatchewan, Canada</li>
-            <li><strong>Mr. Janmejaya Mishra</strong>, Principal Engineer, Strategic Education Inc, USA</li>
+            <li><strong>Nilesh Bhandarwar</strong><br>Senior Software Engineer, Microsoft, USA</li>
+            <li><strong>Ravinder Singh Rathore</strong><br>Senior Engineer, Minnesota, USA</li>
+            <li><strong>Janmejaya Mishra</strong><br>Principal Engineer, Strategic Education Inc., USA</li>
+            <li><strong>Shubham Gupta</strong><br>Analytics and AI Leader, Noblesoft Solutions Inc., USA</li>
+            <li><strong>Swarun Kumar Joginpelly</strong><br>Development Leader, SNHU, USA</li>
+            <li><strong>Yogesh Ramaswamy</strong><br>Independent Infrastructure Engineering Consultant, USA</li>
           </ul>
         </div>
       </div>
-
-      <!-- National Advisory Committee -->
-      <div class="advisory-card">
-        <div class="advisory-card-header">
-          <h3><i class="fas fa-flag-checkered"></i> National Advisory</h3>
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-chalkboard"></i> Keynotes, Tutorials & Workshops Chairs</h2>
         </div>
-        <div class="advisory-card-body">
+        <div class="committee-card-body">
           <ul class="committee-list">
-            <li><strong>Prof. Aurobinda Routray</strong>, IIT Kharagpur</li>
-            <li><strong>Prof. Raja Datta</strong>, IIT Kharagpur</li>
-            <li><strong>Dr. Debi Prasanna Kanungo</strong>, CSIR-CBRI, Roorkee</li>
-            <li><strong>Hare Krishna Ratha</strong>, Advisor - IEEE Bhubaneswar Section</li>
-            <li><strong>Dr. R. K. Panigrahi</strong>, IIT Roorkee</li>
-            <li><strong>Dr. P. Sumathi</strong>, IIT Roorkee</li>
-            <li><strong>Prof. K. P. Ray</strong>, IIT Gandhinagar</li>
-            <li><strong>Prof. Padmalochan Bera</strong>, IIT Bhubaneswar</li>
-            <li><strong>Prof. Manoj Tripathy</strong>, IIT Roorkee</li>
-            <li><strong>Dr. Chandrasekhar Perumalla</strong>, IIT Bhubaneswar</li>
+            <li><strong>Prof. Madhab Chandra Tripathy</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Kanhu Charan Bhuyan</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Rashmi Rekha Sahoo</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Suman Bala Behera</strong><br>School of Electronic Sciences, OUTR, India</li>
           </ul>
-          <div class="update-note"><i class="fas fa-clock"></i> More updates soon</div>
         </div>
       </div>
-
-      <!-- University Advisory Committee -->
-      <div class="advisory-card">
-        <div class="advisory-card-header">
-          <h3><i class="fas fa-university"></i> University Advisory</h3>
+      <div class="committee-card-item">
+        <div class="committee-card-header">
+          <h2><i class="fas fa-file-signature"></i> Submission & Proceedings Chairs</h2>
         </div>
-        <div class="advisory-card-body">
+        <div class="committee-card-body">
           <ul class="committee-list">
-            <li><strong>Prof. Aruna Tripathy</strong>, Dean PG Studies & Research, OUTR</li>
-            <li><strong>Prof. Ranjan Kumar Jena</strong>, Dean Academic Affairs, OUTR</li>
-            <li><strong>Prof. Ajit Kumar Barisal</strong>, Dean Sponsored Research, OUTR</li>
-            <li><strong>Prof. Jibitesh Mishra</strong>, Dean Students Welfare, OUTR</li>
-            <li><strong>Prof. Tapas Kumar Patra</strong>, Dean CDCE, OUTR</li>
-            <li><strong>Prof. Pramod Kumar Parida</strong>, Dean Faculty and Planning</li>
-            <li><strong>Prof. Lokanath Tripathy</strong>, Head SELS, OUTR</li>
-            <li><strong>Prof. Madhab Chandra Tripathy</strong>, Head SESC, OUTR</li>
-            <li><strong>Prof. Ranjan Kumar Dash</strong>, Head SCS, OUTR</li>
-            <li><strong>Prof. Sudhansu Sekhar Sahoo</strong>, Head SMS, OUTR</li>
-            <li><strong>Prof. Sabita Dash</strong>, Head SIP, OUTR</li>
-            <li><strong>Prof. Bijnyan Ranjan Das</strong>, Head SBSH, OUTR</li>
-            <li><strong>Prof. Ranjan Kumar Pradhan</strong>, Head Biotechnology, OUTR</li>
+            <li><strong>Prof. Karmila Soren</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Rashmita Routray</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Abhyarthana Bisoyi</strong><br>School of Electronic Sciences, OUTR, India</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Overall Organizing Committee - 2 Column Grid for better readability -->
-    <h2 class="section-title">Overall Organizing Committee</h2>
+    <!-- Publicity & Hospitality -->
     <div class="grid-2cols">
-      <!-- Column 1 -->
       <div class="committee-card-item">
-        <div class="committee-card-header">
-          <h2><i class="fas fa-tasks"></i> Technical Program Chairs</h2>
-        </div>
-        <div class="committee-card-body">
-          <ul class="committee-list">
-            <li>Dr. Chandrasekhar Perumalla (Chair), IIT Bhubaneswar</li>
-            <li>Dr. Rajib Kumar Panigrahi, Professor, IIT Roorkee</li>
-            <li>Prof. Aruna Tripathy, SELS, OUTR</li>
-          </ul>
-        </div>
-        
-        <div class="committee-card-header">
-          <h2><i class="fas fa-chalkboard-user"></i> Keynotes, Tutorials & Workshops</h2>
-        </div>
-        <div class="committee-card-body">
-          <ul class="committee-list">
-            <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
-            <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
-            <li>Prof. Rashmi Rekha Sahoo, SELS, OUTR</li>
-            <li>Prof. Suman Bala Behera, SELS, OUTR</li>
-          </ul>
-        </div>
-        
-        <div class="committee-card-header">
-          <h2><i class="fas fa-dollar-sign"></i> Finance, Sponsorship & Industry Liaison</h2>
-        </div>
-        <div class="committee-card-body">
-          <ul class="committee-list">
-            <li>Prof. Sushanta Kumar Sahu, SELS, OUTR</li>
-            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-            <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-            <li>Prof. Biswajit Samantaray, SBSH, OUTR</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="committee-card-item">
-        <div class="committee-card-header">
-          <h2><i class="fas fa-file-alt"></i> Submission & Publication Chairs</h2>
-        </div>
-        <div class="committee-card-body">
-          <ul class="committee-list">
-            <li>Prof. Karmila Soren, SELS, OUTR</li>
-            <li>Prof. Rashmita Routray, SELS, OUTR</li>
-            <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
-          </ul>
-        </div>
-        
         <div class="committee-card-header">
           <h2><i class="fas fa-globe"></i> Website & Publicity Chairs</h2>
         </div>
         <div class="committee-card-body">
           <ul class="committee-list">
-            <li>Prof. Satyabhama Dash, SELS, OUTR</li>
-            <li>Prof. Debi Prasad Dash, SELS, OUTR</li>
-            <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
-            <li>Prof. Kamalesh Chandra Rout, SES, OUTR</li>
-            <li>Prof. Deepak Kumar Rout, KIIT Bhubaneswar</li>
-            <li>Prof. Biswajit Samantaray, SBSH, OUTR</li>
+            <li><strong>Prof. Satyabhama Dash</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Debi Prasad Dash</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Soumyashree Mangaraj</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Kamalesh Chandra Rout</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Deepak Kumar Rout</strong><br>KIIT Bhubaneswar, India</li>
+            <li><strong>Prof. Biswajit Samantaray</strong><br>School of Basic Sciences and Humanities, OUTR, India</li>
           </ul>
         </div>
-        
+      </div>
+      <div class="committee-card-item">
         <div class="committee-card-header">
           <h2><i class="fas fa-hotel"></i> Travel & Hospitality Chairs</h2>
         </div>
         <div class="committee-card-body">
           <ul class="committee-list">
-            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-            <li>Prof. Subasish Mohapatra, SCS, OUTR</li>
+            <li><strong>Prof. Ananya Dastidar</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Naresh Chandra Naik</strong><br>School of Electronic Sciences, OUTR, India</li>
+            <li><strong>Prof. Subasish Mohapatra</strong><br>School of Computer Sciences, OUTR, India</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Departmental Committee - Full Width -->
-    <div class="committee-card-item" style="margin-bottom: 2rem;">
-      <div class="committee-card-header">
-        <h2><i class="fas fa-building"></i> Departmental Committee Members</h2>
-      </div>
-      <div class="committee-card-body">
-        <div class="grid-2cols" style="margin-bottom: 0;">
-          <ul class="committee-list">
-            <li>Prof. Sribatsa Behera, SELS, OUTR</li>
-            <li>Prof. Kanhu Charan Bhuyan, SELS, OUTR</li>
-            <li>Prof. Madhab Chandra Tripathy, SELS, OUTR</li>
-            <li>Prof. Jagannath Sethi, SELS, OUTR</li>
-            <li>Prof. Rashmi Rekha Sahoo, SELS, OUTR</li>
-            <li>Prof. Ananya Dastidar, SELS, OUTR</li>
-            <li>Prof. Satyabhama Dash, SELS, OUTR</li>
-          </ul>
-          <ul class="committee-list">
-            <li>Prof. Soumyashree Mangaraj, SELS, OUTR</li>
-            <li>Prof. Debi Prasad Dash, SELS, OUTR</li>
-            <li>Prof. Abhyarthana Bisoyi, SELS, OUTR</li>
-            <li>Prof. Naresh Chandra Naik, SELS, OUTR</li>
-            <li>Prof. Karmila Soren, SELS, OUTR</li>
-            <li>Prof. Rashmita Routray, SELS, OUTR</li>
-            <li>Prof. Suman Bala Behera, SELS, OUTR</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
     <!-- Footer Note -->
     <div class="footer-note">
       <i class="fas fa-microphone-alt"></i> ICIMSP 2027 brings together distinguished international & national experts, fostering innovation in intelligent machine learning, signal processing, and emerging technologies.

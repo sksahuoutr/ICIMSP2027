@@ -77,36 +77,96 @@
     color: #fff;
   }
   
-  .cfp-col details {
-    margin-bottom: 0.8rem;
+  /* Three-column grid for tracks */
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 2.5rem;
   }
   
-  .cfp-col details summary {
+  /* Two-column grid for remaining items */
+  .two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin-top: 1rem;
+  }
+  
+  .track-card, .content-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: left;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .track-card h3, .content-card h3 {
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .track-card details {
+    margin-bottom: 0.6rem;
+  }
+  
+  .track-card details summary {
     cursor: pointer;
     font-weight: 600;
     color: #003366;
-    padding: 0.5rem 0;
-    font-size: 1rem;
+    padding: 0.4rem 0;
+    font-size: 0.98rem;
   }
   
-  .cfp-col details summary:hover {
+  .track-card details summary:hover {
     color: #004a99;
   }
   
-  .cfp-col details ul {
-    margin: 0.5rem 0 0.5rem 1.5rem;
+  .track-card details ul {
+    margin: 0.4rem 0 0.5rem 1.2rem;
+    padding-left: 0;
   }
   
-  .cfp-col details ul li {
-    margin-bottom: 0.4rem;
-    font-size: 0.95rem;
+  .track-card details ul li {
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
     line-height: 1.4;
+  }
+  
+  .content-card ul {
+    margin: 0.5rem 0 0 1.2rem;
+    padding-left: 0;
+  }
+  
+  .content-card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
   
   .date-icon {
     width: 24px;
     display: inline-block;
     color: #003366;
+  }
+  
+  .content-card h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #003366;
+  }
+  
+  @media (max-width: 900px) {
+    .tracks-grid, .two-col-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
   }
 </style>
 </head>
@@ -154,7 +214,7 @@
       <!-- Springer Notice -->
       <div class="springer-notice">
         <i class="fas fa-book-open"></i> 
-        <strong>Proceedings Publication:</strong> Submitted a proposal to publish the ICIMSP 2027 proceedings with Springer Nature Group. (Subject to final approval.)</em>.
+        <strong>Proceedings Publication:</strong> Submitted a proposal to publish the ICIMSP 2027 proceedings with Springer Nature Group. (Subject to final approval.)
       </div>
 
       <!-- Action Buttons -->
@@ -162,99 +222,117 @@
         <a class="btn-outline" href="author_template.html">Author Template</a>
         <a class="btn-outline" href="https://drive.google.com/file/d/1dFui2QJSjirsiJLnINZn7av9A4GQlmva/view?usp=drive_link" target="_blank">Conference Brochure</a>
         <a class="btn-outline" href="author-guidelines.html">Author Guidelines</a>
-          <a href="registration.html" class="btn secondary">Registation</a>
-          <a href="https://forms.gle/3LngiTqiEpG2UJ1f8" class="btn secondary">Invitation for Reviewer</a>
-          <a href="flyer.html" class="btn secondary">Download Flyer</a>
+        <a href="registration.html" class="btn secondary">Registration</a>
+        <a href="https://forms.gle/3LngiTqiEpG2UJ1f8" class="btn secondary">Invitation for Reviewer</a>
+        <a href="flyer.html" class="btn secondary">Download Flyer</a>
       </div>
-      
     </section>
 
-    <!-- Three-column section using existing cfp-grid class -->
-    <div class="cfp-grid">
-      <!-- Track Column - One column layout -->
-      <div class="cfp-col">
-        <h2><i class="fas fa-tasks"></i> Conference Tracks</h2>
-        <div class="card" style="text-align: left;">
-          <details open>
-            <summary><strong>Track 1: Intelligent Machines & Autonomous Systems</strong></summary>
-            <ul>
-              <li>Robotics, Mechatronics, and Autonomous Systems</li>
-              <li>Intelligent Control and Human–Machine Interaction</li>
-              <li>AI for Automation and Decision-Making</li>
-              <li>Cyber-Physical Systems and Industry 4.0</li>
-              <li>Smart Manufacturing, Digital Twins, and IIoT</li>
-            </ul>
-          </details>
-          <details>
-            <summary><strong>Track 2: Signal Processing, Computer Vision & AI Applications</strong></summary>
-            <ul>
-              <li>Signal, Image, and Video Processing</li>
-              <li>Computer Vision and Pattern Recognition</li>
-              <li>Deep Learning and Explainable AI</li>
-              <li>Biometrics and Intelligent Perception Systems</li>
-              <li>Medical Imaging, Remote Sensing, and Smart Applications</li>
-              <li>Edge and Embedded AI Systems</li>
-            </ul>
-          </details>
-          <details>
-            <summary><strong>Track 3: Intelligent Communication, Computing & Hardware Technologies</strong></summary>
-            <ul>
-              <li>Wireless Networks, 5G/6G, and IoT</li>
-              <li>Intelligent Communication and Network Security</li>
-              <li>Computational Intelligence and Machine Learning</li>
-              <li>Edge, Cloud, and Quantum Computing</li>
-              <li>VLSI Design, Embedded Systems, and AI Hardware</li>
-              <li>Smart Sensors and Emerging Intelligent Technologies</li>
-              <li>Blockchain-enabled Intelligent Applications</li>
-            </ul>
-          </details>
-        </div>
+    <!-- Conference Tracks in 3 Columns -->
+    <h2><i class="fas fa-tasks"></i> Conference Tracks</h2>
+    <div class="tracks-grid">
+      <!-- Track 1 -->
+      <div class="track-card">
+        <h3>Track 1: Intelligent Systems & Autonomous Technologies</h3>
+        <details open>
+          <summary>Topics</summary>
+          <ul>
+            <li>Robotics and Autonomous Systems</li>
+            <li>Intelligent Control and Automation</li>
+            <li>Human–Machine and Brain–Computer Interaction</li>
+            <li>Cyber-Physical Systems and Industry 4.0</li>
+            <li>Smart Manufacturing and Digital Twins</li>
+            <li>IoT and Industrial IoT (IIoT)</li>
+            <li>Embedded Control and Real-Time Intelligent Systems</li>
+            <li>Robust and Adversarial Intelligent Systems</li>
+          </ul>
+        </details>
+        <p style="font-size:0.85rem; color:#555; margin-top:0.8rem;"><strong>Focus:</strong> Intelligent autonomous technologies integrating robotics, real-time embedded control, industrial automation, IoT-enabled systems, and human-centered intelligent applications.</p>
       </div>
 
-      <!-- Contest Column -->
-      <div class="cfp-col">
+      <!-- Track 2 -->
+      <div class="track-card">
+        <h3>Track 2: Signal Processing & Computer Vision</h3>
+        <details open>
+          <summary>Topics</summary>
+          <ul>
+            <li>Signal, Image, and Video Processing</li>
+            <li>Computer Vision and Pattern Recognition</li>
+            <li>Image Enhancement and Restoration</li>
+            <li>Scene Understanding and Motion Analysis</li>
+            <li>Biometrics and Intelligent Perception Systems</li>
+            <li>Medical Imaging and Healthcare Applications</li>
+            <li>Remote Sensing and Hyperspectral Imaging</li>
+            <li>Vision Systems for Autonomous Applications</li>
+            <li>Edge and Embedded Vision Processing</li>
+          </ul>
+        </details>
+        <p style="font-size:0.85rem; color:#555; margin-top:0.8rem;"><strong>Focus:</strong> Theoretical and applied research in signal processing, computer vision, visual analytics, and perception-oriented imaging technologies for real-world applications.</p>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="track-card">
+        <h3>Track 3: Artificial Intelligence, Algorithms & Intelligent Architectures</h3>
+        <details open>
+          <summary>Topics</summary>
+          <ul>
+            <li>Computational Intelligence and Machine Learning</li>
+            <li>Deep Learning and Explainable AI</li>
+            <li>Optimization and Evolutionary Algorithms</li>
+            <li>Data Intelligence and Intelligent Decision Systems</li>
+            <li>Intelligent Communication and Network Security</li>
+            <li>Edge, Cloud, and Distributed Computing</li>
+            <li>AI Hardware, VLSI, and Embedded AI Systems</li>
+            <li>Smart Sensors and Emerging Intelligent Technologies</li>
+            <li>Blockchain-enabled Intelligent Applications</li>
+          </ul>
+        </details>
+        <p style="font-size:0.85rem; color:#555; margin-top:0.8rem;"><strong>Focus:</strong> Advanced AI methodologies, intelligent computing paradigms, secure communication technologies, AI-specific hardware architectures, and emerging intelligent applications.</p>
+      </div>
+    </div>
+
+    <!-- Break + Remaining Items in 2-Column Optimized Grid -->
+    <div class="two-col-grid">
+      <!-- Student Paper Contest -->
+      <div class="content-card">
         <h2><i class="fas fa-trophy"></i> Student Paper Contest</h2>
-        <div class="card" style="text-align: left;">
-          <p><strong>Eligibility:</strong> UG/PG/Ph.D students. Original/poster work.</p>
-          <h3><i class="fas fa-medal"></i> Categories & Prizes</h3>
-          <ul>
-            <li>B.E./B.Tech/M.Sc Poster: 1st ₹5,000, 2nd ₹3,000</li>
-            <li>M.E./M.Tech/M.Phil/PhD Poster: 1st ₹6,000, 2nd ₹4,000</li>
-          </ul>
-          <h3><i class="fas fa-file-alt"></i> Guidelines</h3>
-          <ul>
-            <li>Max 2 authors per paper</li>
-            <li>Manuscript: 8 pages (Springer Nature format)</li>
-            <li>Submit PDF, Biography, Publications</li>
-            <li>Key Dates: Submission 15 Jul–15 Sep 2026</li>
-          </ul>
-          <h3><i class="fas fa-chalkboard"></i> Evaluation & Awards</h3>
-          <ul>
-            <li>Expert review panel</li>
-            <li>Poster round and interactive session</li>
-            <li>Awards: Cash prizes & certificate</li>
-          </ul>
-        </div>
+        <p><strong>Eligibility:</strong> UG/PG/Ph.D students. Original/poster work.</p>
+        <h3><i class="fas fa-medal"></i> Categories & Prizes</h3>
+        <ul>
+          <li>B.E./B.Tech/M.Sc Poster: 1st ₹5,000, 2nd ₹3,000</li>
+          <li>M.E./M.Tech/M.Phil/PhD Poster: 1st ₹6,000, 2nd ₹4,000</li>
+        </ul>
+        <h3><i class="fas fa-file-alt"></i> Guidelines</h3>
+        <ul>
+          <li>Max 2 authors per paper</li>
+          <li>Manuscript: 8 pages (Springer Nature format)</li>
+          <li>Submit PDF, Biography, Publications</li>
+          <li>Key Dates: Submission 15 Jul–15 Sep 2026</li>
+        </ul>
+        <h3><i class="fas fa-chalkboard"></i> Evaluation & Awards</h3>
+        <ul>
+          <li>Expert review panel</li>
+          <li>Poster round and interactive session</li>
+          <li>Awards: Cash prizes & certificate</li>
+        </ul>
       </div>
 
-      <!-- Submission Column -->
-      <div class="cfp-col">
+      <!-- Manuscript Submission + Important Dates -->
+      <div class="content-card">
         <h2><i class="fas fa-upload"></i> Manuscript Submission</h2>
-        <div class="submission-portal-link">
+        <div class="submission-portal-link" style="background:#eef2f7; margin-bottom:1.2rem;">
           <p>The manuscript has to be uploaded online at the ICIMSP 2027 Microsoft Research paper submission portal:</p>
           <a href="https://cmt3.research.microsoft.com/ICIMSP2027" target="_blank"><i class="fas fa-external-link-alt"></i> Submit Paper via CMT</a>
         </div>
 
-        <div class="card" style="margin-top: 1.5rem; text-align: left;">
-          <h3><i class="far fa-calendar-alt"></i> Important Dates</h3>
-          <ul>
-            <li><i class="far fa-calendar-check date-icon"></i> <strong>Submission opens:</strong> 15 July 2026</li>
-            <li><i class="far fa-clock date-icon"></i> <strong>Submission deadline:</strong> 15 September 2026</li>
-            <li><i class="far fa-envelope date-icon"></i> <strong>Notification of acceptance:</strong> To be announced</li>
-            <li><i class="fas fa-edit date-icon"></i> <strong>Camera-ready deadline:</strong> To be announced</li>
-            <li><i class="fas fa-chalkboard-user date-icon"></i> <strong>Conference dates:</strong> 1–3 July 2027</li>
-          </ul>
-        </div>
+        <h3><i class="far fa-calendar-alt"></i> Important Dates</h3>
+        <ul>
+          <li><i class="far fa-calendar-check date-icon"></i> <strong>Submission opens:</strong> 15 July 2026</li>
+          <li><i class="far fa-clock date-icon"></i> <strong>Submission deadline:</strong> 15 September 2026</li>
+          <li><i class="far fa-envelope date-icon"></i> <strong>Notification of acceptance:</strong> To be announced</li>
+          <li><i class="fas fa-edit date-icon"></i> <strong>Camera-ready deadline:</strong> To be announced</li>
+          <li><i class="fas fa-chalkboard-user date-icon"></i> <strong>Conference dates:</strong> 1–3 July 2027</li>
+        </ul>
       </div>
     </div>
 
